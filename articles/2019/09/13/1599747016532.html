@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>redis-02-String类型 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri2.github.io"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri2.github.io"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="redis-02-String类型 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri2.github.io/articles/2019/09/13/1599747016532.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="redis-02-String类型 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri2.github.io/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri2.github.io/manifest.json">        <link rel="canonical" href="https://ceneri2.github.io/articles/2019/09/13/1599747016532.html">        <link rel="stylesheet"
-              href="https://ceneri2.github.io/skins/nijigen/css/base.css?1599763106802"/>
-            <link rel="prev" title="redis-01-常用命令" href="https://ceneri2.github.io/articles/2019/09/12/1599746683209.html">
-            <link rel="next" title="redis-03-Set集合" href="https://ceneri2.github.io/articles/2019/09/14/1599747790318.html">
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>redis-02-String类型 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="redis-02-String类型 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/09/13/1599747016532.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="redis-02-String类型 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/09/13/1599747016532.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1599763106802"/>
+            <link rel="prev" title="redis-01-常用命令" href="https://ceneri.me/articles/2019/09/12/1599746683209.html">
+            <link rel="next" title="redis-03-Set集合" href="https://ceneri.me/articles/2019/09/14/1599747790318.html">
     <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
 <body>
 <div class="bg"></div>
@@ -15,21 +15,21 @@
 <div class="bg bg--5"></div>
 <header class="header">
     <div class="header__wrap">
-        <a href="https://ceneri2.github.io" rel="start" class="header__logo">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
             <i class="icon__home"></i> ceneri 的个人博客
         </a>
 
         <nav class="mobile__hidden header__nav">
-            <a href="https://ceneri2.github.io/tags.html" rel="section">
+            <a href="https://ceneri.me/tags.html" rel="section">
                 <i class="icon__tags"></i> 标签墙
             </a>
-            <a href="https://ceneri2.github.io/archives.html">
+            <a href="https://ceneri.me/archives.html">
                 <i class="icon__inbox"></i> 存档
             </a>
-            <a rel="archive" href="https://ceneri2.github.io/links.html">
+            <a rel="archive" href="https://ceneri.me/links.html">
                 <i class="icon__link"></i> 友链
             </a>
-            <a rel="alternate" href="https://ceneri2.github.io/rss.xml" rel="section">
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
                 <i class="icon__rss"></i> RSS
             </a>
         </nav>
@@ -43,22 +43,22 @@
     <main class="module__list">
         <ul>
             <li>
-                <a href="https://ceneri2.github.io/tags.html" rel="section">
+                <a href="https://ceneri.me/tags.html" rel="section">
                     <i class="icon__tags"></i> 标签墙
                 </a>
             </li>
             <li>
-                <a href="https://ceneri2.github.io/archives.html">
+                <a href="https://ceneri.me/archives.html">
                     <i class="icon__inbox"></i> 存档
                 </a>
             </li>
             <li>
-                <a rel="archive" href="https://ceneri2.github.io/links.html">
+                <a rel="archive" href="https://ceneri.me/links.html">
                     <i class="icon__link"></i> 友链
                 </a>
             </li>
             <li>
-                <a rel="alternate" href="https://ceneri2.github.io/rss.xml" rel="section">
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
                     <i class="icon__rss"></i> RSS
                 </a>
             </li>
@@ -78,7 +78,7 @@
                     </time>
 
                     <h2 class="item__title">
-                        <a rel="bookmark" href="https://ceneri2.github.io/articles/2019/09/13/1599747016532.html">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/09/13/1599747016532.html">
                             redis-02-String类型
                         </a>
                     </h2>
@@ -91,15 +91,15 @@
                     <div class="ft__center">
                         <span class="tag">
                             <i class="icon__tags"></i>
-                            <a rel="tag" href="https://ceneri2.github.io/tags/redis">
+                            <a rel="tag" href="https://ceneri.me/tags/redis">
                                 redis</a>
                         </span>
-                            <a class="tag" href="https://ceneri2.github.io/articles/2019/09/13/1599747016532.html#b3logsolocomments">
+                            <a class="tag" href="https://ceneri.me/articles/2019/09/13/1599747016532.html#b3logsolocomments">
                                 <i class="icon__comments"></i> <span data-uvstatcmt="1599747016532">0</span> 评论
                             </a>
                         <span class="tag">
                             <i class="icon__views"></i>
-                        <span data-uvstaturl="https://ceneri2.github.io/articles/2019/09/13/1599747016532.html">0</span> 浏览
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/09/13/1599747016532.html">0</span> 浏览
                         </span>
                     </div>
 
@@ -159,8 +159,8 @@ getset db redis # 返回旧值 mongodb
                                 <hr>
 
 标题：redis-02-String类型<br>
-作者：<a href="https://ceneri2.github.io" target="_blank">ceneri</a><br>
-地址：<a href="https://ceneri2.github.io/articles/2019/09/13/1599747016532.html" target="_blank">https://ceneri2.github.io/articles/2019/09/13/1599747016532.html</a><br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/09/13/1599747016532.html" target="_blank">https://ceneri.me/articles/2019/09/13/1599747016532.html</a><br>
 
 <!-- 签名档内可使用 HTML、JavaScript -->
 <br>
@@ -171,10 +171,10 @@ getset db redis # 返回旧值 mongodb
 
                 <div class="module mobile__hidden">
                     <div class="module__content fn__clear">
-                            <a href="https://ceneri2.github.io/articles/2019/09/12/1599746683209.html" rel="prev" class="fn__left breadcrumb">
+                            <a href="https://ceneri.me/articles/2019/09/12/1599746683209.html" rel="prev" class="fn__left breadcrumb">
                                 旧一篇: redis-01-常用命令
                             </a>
-                            <a href="https://ceneri2.github.io/articles/2019/09/14/1599747790318.html" rel="next"
+                            <a href="https://ceneri.me/articles/2019/09/14/1599747790318.html" rel="next"
                                class="fn__right breadcrumb">
                                 redis-03-Set集合: 新一篇
                             </a>
@@ -183,7 +183,7 @@ getset db redis # 返回旧值 mongodb
 
                 <div class="module mobile__hidden fn__none">
                     <div class="module__content">
-                        <a href="https://ceneri2.github.io/articles/2019/09/12/1599746683209.html" rel="prev" class="breadcrumb">
+                        <a href="https://ceneri.me/articles/2019/09/12/1599746683209.html" rel="prev" class="breadcrumb">
                             旧一篇: redis-01-常用命令
                         </a>
                     </div>
@@ -191,7 +191,7 @@ getset db redis # 返回旧值 mongodb
 
                 <div class="module mobile__hidden fn__none">
                     <div class="module__content">
-                        <a href="https://ceneri2.github.io/articles/2019/09/14/1599747790318.html" rel="next"
+                        <a href="https://ceneri.me/articles/2019/09/14/1599747790318.html" rel="next"
                            class="breadcrumb">
                             新一篇: redis-03-Set集合
                         </a>
@@ -258,12 +258,12 @@ getset db redis # 返回旧值 mongodb
             <header class="module__header">标签</header>
             <main class="module__content--three module__content fn__clear">
                     <a rel="tag"
-                       href="https://ceneri2.github.io/tags/redis"
+                       href="https://ceneri.me/tags/redis"
                        class="tag vditor-tooltipped vditor-tooltipped__n"
                        aria-label="7 篇文章">
                         redis</a>
                     <a rel="tag"
-                       href="https://ceneri2.github.io/tags/spring"
+                       href="https://ceneri.me/tags/spring"
                        class="tag vditor-tooltipped vditor-tooltipped__n"
                        aria-label="4 篇文章">
                         spring</a>
@@ -273,7 +273,7 @@ getset db redis # 返回旧值 mongodb
     <div class="module item">
         <div class="module__header">
             <div class="fn__flex">
-                <a href="https://ceneri2.github.io/archives.html" class="fn__flex-1 ft__center">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
                     11
                     文章
                 </a>
@@ -281,7 +281,7 @@ getset db redis # 返回旧值 mongodb
             <br/>
             <div class="fn__flex">
                 <div class="fn__flex-1 ft__center">
-                    <span data-uvstaturl="https://ceneri2.github.io">0</span> <span class="ft-gray">浏览</span>
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
                 </div>
             </div>
         </div>
@@ -293,7 +293,7 @@ getset db redis # 返回旧值 mongodb
 <div class="icon__up" onclick="Util.goTop()"></div>
 <footer class="footer">
     &copy; 2020
-    <a href="https://ceneri2.github.io">ceneri 的个人博客</a>
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
     
     <div class="fn__none"></div>
 </footer>
@@ -302,8 +302,8 @@ getset db redis # 返回旧值 mongodb
 <script>
   var Label = {
     speech: true,
-    servePath: "https://ceneri2.github.io",
-    staticServePath: "https://ceneri2.github.io",
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
     luteAvailable: false,
     hljsStyle: 'github',
     langLabel: "zh_CN",
@@ -313,15 +313,15 @@ getset db redis # 返回旧值 mongodb
     articleId: "1599747016532",
   }
 </script>
-<script type="text/javascript" src="https://ceneri2.github.io/skins/nijigen/js/common.min.js?1599763106802" charset="utf-8"></script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1599763106802" charset="utf-8"></script>
 
 
 <script type="text/javascript">
-    Util.addScript('https://ceneri2.github.io/js/page.min.js?1599763106802', 'soloPageScript')
+    Util.addScript('https://ceneri.me/js/page.min.js?1599763106802', 'soloPageScript')
     var page = new Page({
         "commentContentCannotEmptyLabel": "评论不能为空",
         "oId": "1599747016532",
-        "blogHost": "https://ceneri2.github.io",
+        "blogHost": "https://ceneri.me",
         "randomArticles1Label": "随机阅读：",
         "externalRelevantArticles1Label": "站外相关阅读："
     });
@@ -337,4 +337,4 @@ getset db redis # 返回旧值 mongodb
 </body>
 </html>
 
-<!-- Generated by Latke (https://github.com/88250/latke) in 806ms, 2020/09/11 03:11:36 -->
+<!-- Generated by Latke (https://github.com/88250/latke) in 1012ms, 2020/09/11 11:10:32 -->

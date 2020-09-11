@@ -2,99 +2,99 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>ceneri 的个人博客</title>
-    <link>https://ceneri2.github.io</link>
-    <atom:link href="https://ceneri2.github.io/rss.xml" rel="self" type="application/rss+xml"/>
+    <link>https://ceneri.me</link>
+    <atom:link href="https://ceneri.me/rss.xml" rel="self" type="application/rss+xml"/>
     <description>JAVA程序媛</description>
     <generator>Solo, v4.3.1, https://b3log.org/solo</generator>
-    <lastBuildDate>Fri, 11 Sep 2020 03:11:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 11 Sep 2020 11:10:22 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
       <title>redis-07-三种特殊数据类</title>
-      <link>https://ceneri2.github.io/articles/2019/09/18/1599750078455.html</link>
+      <link>https://ceneri.me/articles/2019/09/18/1599750078455.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/09/18/1599750078455.html</guid>
+      <guid>https://ceneri.me/articles/2019/09/18/1599750078455.html</guid>
       <category>redis</category>
       <pubDate>Wed, 18 Sep 2019 09:00:00 +0800</pubDate>
     </item>
     <item>
       <title>redis-06-Zset有序集合</title>
-      <link>https://ceneri2.github.io/articles/2019/09/17/1599749567559.html</link>
+      <link>https://ceneri.me/articles/2019/09/17/1599749567559.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/09/17/1599749567559.html</guid>
+      <guid>https://ceneri.me/articles/2019/09/17/1599749567559.html</guid>
       <category>redis</category>
       <pubDate>Tue, 17 Sep 2019 09:00:00 +0800</pubDate>
     </item>
     <item>
       <title>redis-05-Hash哈希</title>
-      <link>https://ceneri2.github.io/articles/2019/09/16/1599749076072.html</link>
+      <link>https://ceneri.me/articles/2019/09/16/1599749076072.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/09/16/1599749076072.html</guid>
+      <guid>https://ceneri.me/articles/2019/09/16/1599749076072.html</guid>
       <category>redis</category>
       <pubDate>Mon, 16 Sep 2019 09:00:00 +0800</pubDate>
     </item>
     <item>
       <title>redis-04-List链表</title>
-      <link>https://ceneri2.github.io/articles/2019/09/15/1599748813551.html</link>
+      <link>https://ceneri.me/articles/2019/09/15/1599748813551.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/09/15/1599748813551.html</guid>
+      <guid>https://ceneri.me/articles/2019/09/15/1599748813551.html</guid>
       <category>redis</category>
       <pubDate>Sun, 15 Sep 2019 07:00:00 +0800</pubDate>
     </item>
     <item>
       <title>redis-03-Set集合</title>
-      <link>https://ceneri2.github.io/articles/2019/09/14/1599747790318.html</link>
+      <link>https://ceneri.me/articles/2019/09/14/1599747790318.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/09/14/1599747790318.html</guid>
+      <guid>https://ceneri.me/articles/2019/09/14/1599747790318.html</guid>
       <category>redis</category>
       <pubDate>Sat, 14 Sep 2019 05:00:00 +0800</pubDate>
     </item>
     <item>
       <title>redis-02-String类型</title>
-      <link>https://ceneri2.github.io/articles/2019/09/13/1599747016532.html</link>
+      <link>https://ceneri.me/articles/2019/09/13/1599747016532.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/09/13/1599747016532.html</guid>
+      <guid>https://ceneri.me/articles/2019/09/13/1599747016532.html</guid>
       <category>redis</category>
       <pubDate>Fri, 13 Sep 2019 03:00:00 +0800</pubDate>
     </item>
     <item>
       <title>redis-01-常用命令</title>
-      <link>https://ceneri2.github.io/articles/2019/09/12/1599746683209.html</link>
+      <link>https://ceneri.me/articles/2019/09/12/1599746683209.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/09/12/1599746683209.html</guid>
+      <guid>https://ceneri.me/articles/2019/09/12/1599746683209.html</guid>
       <category>redis</category>
       <pubDate>Thu, 12 Sep 2019 00:00:00 +0800</pubDate>
     </item>
     <item>
       <title>spring-04-di 注入方式</title>
-      <link>https://ceneri2.github.io/articles/2019/06/05/1599755336464.html</link>
+      <link>https://ceneri.me/articles/2019/06/05/1599755336464.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/06/05/1599755336464.html</guid>
+      <guid>https://ceneri.me/articles/2019/06/05/1599755336464.html</guid>
       <category>spring</category>
       <pubDate>Wed, 05 Jun 2019 00:00:40 +0800</pubDate>
     </item>
     <item>
       <title>spring-03-ioc2 IOC创建对象的方式及Spring配置</title>
-      <link>https://ceneri2.github.io/articles/2019/06/05/1599755306182.html</link>
+      <link>https://ceneri.me/articles/2019/06/05/1599755306182.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/06/05/1599755306182.html</guid>
+      <guid>https://ceneri.me/articles/2019/06/05/1599755306182.html</guid>
       <category>spring</category>
       <pubDate>Wed, 05 Jun 2019 00:00:30 +0800</pubDate>
     </item>
     <item>
       <title>spring-02-hellospring 初识Spring</title>
-      <link>https://ceneri2.github.io/articles/2019/06/05/1599755073687.html</link>
+      <link>https://ceneri.me/articles/2019/06/05/1599755073687.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri2.github.io/articles/2019/06/05/1599755073687.html</guid>
+      <guid>https://ceneri.me/articles/2019/06/05/1599755073687.html</guid>
       <category>spring</category>
       <pubDate>Wed, 05 Jun 2019 00:00:20 +0800</pubDate>
     </item>
