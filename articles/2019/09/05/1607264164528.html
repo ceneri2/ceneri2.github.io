@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>springmvc-06-ajax ajax详解 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="springmvc-06-ajax ajax详解 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/09/05/1607264164528.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="springmvc-06-ajax ajax详解 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/09/05/1607264164528.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="springmvc-05-json Json交互处理" href="https://ceneri.me/articles/2019/09/05/1607262527551.html">
+            <link rel="next" title="springmvc-07-intercepter 拦截器" href="https://ceneri.me/articles/2019/09/05/1607264734877.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        09月
+                        <span class="item__day">05</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/09/05/1607264164528.html">
+                            springmvc-06-ajax ajax详解
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-09-05
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/SpringMVC">
+                                SpringMVC</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/09/05/1607264164528.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1607264164528">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/09/05/1607264164528.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">jQuery.ajax</h3>
+<pre><code>jQuery.ajax(...)
+       部分参数：
+              url：请求地址
+             type：请求方式，GET、POST（1.9.0之后用method）
+          headers：请求头
+             data：要发送的数据
+      contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")
+            async：是否异步
+          timeout：设置请求超时时间（毫秒）
+       beforeSend：发送请求前执行的函数(全局)
+         complete：完成之后执行的回调函数(全局)
+          success：成功之后执行的回调函数(全局)
+            error：失败之后执行的回调函数(全局)
+          accepts：通过请求头发送给服务器，告诉服务器当前客户端课接受的数据类型
+         dataType：将服务器端返回的数据转换成指定类型
+            "xml": 将服务器端返回的内容转换成xml格式
+           "text": 将服务器端返回的内容转换成普通文本格式
+           "html": 将服务器端返回的内容转换成普通文本格式，在插入DOM中时，如果包含JavaScript标签，则会尝试去执行。
+         "script": 尝试将返回值当作JavaScript去执行，然后再将服务器端返回的内容转换成普通文本格式
+           "json": 将服务器端返回的内容转换成相应的JavaScript对象
+          "jsonp": JSONP 格式使用 JSONP 形式调用函数时，如 "myurl?callback=?" jQuery 将自动替换 ? 为正确的函数名，以执行回调函数
+</code></pre>
+<h3 id="toc_h3_1">Ajax与后台交互案例一</h3>
+<p>（1）目的：让文本框失去焦点触发ajax事件提交到后台，然后后台返回信息在控制台上<br>
+（2）步骤：</p>
+<ol>
+<li>建立普通maven子项目springmvc-06-ajax，添加web框架支持，添加lib包到war包中（略）</li>
+<li>编写web.xml和springmvc-servlet.xml（略）</li>
+<li>导入jquery-3.1.1.min.js文件</li>
+<li>编写jsp页面</li>
+<li>编写控制器</li>
+<li>配置Tomcat并测试</li>
+</ol>
+<pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
+&lt;head&gt;
+  &lt;title&gt;ajax&lt;/title&gt;
+  &lt;script src="${pageContext.request.contextPath}/statics/js/jquery-3.4.1.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+
+    /*
+   jQuery.post(...)
+   所有参数：
+          url: 待载入页面的URL地址 (必填)
+         data: 待发送 Key/value 参数
+      success: 载入成功时回调函数
+        data:请求返回的数据
+        status：请求返回的状态
+     */
+    function a1(){
+      //ajax默认是get请求
+      $.post({
+        url:"${pageContext.request.contextPath}/ajax/a1",
+        data:{'name':$("#txtName").val()},
+        success:function (data,status) {
+          console.log(data);
+          console.log(status);
+        }
+      });
+    }
+
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;%--onblur：失去焦点触发事件--%&gt;
+用户名:&lt;input type="text" id="txtName" onblur="a1()"/&gt;
+&lt;/body&gt;
+</code></pre>
+<p>编写控制器</p>
+<pre><code>@Controller
+@RequestMapping("/ajax")
+public class AjaxController {
+}
+</code></pre>
+<pre><code>//第一种方式，服务器要返回一个字符串，直接使用response
+    @RequestMapping("/a1")
+    public void ajax(String name, HttpServletResponse response) throws IOException {
+        if ("admin".equals(name)){
+            response.getWriter().print("true");
+        }else {
+            response.getWriter().print("false");
+        }
+    }
+</code></pre>
+<h3 id="toc_h3_2">Ajax与后台交互案例二</h3>
+<p>（1）目的：前端页面按钮点击，局部更新用户数据<br>
+（2）步骤：</p>
+<ol>
+<li>编写jsp页面</li>
+<li>编写控制器</li>
+<li>配置Tomcat并测试</li>
+</ol>
+<p>jsp页面</p>
+<pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;input type="button" id="btn" value="获取数据"/&gt;
+&lt;table width="80%" align="center"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;姓名&lt;/td&gt;
+        &lt;td&gt;年龄&lt;/td&gt;
+        &lt;td&gt;性别&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tbody id="content"&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;script src="${pageContext.request.contextPath}/statics/js/jquery-3.4.1.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+    $(function () {
+        $("#btn").click(function () {
+            $.post("${pageContext.request.contextPath}/ajax/a2",function (data) {
+                console.log(data);
+                var html = "";
+                for (var i=0;i&lt;data.length;i++){
+                    html += "&lt;tr&gt;" +
+                    "&lt;td&gt;"+data[i].name + "&lt;/td&gt;" +
+                    "&lt;td&gt;"+data[i].age + "&lt;/td&gt;" +
+                     "&lt;td&gt;"+data[i].sex + "&lt;/td&gt;" +
+                     "&lt;/tr&gt;"
+                }
+                $("#content").html(html);
+            })
+        })
+    })
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>控制器</p>
+<pre><code>@RequestMapping("/a2")
+    @ResponseBody
+    public List&lt;User&gt; ajax2(){
+
+        List&lt;User&gt; list = new ArrayList&lt;&gt;();
+
+        User user1 = new User("西西1",1,"女");
+        User user2 = new User("西西2",1,"女");
+        User user3 = new User("西西3",1,"女");
+        User user4 = new User("西西4",1,"女");
+        list.add(user1);
+        list.add(user2);
+        list.add(user3);
+        list.add(user4);
+
+        return list; //由于加了@ResponseBody注解，他会返回一个字符串；
+    }
+</code></pre>
+<h3 id="toc_h3_3">Ajax与后台交互案例三</h3>
+<p>（1）目的：用户注册时用户名和密码使用Ajax判断<br>
+（2）步骤：<br>
+1.编写jsp页面<br>
+2.编写控制器<br>
+3.配置Tomcat并测试</p>
+<p>jsp页面</p>
+<pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;script src="${pageContext.request.contextPath}/statics/js/jquery-3.4.1.js"&gt;&lt;/script&gt;
+
+    &lt;script&gt;
+        function a1() {
+            $.post({
+                url:"${pageContext.request.contextPath}/ajax/a3",
+                data:{"name":$("#name").val()},
+                success: function (data) {
+                    if (data.toString()=='ok') { //信息核对成功
+                        $('#userInfo').css("color","green");
+                    }else {
+                        $('#userInfo').css("color","red");
+                    }
+                    $("#userInfo").html(data);
+                }
+            })
+
+        }
+        function a2() {
+            $.post("${pageContext.request.contextPath}/ajax/a3",{"pwd":$("#pwd").val()},function (data) {
+                if (data.toString()=='ok') { //信息核对成功
+                    $('#pwdInfo').css("color","green");
+                }else {
+                    $('#pwdInfo').css("color","red");
+                }
+                $("#pwdInfo").html(data);
+            })
+        }
+    &lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;p&gt;
+    用户名：
+    &lt;input type="text" id="name" onblur="a1()"/&gt;
+    &lt;span id="userInfo"&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    密码：
+    &lt;input type="text" id="pwd" onblur="a2()"/&gt;
+    &lt;span id="pwdInfo"&gt;&lt;/span&gt;
+&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>控制器</p>
+<pre><code>@RequestMapping("/a3")
+    @ResponseBody
+    public String ajax3(String name,String pwd){
+        String msg = "";
+        if (name!=null){
+            if ("admin".equals(name)){
+                msg = "ok";
+            }else {
+                msg = "用户名有误";
+            }
+        }
+        if (pwd!=null){
+            if ("123456".equals(pwd)){
+                msg = "ok";
+            }else {
+                msg = "密码输入有误";
+            }
+        }
+        return msg;
+    }
+
+</code></pre>
+                            <div>
+                                <hr>
+
+标题：springmvc-06-ajax ajax详解<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/09/05/1607264164528.html" target="_blank">https://ceneri.me/articles/2019/09/05/1607264164528.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/09/05/1607262527551.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: springmvc-05-json Json交互处理
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/09/05/1607264734877.html" rel="next"
+                               class="fn__right breadcrumb">
+                                springmvc-07-intercepter 拦截器: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/09/05/1607262527551.html" rel="prev" class="breadcrumb">
+                            旧一篇: springmvc-05-json Json交互处理
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/09/05/1607264734877.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: springmvc-07-intercepter 拦截器
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1607264164528"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">jQuery.ajax</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">Ajax与后台交互案例一</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">Ajax与后台交互案例二</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">Ajax与后台交互案例三</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1607264164528",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1607264164528",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1607264164528', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1444ms, 2020/12/08 21:51:12 -->

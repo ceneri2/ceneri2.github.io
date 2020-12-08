@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>pmp-01-引论 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="pmp-01-引论 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/12/11/1599802976752.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="pmp-01-引论 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/12/11/1599802976752.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="ssmbuild-整合SSM" href="https://ceneri.me/articles/2019/09/05/1607266751298.html">
+            <link rel="next" title="pmp-02-项目运行环境" href="https://ceneri.me/articles/2019/12/11/1600620412760.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        12月
+                        <span class="item__day">11</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/12/11/1599802976752.html">
+                            pmp-01-引论
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-12-11
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/pmp">
+                                pmp</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/12/11/1599802976752.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1599802976752">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/12/11/1599802976752.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">项目</h3>
+<ul>
+<li>
+<p>独特性</p>
+<ul>
+<li>独特的产品、服务或成果。</li>
+</ul>
+</li>
+<li>
+<p>临时性</p>
+<ul>
+<li>有明确的开始/结束时间</li>
+</ul>
+</li>
+<li>
+<p>成果导向性</p>
+<ul>
+<li>可交付成果
+<ul>
+<li>有形的产品</li>
+<li>无形的服务</li>
+<li>其他成果</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>逐渐明晰性</p>
+</li>
+<li>
+<p>项目驱动组织进行变更，前提：提升组织的价值</p>
+</li>
+<li>
+<p>项目创造商业价值，为相关方带来效益</p>
+</li>
+<li>
+<p>项目启动背景</p>
+<ul>
+<li>符合法规、法律或社会要求；</li>
+<li>满足相关方的要求或需求；</li>
+<li>执行、变更业务或技术战略；</li>
+<li>创造、改进或修复产品、过程或服务。</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_1">项目、项目集、项目组合以及运营管理之间的关系</h3>
+<ul>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload2888751971878696202-011e77e4.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>项目组合（Protfolio）</p>
+<ul>
+<li>实现战略目标，包含运营</li>
+<li>各项目间有优先级</li>
+<li>项目之间可以不相关，可以随意添加去删除</li>
+</ul>
+</li>
+<li>
+<p>项目集（Program）</p>
+<ul>
+<li>相互关联且被协调管理的项目、子项目集</li>
+<li>各项目平等，无优先级</li>
+</ul>
+</li>
+<li>
+<p>项目（Project）</p>
+<ul>
+<li>可以不属于项目集</li>
+</ul>
+</li>
+<li>
+<p>运营：对应项目的，持续性、重复性、基本无风险</p>
+</li>
+</ul>
+<h3 id="toc_h3_2">商业文件</h3>
+<ul>
+<li>
+<p>项目经理需要确保项目管理方法紧扣商业文件的意图</p>
+</li>
+<li>
+<p>项目商业论证</p>
+<ul>
+<li>
+<p>指文档化的经济可行性研究报告，是启动后续项目管理活动的依据。</p>
+</li>
+<li>
+<p>商业论证列出了项目启动的目标和理由。</p>
+</li>
+<li>
+<p>说服高级管理层继续该项目的理由</p>
+</li>
+<li>
+<p>是项目章程之前的工作</p>
+<ul>
+<li>流程：分析 -&gt; 上报发起人决定</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>项目效益管理计划</p>
+<ul>
+<li>描述了项目实现效益的方式和时间，以及应制定的效益衡量机制</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_3">项目边界</h3>
+<ul>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload1795385434952533225-b842f8c5.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>PS：监控过程，监控绩效偏差，包括所有其它4个过程</li>
+</ul>
+<h3 id="toc_h3_4">项目和开发生命周期</h3>
+<ul>
+<li>
+<p>预测型/瀑布型</p>
+</li>
+<li>
+<p>迭代型</p>
+<ul>
+<li>通过重复的循环活动</li>
+</ul>
+</li>
+<li>
+<p>增量型</p>
+<ul>
+<li>渐进地增加产品的功能</li>
+</ul>
+</li>
+<li>
+<p>敏捷型/适应型</p>
+<ul>
+<li>敏捷型变更成本小，但不一定做的快</li>
+</ul>
+</li>
+<li>
+<p>混合型</p>
+<ul>
+<li>预测性+适应型</li>
+</ul>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload1139685772486114822-c9106382.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+</ul>
+<h3 id="toc_h3_5">阶段关口</h3>
+<ul>
+<li>
+<p>在阶段结束点时的判定是否进入下一阶段</p>
+</li>
+<li>
+<p>用于比较的文件</p>
+<ul>
+<li>项目商业论证</li>
+<li>项目章程</li>
+<li>项目管理计划</li>
+<li>效益管理计划</li>
+</ul>
+</li>
+<li>
+<p>其他名称：阶段审查、阶段门、关键决策点、阶段入口、阶段出口</p>
+</li>
+</ul>
+<h3 id="toc_h3_6">如何评价项目：5个财务测量指标</h3>
+<ul>
+<li>
+<p>1.净现值（NPV，Net Persent Value）</p>
+<ul>
+<li>需要用银行利率将未来的价值，换算成当前的价值</li>
+<li>净现值=未来报酬的总现值－初始投资现值</li>
+<li>净现值的题，直接选最大值</li>
+</ul>
+</li>
+<li>
+<p>2.内部报酬率（IRR，Internal Rate of Return）</p>
+<ul>
+<li>通常用于多个项目比较</li>
+</ul>
+</li>
+<li>
+<p>3.投资回报率（ROI，Return On Investment）</p>
+</li>
+<li>
+<p>4.效益成本比例（BCR， Benefit Cost Ratio）</p>
+</li>
+<li>
+<p>5.回收期（PBP，Pay Back Period）</p>
+</li>
+</ul>
+<h3 id="toc_h3_7">思维导图</h3>
+<p>由幕布生成<br>
+分享链接：<a href="https://share.mubu.com/doc/2-hm16I8eHe" target="_blank">https://share.mubu.com/doc/2-hm16I8eHe</a></p>
+<p><img src="https://b3logfile.com/file/2020/09/1.引论-dcf105f3.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="1.引论.png"></p>
+                            <div>
+                                <hr>
+
+标题：pmp-01-引论<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/12/11/1599802976752.html" target="_blank">https://ceneri.me/articles/2019/12/11/1599802976752.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/09/05/1607266751298.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: ssmbuild-整合SSM
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/12/11/1600620412760.html" rel="next"
+                               class="fn__right breadcrumb">
+                                pmp-02-项目运行环境: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/09/05/1607266751298.html" rel="prev" class="breadcrumb">
+                            旧一篇: ssmbuild-整合SSM
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600620412760.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: pmp-02-项目运行环境
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1599802976752"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">项目</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">项目、项目集、项目组合以及运营管理之间的关系</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">商业文件</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">项目边界</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">项目和开发生命周期</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">阶段关口</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">如何评价项目：5个财务测量指标</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_7">思维导图</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1599802976752",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1599802976752",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1599802976752', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1524ms, 2020/12/08 21:51:16 -->

@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>springboot-03-web web开发 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="springboot-03-web web开发 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2020/02/18/1607354377610.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="springboot-03-web web开发 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2020/02/18/1607354377610.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="springboot-02-config 配置文件及原理" href="https://ceneri.me/articles/2020/02/18/1607283121892.html">
+            <link rel="next" title="springboot-04-data 数据访问" href="https://ceneri.me/articles/2020/02/18/1607365451628.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2020年">
+                        02月
+                        <span class="item__day">18</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2020/02/18/1607354377610.html">
+                            springboot-03-web web开发
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2020-02-18
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/SpringBoot">
+                                SpringBoot</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2020/02/18/1607354377610.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1607354377610">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2020/02/18/1607354377610.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">一.静态资源访问</h3>
+<h4 id="toc_h4_1">1.三种方式访问并处理静态资源：</h4>
+<ul>
+<li>webjars方式：（一般不使用）</li>
+</ul>
+<ol>
+<li>可访问webjars官网查找需要的资源</li>
+<li>导入需要的资源配置放入pom.xml中</li>
+<li>可以查看项目中的lib包资源是否被导入</li>
+<li>在lib包中查看导入的资源下有一个WEB-INF/resources里面就是我们需要的静态资源</li>
+<li>浏览器访问：localhost:8080/webjars/xxx  （xxx为资源名）</li>
+</ol>
+<ul>
+<li>在项目的resources目录下可访问的四个文件夹的方式：（常用）
+<ul>
+<li>public文件夹，static文件夹，resources文件夹，WEB-INF/resources文件夹，一般用前三个</li>
+<li>优先级：resources&gt;static&gt;public</li>
+</ul>
+</li>
+<li>自定义资源访问路径：
+<ul>
+<li>在application.properties中添加spring.resources.static-locations=classpath:/ceneri/,classpath:/hello/ 用来指定静态资源访问路径为ceneri文件夹和hello文件夹</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_2">二.首页定制</h3>
+<h4 id="toc_h4_3">1.首页可存放的目录（4个）</h4>
+<ul>
+<li>public文件夹下</li>
+<li>static文件夹下</li>
+<li>resources文件夹下</li>
+<li>templates文件夹下（必须支持thymeleaf，才能访问）</li>
+</ul>
+<h4 id="toc_h4_4">2.在SpringBoot2.2.4版本中不能定制图标</h4>
+<p>但是我们可以写在html中引入</p>
+<pre><code>&lt;link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /&gt;
+</code></pre>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;首页&lt;/title&gt;
+    &lt;link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;首页&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="toc_h3_5">三.模板引擎Thymeleaf</h3>
+<p>注：SpringBoot2.x必须使用Thymeleaf3.x版本</p>
+<h4 id="toc_h4_6">1.步骤：</h4>
+<ol>
+<li>
+<p>导入依赖</p>
+</li>
+<li>
+<p>编写前端页面引入命名空间</p>
+</li>
+<li>
+<p>编写后台代码</p>
+</li>
+<li>
+<p>测试</p>
+<p>（1）导入依赖</p>
+</li>
+</ol>
+<pre><code>
+</code></pre>
+<!--thymeleaf模板,我们都是基于3.x开发 -->
+<dependency>
+    <groupid>org.thymeleaf</groupid>
+    <artifactid>thymeleaf-spring5</artifactid>
+</dependency>
+```
+<p>（2）编写前端页面引入命名空间 xmlns:th="<a href="http://www.thymeleaf.org" target="_blank">http://www.thymeleaf.org</a>"</p>
+<p>注意：必须将页面放在template文件夹下</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en" xmlns:th="http://www.thymeleaf.org"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;test&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;!--1.显示文本内容，text转义特殊标签直接输出，utext不转义特殊标签--&gt;
+&lt;div th:text="${msg}"&gt;&lt;/div&gt;
+&lt;div th:utext="${msg}"&gt;&lt;/div&gt;
+&lt;hr&gt;
+
+&lt;!--2.循环--&gt;
+&lt;!--写法一：行内写法(推荐使用)--&gt;
+&lt;h3 th:each="user:${users}" th:text="${user}"&gt;&lt;/h3&gt;
+&lt;!--写法二：两个中括号取值--&gt;
+&lt;h3 th:each="user:${users}"&gt;[[ ${user} ]]&lt;/h3&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>（3）编写后台代码</p>
+<pre><code>import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.Arrays;
+
+@Controller
+public class IndexController {
+
+    @RequestMapping("/test")
+    public String test(Model model){
+
+        model.addAttribute("msg","&lt;h1&gt;hello springboot&lt;/h1&gt;");
+
+        model.addAttribute("users", Arrays.asList("小王","男"));
+
+        return "test";
+    }
+}
+</code></pre>
+<p>（4）测试</p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload118380051204366966-a6f88021.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload118380051204366966-a6f88021.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<h4 id="toc_h4_7">2.语法讲解</h4>
+<p>参考官方文档：<a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#attribute-precedence" target="_blank">https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#attribute-precedence</a><br>
+<strong>（1）th的属性：</strong></p>
+<p><a href="https://b3logfile.com/file/2020/11/20180204123955-05794ae0.png" target="_blank"><img src="https://b3logfile.com/file/2020/11/20180204123955-05794ae0.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<p>（2）表达式：</p>
+<pre><code>Simple expressions:（表达式语法）
+
+Variable Expressions: ${...}：获取变量值；OGNL；
+    1）、获取对象的属性、调用方法
+    2）、使用内置的基本对象： #18
+         #ctx : the context object.
+         #vars: the context variables.
+         #locale : the context locale.
+         #request : (only in Web Contexts) the HttpServletRequest object.
+         #response : (only in Web Contexts) the HttpServletResponse object.
+         #session : (only in Web Contexts) the HttpSession object.
+         #servletContext : (only in Web Contexts) the ServletContext object.
+              
+                ${session.foo}
+
+      3）、内置的一些工具对象：
+　　　　　　#execInfo : information about the template being processed.
+　　　　　　#messages : methods for obtaining externalized messages inside variables expressions, in the same way as they would be obtained using #{…} syntax.
+　　　　　　#uris : methods for escaping parts of URLs/URIs
+　　　　　　#conversions : methods for executing the configured conversion service (if any).
+　　　　　　#dates : methods for java.util.Date objects: formatting, component extraction, etc.
+　　　　　　#calendars : analogous to #dates , but for java.util.Calendar objects.
+　　　　　　#numbers : methods for formatting numeric objects.
+　　　　　　#strings : methods for String objects: contains, startsWith, prepending/appending, etc.
+　　　　　　#objects : methods for objects in general.
+　　　　　　#bools : methods for boolean evaluation.
+　　　　　　#arrays : methods for arrays.
+　　　　　　#lists : methods for lists.
+　　　　　　#sets : methods for sets.
+　　　　　　#maps : methods for maps.
+　　　　　　#aggregates : methods for creating aggregates on arrays or collections.
+　　　　　　#ids : methods for dealing with id attributes that might be repeated (for example, as a result of an iteration).
+
+==============================================================================================
+Selection Variable Expressions: *{...}：选择表达式：和${}在功能上是一样；
+   补充：配合 th:object="${session.user}：
+
+   &lt;div th:object="${session.user}"&gt;
+    &lt;p&gt;Name: &lt;span th:text="*{firstName}"&gt;Sebastian&lt;/span&gt;.&lt;/p&gt;
+    &lt;p&gt;Surname: &lt;span th:text="*{lastName}"&gt;Pepper&lt;/span&gt;.&lt;/p&gt;
+    &lt;p&gt;Nationality: &lt;span th:text="*{nationality}"&gt;Saturn&lt;/span&gt;.&lt;/p&gt;
+    &lt;/div&gt;
+  
+Message Expressions: #{...}：获取国际化内容
+Link URL Expressions: @{...}：定义URL；
+            @{/order/process(execId=${execId},execType='FAST')}
+
+Fragment Expressions: ~{...}：片段引用表达式
+            &lt;div th:insert="~{commons :: main}"&gt;...&lt;/div&gt;
+          
+Literals（字面量）
+      Text literals: 'one text' , 'Another one!' ,…
+      Number literals: 0 , 34 , 3.0 , 12.3 ,…
+      Boolean literals: true , false
+      Null literal: null
+      Literal tokens: one , sometext , main ,…
+Text operations:（文本操作）
+    String concatenation: +
+    Literal substitutions: |The name is ${name}|
+Arithmetic operations:（数学运算）
+    Binary operators: + , - , * , / , %
+    Minus sign (unary operator): -
+Boolean operations:（布尔运算）
+    Binary operators: and , or
+    Boolean negation (unary operator): ! , not
+Comparisons and equality:（比较运算）
+    Comparators: &gt; , &lt; , &gt;= , &lt;= ( gt , lt , ge , le )
+    Equality operators: == , != ( eq , ne )
+Conditional operators:条件运算（三元运算符）
+    If-then: (if) ? (then)
+    If-then-else: (if) ? (then) : (else)
+    Default: (value) ?: (defaultvalue)
+Special tokens:
+    No-Operation: _
+</code></pre>
+<h3 id="toc_h3_8">四.SpringMVC的自动配置</h3>
+<p>SpringBoot让我们可以扩展和定制MVC</p>
+<h4 id="toc_h4_9">1.定制</h4>
+<p>（1）定制视图解析器</p>
+<p>步骤：</p>
+<ol>
+<li>实现WebMvcConfigurer接口</li>
+<li>自定义视图解析器，生成bean交给Springboot</li>
+<li>添加注解 @Configuration<br>
+所以说，我们如果想要使用自己定制化的东西，我们只需要给容器中添加这个组件就好了！剩下的事情SpringBoot就会帮我们做了</li>
+</ol>
+<pre><code>import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.View;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.Locale;
+
+//自定义视图解析器
+//如果需要自定义一些定制化的功能，只要写个组件交给springboot管理，spring boot会帮我们自动装配
+@Configuration
+public class MyMvcConfig1 implements WebMvcConfigurer {
+
+    //生成bean交给Springboot管理
+    @Bean
+    public ViewResolver myViewResolver(){
+        return new MyViewResolver();
+    }
+
+
+    //自定义一个自己的视图解析器MyViewResolver
+    public static class MyViewResolver implements ViewResolver{
+
+        @Override
+        public View resolveViewName(String s, Locale locale) throws Exception {
+            return null;
+        }
+    }
+}
+</code></pre>
+<p>（2）定制日期格式</p>
+<p>只需要在配置文件application.properties中添加需要配置的格式即可</p>
+<pre><code>
+</code></pre>
+<p>自定义日期格式化</p>
+<p>#spring.mvc.date-format</p>
+<h4 id="toc_h4_10">2.扩展</h4>
+<p>步骤：</p>
+<ol>
+<li>实现WebMvcConfigurer接口</li>
+<li>重写addViewControllers方法</li>
+<li>添加注解@Configuration<br>
+访问：localhost:8080/wzh会自动帮我们跳转到test视图</li>
+</ol>
+<pre><code>import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+//自定义视图跳转
+//官方建议我们这么去扩展springmvc,自定义类扩展MVC的功能
+@Configuration
+public class MyMvcConfig2 implements WebMvcConfigurer {
+
+//自定义url路径对应的跳转视图
+@Override
+public void addViewControllers(ViewControllerRegistry registry) {
+registry.addViewController("/wzh").setViewName("test");
+}
+}
+</code></pre>
+<p>3.全面接管SpringMVC</p>
+<ul>
+<li>全面接管即：SpringBoot对SpringMVC的自动配置不需要了，所有都是我们自己去配置！只需在我们的配置类中要加一个@EnableWebMvc.</li>
+<li>我们看下如果我们全面接管了SpringMVC了，我们之前SpringBoot给我们配置的静态资源映射全部失效。</li>
+<li>一般我们不推荐使用全面接管方式</li>
+</ul>
+<pre><code>import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+//自定义视图解析器
+//如果需要自定义一些定制化的功能，只要写个组件交给springboot管理，spring boot会帮我们自动装配
+@Configuration
+@EnableWebMvc   //全面接管SpringMVC，之前Springboot自动配置好的静态资源映射全部失效
+public class MyMvcConfig implements WebMvcConfigurer {
+</code></pre>
+<h3 id="toc_h3_11">应用</h3>
+<h4 id="toc_h4_12">（一）员工管理系统：准备工作</h4>
+<p>数据准备，模拟数据库表dao、pojo<br>
+<img src="https://b3logfile.com/file/2020/12/image-9a36cb54.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="image.png"></p>
+<p>DepartmentDao.java</p>
+<pre><code>package com.ceneri.dao;
+
+import com.ceneri.pojo.Department;
+import org.springframework.stereotype.Repository;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+@Repository
+public class DepartmentDao {
+
+    //模拟数据库中的数据
+
+    private static Map&lt;Integer, Department&gt; departments= null;
+
+    static {
+        departments = new HashMap&lt;Integer, Department&gt;() ;
+
+        departments.put(101,new Department(101,"教学部"));
+        departments.put(102,new Department(102,"市场部"));
+        departments.put(103,new Department(103,"教研部"));
+        departments.put(104,new Department(104,"运营部"));
+        departments.put(105,new Department(105,"后勤部"));
+    }
+}
+</code></pre>
+<p>EmployeeDao.java</p>
+<pre><code>package com.ceneri.dao;
+
+import com.ceneri.pojo.Department;
+import com.ceneri.pojo.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+@Repository
+public class EmployeeDao {
+    //模拟数据库中的数据
+
+    private static Map&lt;Integer, Employee&gt; employees= null;
+
+    @Autowired
+    private DepartmentDao departmentDao;
+    static {
+        employees = new HashMap&lt;Integer, Employee&gt;() ;
+
+        employees.put(1001,new Employee(1001,"AA","12345a@qq.com",1,new Department(101,"教学部"),new Date()));
+        employees.put(1002,new Employee(1002,"BB","12345b@qq.com",0,new Department(102,"市场部"),new Date()));
+        employees.put(1003,new Employee(1003,"CC","12345c@qq.com",1,new Department(103,"教研部"),new Date()));
+        employees.put(1004,new Employee(1004,"DD","12345d@qq.com",0,new Department(104,"运营部"),new Date()));
+        employees.put(1005,new Employee(1005,"EE","12345e@qq.com",1,new Department(105,"后勤部"),new Date()));
+    }
+}
+</code></pre>
+<p>Department.java</p>
+<pre><code>package com.ceneri.pojo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Department {
+    private Integer id;
+    private String departmentName;
+}
+</code></pre>
+<p>Employee.java</p>
+<pre><code>package com.ceneri.pojo;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+
+//员工表
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Employee {
+    private Integer id;
+    private String lastname;
+    private String email;
+    private Integer gender;//0:女 1：男
+    private Department department;
+    private Date birth;
+}
+</code></pre>
+<h4 id="toc_h4_13">（二）国际化</h4>
+<ol>
+<li>编写国际化配置文件</li>
+</ol>
+<p><img src="https://b3logfile.com/file/2020/12/image-15fe1843.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="image.png"><br>
+<img src="https://b3logfile.com/file/2020/12/image-fbc68903.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="image.png"></p>
+<ol start="2">
+<li>配置文件</li>
+</ol>
+<pre><code>spring.messages.basename=i18n.login
+</code></pre>
+<ol start="3">
+<li>去页面获取国际化的值；</li>
+</ol>
+<p>查看Thymeleaf的文档，找到message取值操作为： #{...}。</p>
+<pre><code>&lt;label class="sr-only" th:text="#{login.username}"&gt;Username&lt;/label&gt;
+			&lt;input type="text" class="form-control"  name="username" th:placeholder="#{login.username}" required="" autofocus=""&gt;
+			&lt;label class="sr-only"  th:text="#{login.password}"&gt;Password&lt;/label&gt;
+			&lt;input type="password" class="form-control" name="password" th:placeholder="#{login.password}" required=""&gt;
+			&lt;div class="checkbox mb-3"&gt;
+				&lt;label&gt;
+          &lt;input type="checkbox" value="remember-me"&gt; [[#{login.remember}]]
+        &lt;/label&gt;
+</code></pre>
+<p>4.<strong>根据按钮自动切换中文英文</strong></p>
+<pre><code>&lt;a class="btn btn-sm" th:href="@{/index.html(l='zh_CN')}"&gt;中文&lt;/a&gt;
+&lt;a class="btn btn-sm" th:href="@{/index.html(l='en_US')}"&gt;English&lt;/a&gt;
+</code></pre>
+<p>自定义组件类</p>
+<pre><code>package com.ceneri.config;
+
+import org.springframework.util.StringUtils;
+import org.springframework.web.servlet.LocaleResolver;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Locale;
+
+//可以在链接上携带区域信息
+public class MyLocaleResolver implements LocaleResolver {
+
+    //解析请求
+    @Override
+    public Locale resolveLocale(HttpServletRequest request) {
+
+        // 获得请求中的需要的语言参数
+        String language = request.getParameter("l");
+        Locale locale = Locale.getDefault(); //如果没有获取到就使用系统默认的
+        //如果请求链接不为空
+        if (!StringUtils.isEmpty(language)){
+            //分割请求参数
+            String[] split = language.split("_");
+            //国家，地区
+            locale = new Locale(split[0],split[1]);
+        }
+        return locale;
+    }
+
+    @Override
+    public void setLocale(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Locale locale) {
+
+    }
+}
+</code></pre>
+<p>在MvcConofig下添加bean</p>
+<pre><code>@Configuration
+public class MyMvcConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/index.html").setViewName("index");
+        registry.addViewController("/main.html").setViewName("dashboard");
+        registry.addViewController("/list.html").setViewName("list");
+    }
+
+    // 自定义的国际化组件就生效了
+    @Bean
+    public LocaleResolver localeResolver() {
+        return new MyLocaleResolver();
+    }
+}
+</code></pre>
+<h4 id="toc_h4_14">（三）登录功能实现</h4>
+<p>编写登录的controller</p>
+<pre><code>@Controller
+public class LoginController {
+
+    @PostMapping("/user/login")
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password,
+                        HttpSession session,
+                        Model model){
+
+        if(!StringUtils.isEmpty(username) &amp;&amp; "123456".equals(password)){
+            //登陆成功！防止表单重复提交，我们重定向
+            session.setAttribute("loginUser",username);
+            return "redirect:/main.html";
+        }else {
+            //登录失败！存放错误信息
+            model.addAttribute("msg","用户名密码错误");
+            return "index";
+        }
+
+    }
+
+/*    @ResponseBody
+    @PostMapping("/user/login")
+    public String login(){
+
+    return "OK";
+    }*/
+}
+</code></pre>
+<h4 id="toc_h4_15">（四）拦截器</h4>
+<p>自定义一个拦截器</p>
+<pre><code>public class LoginHandlerInterceptor implements HandlerInterceptor {
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+        Object user = request.getSession().getAttribute("loginUser");
+
+        if(user == null ) {//未登录，返回登录页面
+            request.setAttribute("msg","没有权限,请先登录");
+            request.getRequestDispatcher("/index.html").forward(request,response);
+            return false;
+        }else{
+            return  true;
+        }
+    }
+}
+</code></pre>
+<p>然后将拦截器注册到我们的SpringMVC配置类当中！</p>
+<pre><code>//注册拦截器,及拦截请求addPathPatterns和要剔除哪些请求excludePathPatterns!
+    //我们还需要过滤静态资源文件，否则样式显示不出来
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new LoginHandlerInterceptor())
+                     .addPathPatterns("/**").excludePathPatterns("/index.html","/","/user/login","/css/**","/js/**","/img/**");
+    }
+</code></pre>
+<p>在后台主页，获取用户登录的信息</p>
+<pre><code>&lt;!--后台主页显示登录用户的信息--&gt;
+
+[[${session.loginUser}]]
+</code></pre>
+<h4 id="toc_h4_16">（五）展示员工列表</h4>
+<ol>
+<li>编写控制器</li>
+</ol>
+<pre><code>//查询所有员工，返回列表页面
+    @GetMapping("/emps")
+    public String list(Model model){
+        Collection&lt;Employee&gt; employees = employeeDao.getAll();
+        //将结果放在请求中
+        model.addAttribute("emps",employees);
+        return "emp/list";
+    }
+</code></pre>
+<p>2.展示表单</p>
+<pre><code>&lt;tr th:each="emp:${emps}"&gt;
+&lt;td th:text="${emp.id}"&gt;&lt;/td&gt;
+&lt;td th:text="${emp.lastname}"&gt;&lt;/td&gt;
+&lt;td th:text="${emp.email}"&gt;&lt;/td&gt;
+&lt;td th:text="${emp.gender==0?'女':'男'}"&gt;&lt;/td&gt;
+&lt;td th:text="${emp.department.departmentName}"&gt;&lt;/td&gt;
+&lt;!--使用时间格式化工具--&gt;
+&lt;td th:text="${#dates.format(emp.birth,'yyyy-MM-dd')}"&gt;&lt;/td&gt;&lt;td&gt;&lt;a class="btn btn-sm btn-primary" th:href="@{/emp/{id}(id=${emp.id})}"&gt;编辑&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+</code></pre>
+<h4 id="toc_h4_17">（六）增加员工列表</h4>
+<ol>
+<li>将添加员工信息改为超链接</li>
+</ol>
+<pre><code>&lt;h2&gt; &lt;a class="btn btn-sm btn-success"th:href="@{/toaddemp}"&gt;添加员工&lt;/a&gt;&lt;/h2&gt;
+</code></pre>
+<ol start="2">
+<li>编写控制器</li>
+</ol>
+<pre><code>@GetMapping("/toaddemp")
+    public String toAddEmp(Model model) {
+        Collection&lt;Department&gt; departments = departmentDao.getDepartments();
+        model.addAttribute("departments",departments);
+        return "emp/add";
+    }
+</code></pre>
+<ol start="3">
+<li>添加前端页面；复制list页面，修改即可</li>
+</ol>
+<p>bootstrap官网文档 ： <a href="https://v4.bootcss.com/docs/4.0/components/forms/" target="_blank">https://v4.bootcss.com/docs/4.0/components/forms/</a></p>
+<ol start="4">
+<li>修改add页面form表单提交地址和方式</li>
+</ol>
+<pre><code>&lt;form th:action="@{/addemp}" method="post"&gt;
+</code></pre>
+<ol start="5">
+<li>编写控制器</li>
+</ol>
+<pre><code>//员工添加功能
+    //接收前端传递的参数，自动封装成为对象[要求前端传递的参数名，和属性名一致]
+    @PostMapping("/addemp")
+    public String addEmp(Employee employee){
+        employeeDao.save(employee); //保存员工信息
+        //回到员工列表页面，可以使用redirect或者forward
+        return "redirect:/emps";
+    }
+</code></pre>
+<h4 id="toc_h4_18">（七）修改员工列表</h4>
+<p>同添加员工操作，编写修改页面，编写控制器</p>
+<pre><code>@GetMapping("/emp/{id}")
+    public String toUpdateEmp(@PathVariable("id") Integer id, Model model) {
+        Employee employee = employeeDao.getEmployeeById(id);
+        model.addAttribute("emp",employee);
+        Collection&lt;Department&gt; departments = departmentDao.getDepartments();
+        model.addAttribute("departments",departments);
+        return "emp/update";
+    }
+</code></pre>
+<h4 id="toc_h4_19">（八）删除员工列表</h4>
+<pre><code>@GetMapping("/delEmp/{id}")
+    public String delEmp(@PathVariable("id") Integer id){
+        employeeDao.delete(id);
+        return "redirect:/emps";
+    }
+</code></pre>
+<h4 id="toc_h4_20">（九）注销功能</h4>
+<p>控制器</p>
+<pre><code>@GetMapping("/user/loginOut")
+    public String loginOut(HttpSession session){
+        session.invalidate();
+        return "redirect:/index.html";
+    }
+</code></pre>
+<p>按钮</p>
+<pre><code>&lt;a class="nav-link" th:href="@{/user/loginOut}"&gt;注销&lt;/a&gt;
+</code></pre>
+<h4 id="toc_h4_21">（十）<strong>Thymeleaf 公共页面元素抽取</strong></h4>
+<p>1.抽取公共片段 th:fragment  定义模板名</p>
+<p>2.引入公共片段  th:insert  插入模板名</p>
+<p>我们来抽取一下，使用list列表做演示！我们要抽取头部，nav标签</p>
+<p>我们在dashboard中将nav部分定义一个模板名；</p>
+<pre><code>&lt;!--顶部导航栏--&gt;
+&lt;nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" th:fragment="topbar"&gt;
+    &lt;a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://getbootstrap.com/docs/4.0/examples/dashboard/#"&gt;[[${session.loginUser}]]&lt;/a&gt;
+    &lt;input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"&gt;
+    &lt;ul class="navbar-nav px-3"&gt;
+        &lt;li class="nav-item text-nowrap"&gt;
+            &lt;a class="nav-link" th:href="@{/user/loginOut}"&gt;注销&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<p><strong>除了使用insert插入，还可以使用replace替换，或者include包含，三种方式会有一些小区别，可以见名知义</strong></p>
+<pre><code>&lt;!--顶部导航栏--&gt;
+		&lt;div th:replace="~{common/commons::topbar}"&gt;&lt;/div&gt;
+</code></pre>
+                            <div>
+                                <hr>
+
+标题：springboot-03-web web开发<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2020/02/18/1607354377610.html" target="_blank">https://ceneri.me/articles/2020/02/18/1607354377610.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2020/02/18/1607283121892.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: springboot-02-config 配置文件及原理
+                            </a>
+                            <a href="https://ceneri.me/articles/2020/02/18/1607365451628.html" rel="next"
+                               class="fn__right breadcrumb">
+                                springboot-04-data 数据访问: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2020/02/18/1607283121892.html" rel="prev" class="breadcrumb">
+                            旧一篇: springboot-02-config 配置文件及原理
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2020/02/18/1607365451628.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: springboot-04-data 数据访问
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1607354377610"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">一.静态资源访问</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_1">1.三种方式访问并处理静态资源：</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">二.首页定制</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_3">1.首页可存放的目录（4个）</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_4">2.在SpringBoot2.2.4版本中不能定制图标</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">三.模板引擎Thymeleaf</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_6">1.步骤：</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_7">2.语法讲解</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_8">四.SpringMVC的自动配置</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_9">1.定制</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_10">2.扩展</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_11">应用</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_12">（一）员工管理系统：准备工作</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_13">（二）国际化</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_14">（三）登录功能实现</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_15">（四）拦截器</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_16">（五）展示员工列表</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_17">（六）增加员工列表</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_18">（七）修改员工列表</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_19">（八）删除员工列表</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_20">（九）注销功能</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_21">（十）Thymeleaf 公共页面元素抽取</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1607354377610",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1607354377610",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1607354377610', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1623ms, 2020/12/08 21:50:56 -->

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>redis-07-三种特殊数据类 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="redis-07-三种特殊数据类 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2020/01/12/1599750078455.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="redis-07-三种特殊数据类 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2020/01/12/1599750078455.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="redis-06-Zset有序集合" href="https://ceneri.me/articles/2020/01/12/1599749567559.html">
+            <link rel="next" title="springboot-01-helloworld 初识及原理探究" href="https://ceneri.me/articles/2020/02/18/1607280652102.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2020年">
+                        01月
+                        <span class="item__day">12</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2020/01/12/1599750078455.html">
+                            redis-07-三种特殊数据类
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2020-01-12
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/redis">
+                                redis</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2020/01/12/1599750078455.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1599750078455">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2020/01/12/1599750078455.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">三种特殊数据类</h3>
+<ul>
+<li>GEO地理位置</li>
+</ul>
+<p>Redis 的 GEO 特性在 Redis 3.2 版本中推出， 这个功能可以将用户给定的地理位置信息储存起来， 并对 这些信息进行操作。来实现诸如附近位置、摇一摇这类依赖于地理位置信息的功能。geo的数据类型为 zset。 GEO 的数据结构总共有六个常用命令：geoadd、geopos、geodist、georadius、 georadiusbymember、gethash 官方文档：<a href="https://www.redis.net.cn/order/3685.html" target="_blank">https://www.redis.net.cn/order/3685.html</a></p>
+<ul>
+<li>HyperLogLog</li>
+</ul>
+<p>Redis 在 2.8.9 版本添加了 HyperLogLog 结构。 Redis HyperLogLog 是用来做基数统计的算法，HyperLogLog 的优点是，在输入元素的数量或者体积 非常非常大时，计算基数所需的空间总是固定 的、并且是很小的。 在 Redis 里面，每个 HyperLogLog 键只需要花费 12 KB 内存，就可以计算接近 2^64 个不同元素的基 数。这和计算基数时，元素越多耗费内存就越多的集合形成鲜明对比。 HyperLogLog则是一种算法，它提供了不精确的去重计数方案。</p>
+<p>举个栗子：假如我要统计网页的UV（浏览用户数量，一天内同一个用户多次访问只能算一次），传统的 解决方案是使用Set来保存用户id，然后统计Set中的元素数量来获取页面UV。但这种方案只能承载少量 用户，一旦用户数量大起来就需要消耗大量的空间来存储用户id。我的目的是统计用户数量而不是保存 用户，这简直是个吃力不讨好的方案！</p>
+<p>而使用Redis的HyperLogLog最多需要12k就可以统计大量的用户 数，尽管它大概有0.81%的错误率，但对于统计UV这种不需要很精确的数据是可以忽略不计的。</p>
+<ul>
+<li>BitMap</li>
+</ul>
+<p>在开发中，可能会遇到这种情况：需要统计用户的某些信息，如活跃或不活跃，登录或者不登录；又如 需要记录用户一年的打卡情况，打卡了是1， 没有打卡是0，如果使用普通的 key/value存储，则要记录 365条记录，如果用户量很大，需要的空间也会很大，所以 Redis 提供了 Bitmap 位图这中数据结构， Bitmap 就是通过操作二进制位来进行记录，即为 0 和 1；如果要记录 365 天的打卡情况，使用 Bitmap 表示的形式大概如下：0101000111000111...........................，这样有什么好处呢？当然就是节约内存 了，365 天相当于 365 bit，又 1 字节 = 8 bit , 所以相当于使用 46 个字节即可。 BitMap 就是通过一个 bit 位来表示某个元素对应的值或者状态, 其中的 key 就是对应元素本身，实际上 底层也是通过对字符串的操作来实现。Redis 从 2.2 版本之后新增了setbit, getbit, bitcount 等几个 bitmap 相关命令。</p>
+                            <div>
+                                <hr>
+
+标题：redis-07-三种特殊数据类<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2020/01/12/1599750078455.html" target="_blank">https://ceneri.me/articles/2020/01/12/1599750078455.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2020/01/12/1599749567559.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: redis-06-Zset有序集合
+                            </a>
+                            <a href="https://ceneri.me/articles/2020/02/18/1607280652102.html" rel="next"
+                               class="fn__right breadcrumb">
+                                springboot-01-helloworld 初识及原理探究: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2020/01/12/1599749567559.html" rel="prev" class="breadcrumb">
+                            旧一篇: redis-06-Zset有序集合
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2020/02/18/1607280652102.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: springboot-01-helloworld 初识及原理探究
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1599750078455"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">三种特殊数据类</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1599750078455",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1599750078455",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1599750078455', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1333ms, 2020/12/08 21:50:58 -->

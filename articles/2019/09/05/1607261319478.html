@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>springmvc-04-controller RestFul和控制器 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="springmvc-04-controller RestFul和控制器 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/09/05/1607261319478.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="springmvc-04-controller RestFul和控制器 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/09/05/1607261319478.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="springmvc-03-annotation 注解版" href="https://ceneri.me/articles/2019/09/05/1607181288295.html">
+            <link rel="next" title="springmvc-05-json Json交互处理" href="https://ceneri.me/articles/2019/09/05/1607262527551.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        09月
+                        <span class="item__day">05</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/09/05/1607261319478.html">
+                            springmvc-04-controller RestFul和控制器
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-09-05
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/SpringMVC">
+                                SpringMVC</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/09/05/1607261319478.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1607261319478">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/09/05/1607261319478.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">控制器Controller</h3>
+<ul>
+<li>控制器复杂提供访问应用程序的行为，通常通过接口定义或注解定义两种方法实现。</li>
+<li>控制器负责解析用户的请求并将其转换为一个模型。</li>
+<li>在Spring MVC中一个控制器类可以包含多个方法</li>
+<li>在Spring MVC中，对于Controller的配置方式有很多种</li>
+</ul>
+<h3 id="toc_h3_1">实现Controller接口</h3>
+<p>Controller是一个接口，在org.springframework.web.servlet.mvc包下，接口中只有一个方法；</p>
+<pre><code>//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+package org.springframework.web.servlet.mvc;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.lang.Nullable;
+import org.springframework.web.servlet.ModelAndView;
+
+@FunctionalInterface
+public interface Controller {
+    @Nullable
+    ModelAndView handleRequest(HttpServletRequest var1, HttpServletResponse var2) throws Exception;
+}
+</code></pre>
+<p><strong>测试</strong></p>
+<ol>
+<li>新建一个Moudle，springmvc-04-controller 。将刚才的03 拷贝一份。
+<ul>
+<li>删掉HelloController</li>
+<li>mvc的配置文件只留下 视图解析器！</li>
+</ul>
+</li>
+<li>编写一个Controller类，ControllerTest1</li>
+</ol>
+<pre><code>package com.ceneri.controller;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+public class ControllerTest1 implements Controller {
+
+    @Override
+    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("msg","TestController1");
+        mv.setViewName("test");
+        return mv;
+    }
+}
+</code></pre>
+<ol start="3">
+<li>编写完毕后，去Spring配置文件中注册请求的bean；name对应请求路径，class对应处理请求的类</li>
+</ol>
+<pre><code>&lt;bean name="/t1" class="com.ceneri.controller.ControllerTest1"/&gt;
+</code></pre>
+<ol start="4">
+<li>编写前端test.jsp，注意在WEB-INF/jsp目录下编写，对应我们的视图解析器</li>
+</ol>
+<pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+${msg}
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<ol start="5">
+<li>
+<p>配置Tomcat运行测试</p>
+<p><strong>说明：</strong></p>
+</li>
+</ol>
+<ul>
+<li>实现接口Controller定义控制器是较老的办法</li>
+<li>缺点是：一个控制器中只有一个方法，如果要多个方法则需要定义多个Controller；定义的方式比较麻烦；</li>
+</ul>
+<h3 id="toc_h3_2">使用注解@Controller</h3>
+<ul>
+<li>@Controller注解类型用于声明Spring类的实例是一个控制器（在讲IOC时还提到了另外3个注解）；</li>
+<li>Spring可以使用扫描机制来找到应用程序中所有基于注解的控制器类，为了保证Spring能找到你的控制器，需要在配置文件中声明组件扫描。</li>
+</ul>
+<pre><code>&lt;context:component-scan base-package="com.ceneri.controller"/&gt;
+</code></pre>
+<ul>
+<li>增加一个ControllerTest2类，使用注解实现；</li>
+</ul>
+<pre><code>package com.ceneri.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class ControllerTest2 {
+
+    @RequestMapping("/t2")
+    public String test1(Model model){
+        model.addAttribute("msg","TestController2");
+        return "test";
+    }
+
+    @RequestMapping("/t3")
+    public String test2(Model model){
+        model.addAttribute("msg","TestController3");
+        return "test";
+    }
+}
+</code></pre>
+<p>运行tomcat测试</p>
+<p><strong>可以发现，我们的两个请求都可以指向一个视图，但是页面结果的结果是不一样的，从这里可以看出视图是被复用的，而控制器与视图之间是弱偶合关系。</strong></p>
+<h3 id="toc_h3_3">PostMapping</h3>
+<p><strong>@PostMapping</strong></p>
+<pre><code>package com.ceneri.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class EncodingController {
+
+    @PostMapping("/e/t")
+    public String test1(String name, Model model){
+        System.out.println(name);
+        model.addAttribute("msg",name);
+        return "test";
+    }
+}
+</code></pre>
+<p>jsp页面</p>
+<pre><code>&lt;%@ page contentType="text/html;charset=UTF-8" language="java" %&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;form action="/e/t" method="post"&gt;
+    &lt;input type="text" name="name"&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="toc_h3_4">RequestMapping</h3>
+<p><strong>@RequestMapping</strong></p>
+<ul>
+<li>@RequestMapping注解用于映射url到控制器类或一个特定的处理程序方法。可用于类或方法上。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。</li>
+</ul>
+<pre><code>package com.ceneri.controller;
+
+import com.ceneri.pojo.User;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+@RequestMapping("/user")
+public class UserController {
+
+    //localhost:8080/user/t1?name=xx;
+    @GetMapping("/t1")
+    public String test1(@RequestParam("username") String name, Model model) {
+        //1.接收前端参数
+        System.out.println("接收到前端的参数为：" + name);
+        //2.将返回的结果传递给前端，Model
+        model.addAttribute("msg", name);
+        //3.跳转视图
+        return "test";
+    }
+
+    /*
+    1.接收前端用户传递的参数，判断参数的名字，假设名字直接在方法上，可以直接使用
+    2.假设传递的是一个对象User,匹配User对象中的字段名；如果名字一致则OK，否则，匹配不到
+    */
+
+    //http://localhost:8080/user/t2?name=aa&amp;id=1&amp;age=15;
+    @GetMapping("/t2")
+    public String test2(User user) {
+        System.out.println(user);
+        return "test";
+    }
+}
+</code></pre>
+<h3 id="toc_h3_5">RestFul 风格</h3>
+<p><strong>概念</strong></p>
+<p>Restful就是一个资源定位及资源操作的风格。不是标准也不是协议，只是一种风格。基于这个风格设计的软件可以更简洁，更有层次，更易于实现缓存等机制。</p>
+<p><strong>功能</strong></p>
+<p>资源：互联网所有的事物都可以被抽象为资源</p>
+<p>资源操作：使用POST、DELETE、PUT、GET，使用不同方法对资源进行操作。</p>
+<p>分别对应 添加、 删除、修改、查询。/<br>
+<strong>传统方式操作资源</strong>  ：通过不同的参数来实现不同的效果！方法单一，post 和 get</p>
+<pre><code>http://127.0.0.1/item/queryItem.action?id=1 查询,GET
+
+http://127.0.0.1/item/saveItem.action 新增,POST
+
+http://127.0.0.1/item/updateItem.action 更新,POST
+
+http://127.0.0.1/item/deleteItem.action?id=1 删除,GET或POST
+</code></pre>
+<p><strong>使用RESTful操作资源</strong> ：可以通过不同的请求方式来实现不同的效果！如下：请求地址一样，但是功能可以不同！</p>
+<pre><code>http://127.0.0.1/item/1 查询,GET
+
+http://127.0.0.1/item 新增,POST
+
+http://127.0.0.1/item 更新,PUT
+
+http://127.0.0.1/item/1 删除,DELETE
+</code></pre>
+<p><strong>学习测试</strong></p>
+<ol>
+<li>
+<p>在新建一个类 RestFulController</p>
+<pre><code>@Controller
+public class RestFulController {
+}
+</code></pre>
+</li>
+<li>
+<p>在Spring MVC中可以使用  @PathVariable 注解，让方法参数的值对应绑定到一个URI模板变量上。</p>
+</li>
+</ol>
+<pre><code>@Controller
+public class RestFulController {
+
+   //映射访问路径
+   @RequestMapping("/commit/{p1}/{p2}")
+   public String index(@PathVariable int p1, @PathVariable int p2, Model model){
+       
+       int result = p1+p2;
+       //Spring MVC会自动实例化一个Model对象用于向视图中传值
+       model.addAttribute("msg", "结果："+result);
+       //返回视图位置
+       return "test";
+       
+  }
+   
+}
+</code></pre>
+<p><strong>使用method属性指定请求类型</strong></p>
+<p>用于约束请求的类型，可以收窄请求范围。指定请求谓词的类型如GET, POST, HEAD, OPTIONS, PUT, PATCH, DELETE, TRACE等</p>
+<p>我们来测试一下：</p>
+<ul>
+<li>
+<p>增加一个方法</p>
+<pre><code>//映射访问路径,必须是POST请求
+@RequestMapping(value = "/hello",method = {RequestMethod.POST})
+public String index2(Model model){
+   model.addAttribute("msg", "hello!");
+   return "test";
+}
+</code></pre>
+</li>
+<li></li>
+</ul>
+<p><strong>小结：</strong></p>
+<p>Spring MVC 的 @RequestMapping 注解能够处理 HTTP 请求的方法, 比如 GET, PUT, POST, DELETE 以及 PATCH。</p>
+<p><strong>所有的地址栏请求默认都会是 HTTP GET 类型的。</strong></p>
+<p>方法级别的注解变体有如下几个：组合注解</p>
+<pre><code>@GetMapping
+@PostMapping
+@PutMapping
+@DeleteMapping
+@PatchMapping
+</code></pre>
+<p>@GetMapping 是一个组合注解，平时使用的会比较多！</p>
+<p>它所扮演的是 @RequestMapping(method =RequestMethod.GET) 的一个快捷方式。</p>
+<pre><code>@Controller
+public class RestFulController {
+
+    @RequestMapping("/add/{p1}/{p2}")
+    public String test1(@PathVariable int p1,@PathVariable String p2, Model model){
+        String result = p1+p2;
+        model.addAttribute("msg","结果:"+result);
+        return "test";
+    }
+
+    //映射访问路径,必须是POST请求
+    @RequestMapping(value = "/a/{p1}/{p2}",method = {RequestMethod.POST})
+    public String test2(@PathVariable int p1,@PathVariable String p2, Model model){
+        String result = p1+p2;
+        model.addAttribute("msg","结果:"+result);
+        return "test";
+    }
+
+    //映射访问路径,必须是POST请求
+    @PostMapping("/post/{p1}/{p2}")
+    public String test3(@PathVariable int p1,@PathVariable String p2, Model model){
+        String result = p1+p2;
+        model.addAttribute("msg","结果:"+result);
+        return "test";
+    }
+
+    @GetMapping("/get/{p1}/{p2}")
+    public String test4(@PathVariable int p1,@PathVariable String p2, Model model){
+        String result = p1+p2;
+        model.addAttribute("msg","结果:"+result);
+        return "test";
+    }
+</code></pre>
+<pre><code>@Controller
+public class ResultGo {
+    @RequestMapping("/result/t1")
+    public void test1(HttpServletRequest req, HttpServletResponse rsp)
+            throws IOException {
+        rsp.getWriter().println("Hello,Spring BY servlet API");
+    }
+    @RequestMapping("/result/t2")
+    public void test2(HttpServletRequest req, HttpServletResponse rsp)
+            throws IOException {
+        rsp.sendRedirect("/index.jsp");
+    }
+    @RequestMapping("/result/t3")
+    public void test3(HttpServletRequest req, HttpServletResponse rsp)
+            throws Exception {
+//转发
+        req.setAttribute("msg","/result/t3");
+        req.getRequestDispatcher("/WEB-INF/jsp/test.jsp").forward(req,rsp);
+    }
+}
+</code></pre>
+<p><strong>RestFul风格转发 重定向</strong></p>
+<pre><code>@Controller
+public class ResultSpringMVC {
+    //注释掉视图解析器
+    @RequestMapping("/rsm/t1")
+    public String test1(){
+        //转发
+        return "/index.jsp";
+    }
+    @RequestMapping("/rsm/t2")
+    public String test2(){
+        //转发二
+        return "forward:/index.jsp";
+    }
+    @RequestMapping("/rsm/t3")
+    public String test3(){
+        //重定向
+        return "redirect:/index.jsp";
+    }
+}
+</code></pre>
+<pre><code>@Controller
+public class ResultSpringMVC2 {
+    @RequestMapping("/rsm2/t1")
+    public String test2(){
+        //有视图解析器
+        //转发
+        return "test";
+    }
+    @RequestMapping("/rsm2/t2")
+    public String test3(){
+        //重定向
+        return "redirect:/index.jsp";
+    }
+</code></pre>
+                            <div>
+                                <hr>
+
+标题：springmvc-04-controller RestFul和控制器<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/09/05/1607261319478.html" target="_blank">https://ceneri.me/articles/2019/09/05/1607261319478.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/09/05/1607181288295.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: springmvc-03-annotation 注解版
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/09/05/1607262527551.html" rel="next"
+                               class="fn__right breadcrumb">
+                                springmvc-05-json Json交互处理: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/09/05/1607181288295.html" rel="prev" class="breadcrumb">
+                            旧一篇: springmvc-03-annotation 注解版
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/09/05/1607262527551.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: springmvc-05-json Json交互处理
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1607261319478"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">控制器Controller</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">实现Controller接口</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">使用注解@Controller</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">PostMapping</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">RequestMapping</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">RestFul 风格</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1607261319478",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1607261319478",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1607261319478', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1354ms, 2020/12/08 21:51:14 -->

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>spring-05-Autowired 自动装配 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="spring-05-Autowired 自动装配 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/08/03/1606134537232.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="spring-05-Autowired 自动装配 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/08/03/1606134537232.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="spring-04-di 注入方式" href="https://ceneri.me/articles/2019/08/03/1606134507769.html">
+            <link rel="next" title="spring-06-anno 注解开发" href="https://ceneri.me/articles/2019/08/03/1606134613923.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        08月
+                        <span class="item__day">03</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/08/03/1606134537232.html">
+                            spring-05-Autowired 自动装配
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-08-03
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/spring">
+                                spring</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/08/03/1606134537232.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1606134537232">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/08/03/1606134537232.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">使用注解实现自动装配</h3>
+<ul>
+<li>自动装配是Spring满足bean依赖的一种方式</li>
+<li>Spring会在上下文自动寻找，并自动给bean装配属性！</li>
+</ul>
+<p>在Spring中有三种自动装配的方式</p>
+<ol>
+<li>在xml中显示的配置</li>
+<li>在java中显示配置</li>
+<li>隐式的自动装配bean【重要】</li>
+</ol>
+<p>这里我们主要讲第三种：自动化的装配bean。</p>
+<h3 id="toc_h3_1">测试</h3>
+<p>环境搭建：一个人有两个宠物</p>
+<h3 id="toc_h3_2">ByName自动装配</h3>
+<pre><code>&lt;bean id="cat" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="dog" class="com.ceneri.study.pojo.Dog"/&gt;
+&lt;!--
+    byName:会自动在容器上下文中套接，和自己对象的set方法后面的值相对应的beanid
+--&gt;
+&lt;bean id="people" class="com.ceneri.study.pojo.People" autowire="byName"&gt;
+    &lt;property name="name" value="狂神"/&gt;
+&lt;/bean&gt;
+</code></pre>
+<h3 id="toc_h3_3">ByType自动装配</h3>
+<pre><code>&lt;bean id="cat" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="dog" class="com.ceneri.study.pojo.Dog"/&gt;
+&lt;!--
+    byType:会自动在容器上下文中套接，和自己对象属性类型相同的beanid
+--&gt;
+&lt;bean id="people" class="com.ceneri.study.pojo.People" autowire="byType"&gt;
+    &lt;property name="name" value="狂神"/&gt;
+&lt;/bean&gt;
+</code></pre>
+<p>小结：</p>
+<ul>
+<li>byname的时候，需要保证所有bean的id唯一，并且这个bean需要和自动注入的属性的set方法的值一致</li>
+<li>bytype的时候，需要保证所有bean的class唯一，并且这个bean需要和自动注入的属性的类型一致</li>
+</ul>
+<h3 id="toc_h3_4">使用注解实现自动装配</h3>
+<p>jdk1.5支持的注解，Spring2.5就支持注解了！</p>
+<p>The introduction of annotation-based configuration raised the question of whether this approach is “better” than XML.</p>
+<p>要使用注解需知：</p>
+<ol>
+<li>
+<p>导入约束：context支持</p>
+</li>
+<li>
+<p>配置注解的支持：<a href="context:annotation-config/" target="_blank">context:annotation-config/</a></p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd"&gt;
+
+    &lt;context:annotation-config/&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<h4>@Autowired注解</h4>
+<ul>
+<li>需要导入 spring-aop的包！</li>
+<li>直接在属性上使用即可！也可以在set方式上使用！</li>
+<li>使用Autowired我们可以不用编写set方法，前提是你这个自动装配的属性在IOC（Spring）容器中存在，且符合名字byName和类型byType！
+<ul>
+<li>正常1（byName）
+<pre><code>&lt;bean id="cat" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="dog" class="com.ceneri.study.pojo.Dog"/&gt;
+
+&lt;bean id="people" class="com.ceneri.study.pojo.People"/&gt;
+</code></pre>
+</li>
+<li>正常2（byType）
+<pre><code>&lt;bean id="cat111" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="dog222" class="com.ceneri.study.pojo.Dog"/&gt;
+
+&lt;bean id="people" class="com.ceneri.study.pojo.People"/&gt;
+</code></pre>
+</li>
+<li>正常3（混合使用，先类型后名字） 匹配的是ID为"cat"的bean
+<pre><code>&lt;bean id="cat11" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="cat" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="dog222" class="com.ceneri.study.pojo.Dog"/&gt;
+
+&lt;bean id="people" class="com.ceneri.study.pojo.People"/&gt;
+</code></pre>
+</li>
+<li>不正常（多种类型且名字也不匹配，报错）
+<pre><code>&lt;bean id="cat11" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="cat111" class="com.ceneri.study.pojo.Cat"/&gt;
+&lt;bean id="dog22" class="com.ceneri.study.pojo.Dog"/&gt;
+&lt;bean id="dog222" class="com.ceneri.study.pojo.Dog"/&gt;
+
+&lt;bean id="people" class="com.ceneri.study.pojo.People"/&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>科普：<br>
+@Nullable 字段/对象标记了这个注解，说明这个字段/对象可以为null
+<pre><code>public @interface Autowired {
+    boolean required() default true;
+}
+</code></pre>
+</li>
+<li>测试代码</li>
+</ul>
+<pre><code>//如果显示定义了Autowired的required属性为false,说明这个对象可以为null,否则不允许为空
+     @Autowired(required = false)
+     private @Nullable Cat cat;
+</code></pre>
+</li>
+</ol>
+<h4 id="toc_h4_5">@Qualifilter注解</h4>
+<p>如果@Autowired自动装配的环境比较复杂，自动装配无法通过一个注解【@Autowired】完成的时候，我们可以使用@Qualifilter(value="xxx")去配合@Autowired的使用，指定一个唯一的bean对象注入</p>
+<pre><code>public class People {
+            @Autowired
+               @Qualifier(value = "cat11")
+            private Cat cat;
+               @Autowired
+               @Qualifier(value="dog222")
+               private Dog dog;
+               private String name;
+           }
+</code></pre>
+<h4 id="toc_h4_6">@Resource注解</h4>
+<pre><code>public class People {
+ @Resource(name = "cat1")
+    private Cat cat;
+ @Resource
+    private Dog dog;
+    private String name;
+}
+</code></pre>
+<p>小结：</p>
+<p>@Resource和@Autowired</p>
+<ul>
+<li>都是用来自动装配的，都可以放在属性字段上
+<ul>
+<li>实现方式不同</li>
+<li>@Autowired默认通过bytype的方式实现，如果有多个类型，则通过byname实现，如果两个都找不到，就报错！
+<ul>
+<li>@Resource默认通过byname的方式实现，如果找不到名字，则通过bytype实现，如果两个都找不到，就报错！</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>执行的顺序不同：
+<ul>
+<li>@Autowired默认通过bytype的方式实现</li>
+<li>@Resource默认通过byname的方式实现</li>
+<li>类型重复的话，如果名字不是默认的（如cat11，cat111，而没有默认的cat）
+<ul>
+<li>@Autowired配合@Qualifier(value = "cat11")使用</li>
+<li>@Resource直接使用@Resource(name = "cat11")</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+                            <div>
+                                <hr>
+
+标题：spring-05-Autowired 自动装配<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/08/03/1606134537232.html" target="_blank">https://ceneri.me/articles/2019/08/03/1606134537232.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/08/03/1606134507769.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: spring-04-di 注入方式
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/08/03/1606134613923.html" rel="next"
+                               class="fn__right breadcrumb">
+                                spring-06-anno 注解开发: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/08/03/1606134507769.html" rel="prev" class="breadcrumb">
+                            旧一篇: spring-04-di 注入方式
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/08/03/1606134613923.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: spring-06-anno 注解开发
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1606134537232"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">使用注解实现自动装配</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">测试</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">ByName自动装配</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">ByType自动装配</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">使用注解实现自动装配</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_5">@Qualifilter注解</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_6">@Resource注解</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1606134537232",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1606134537232",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1606134537232', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1350ms, 2020/12/08 21:51:30 -->

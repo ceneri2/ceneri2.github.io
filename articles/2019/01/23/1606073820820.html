@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>java-09-I0编程 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="java-09-I0编程 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/01/23/1606073820820.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="java-09-I0编程 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/01/23/1606073820820.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="java-08-JAVA集合" href="https://ceneri.me/articles/2019/01/23/1606073759169.html">
+            <link rel="next" title="java-10-JAVA处理日期和时间" href="https://ceneri.me/articles/2019/01/23/1606073862292.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        01月
+                        <span class="item__day">23</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/01/23/1606073820820.html">
+                            java-09-I0编程
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-01-23
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/java">
+                                java</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/01/23/1606073820820.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1606073820820">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/01/23/1606073820820.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">9.1 IO</h3>
+<p>IO: Input / Output</p>
+<p>IO流是一种流式的数据输入/输出模型：</p>
+<ul>
+<li>二进制数据以byte为最小单位在InputStream / OutputStream中单向流动</li>
+<li>字符数据以char为最小单位在Reader / Writer中单向流动</li>
+<li>JDK的java.io包提供了同步IO功能</li>
+<li>JDK的java.nio包提供了异步IO功能</li>
+</ul>
+<p>Java的IO流的接口：</p>
+<ul>
+<li>字节流接口：InputStream / OutputStream</li>
+<li>字符流接口：Reader / Writer</li>
+</ul>
+<h3 id="toc_h3_1">9.2 File</h3>
+<p>java.io.File表示文件系统的一个文件或者目录：</p>
+<ul>
+<li>isFile()：是否是文件</li>
+<li>isDirectory()：是否是目录</li>
+</ul>
+<p>创建File对象本身不涉及IO操作</p>
+<p>获取路径／绝对路径／规范路径： getPath() / getAbsolutePath() / getCanonicalPath()</p>
+<p>文件操作：</p>
+<ul>
+<li>canRead()：是否允许读取该文件</li>
+<li>canWrite()：是否允许写入该文件</li>
+<li>canExecute()：是否允许运行该文件</li>
+<li>length()：获取文件大小</li>
+<li>createNewFile()：创建一个新文件</li>
+<li>static createTempFile()：创建一个临时文件</li>
+<li>delete()：删除该文件</li>
+<li>deleteOnExit()：在JVM退出时删除该文件</li>
+</ul>
+<p>目录操作：</p>
+<ul>
+<li>String[] list()：列出目录下的文件和子目录名</li>
+<li>File[] listFiles()：列出目录下的文件和子目录名</li>
+<li>File[] listFiles(FileFilter filter)</li>
+<li>File[] listFiles(FilenameFilter filter)</li>
+<li>mkdir()：创建该目录</li>
+<li>mkdirs()：创建该目录，并在必要时将不存在的父目录也创建出来</li>
+<li>delete()：删除该目录</li>
+</ul>
+<h3 id="toc_h3_2">9.3 InputStream</h3>
+<p>InputStream是所有输入流的超类：</p>
+<ul>
+<li>int read()读取一个字节</li>
+<li>int read(byte[])读取若干字节并填充到byte[]数组</li>
+</ul>
+<p>read()方法是阻塞（blocking）的</p>
+<p>使用try(resource)可以保证InputStream正确关闭</p>
+<p>常用InputStream：</p>
+<ul>
+<li>FileInputStream</li>
+<li>ByteArrayInputStream</li>
+</ul>
+<h3 id="toc_h3_3">9.4 OutputStream</h3>
+<p>OutputStream是所有输出流的超类：</p>
+<ul>
+<li>write(int b)写入一个字节</li>
+<li>write(byte[])写入byte[]数组的所有字节</li>
+<li>flush()方法将缓冲器内容输出</li>
+</ul>
+<p>write()方法是阻塞（blocking）的</p>
+<p>使用try(resource)可以保证OutputStream正确关闭</p>
+<p>常用OutputStream：</p>
+<ul>
+<li>FileOutputStream</li>
+<li>ByteArrayOutputStream</li>
+</ul>
+<h3 id="toc_h3_4">9.5 Filter模式</h3>
+<p>Filter模式是为了解决子类数量爆炸的问题</p>
+<p>直接提供数据的InputStream：</p>
+<ul>
+<li>FileInputStream</li>
+<li>ByteArrayInputStream</li>
+<li>ServletInputStream</li>
+</ul>
+<p>提供附加功能的InputStream从FilterInputStream派生：</p>
+<ul>
+<li>BufferedInputStream</li>
+<li>DigestInputStream</li>
+<li>CipherInputStream</li>
+<li>GZIPInputStream</li>
+</ul>
+<p>Filter模式又称Decorator模式，通过少量的类实现了各种功能的组合</p>
+<p>FilterOutputStream和FilterInputStream类似</p>
+<h3 id="toc_h3_5">7.6 Zip</h3>
+<p>ZipInputStream可以读取Zip流</p>
+<p>JarInputStream提供了额外读取jar包内容的能力</p>
+<p>ZipOutputStream可以写入Zip流</p>
+<p>配合FileInputStream和FileOutputStream就可以读写Zip文件</p>
+<h3 id="toc_h3_6">7.7 classpath资源</h3>
+<p>classpath中可以包含任意类型的文件</p>
+<p>从classpath读取文件可以避免不同环境下文件路径不一致的问题</p>
+<p>读取classpath资源：</p>
+<pre><code>try(InputStream input = getClass().getResourceAsStream("/default.properties")) {
+    if (input != null) {
+    }
+}
+</code></pre>
+<h3 id="toc_h3_7">7.8 序列化</h3>
+<p>序列化是指把一个Java对象变成二进制内容（byte[]）</p>
+<p>Java对象实现序列化必须实现Serializable接口</p>
+<p>反序列化是指把一个二进制内容（byte[]）变成Java对象</p>
+<p>使用ObjectOutputStream和ObjectInputStream实现序列化和反序列化</p>
+<p>readObject()可能抛出的异常：</p>
+<ul>
+<li>ClassNotFoundException：没有找到对应的Class</li>
+<li>InvalidClassException：Class不匹配</li>
+</ul>
+<p>反序列化由JVM直接构造出Java对象，不调用构造方法</p>
+<p>可设置serialVersionUID作为版本号（非必需）</p>
+<h3 id="toc_h3_8">7.9 Reader</h3>
+<p>Reader以字符为最小单位实现了字符流输入：</p>
+<ul>
+<li>int read() 读取下一个字符</li>
+<li>int read(char[]) 读取若干字符并填充到char[]数组</li>
+</ul>
+<p>常用Reader类：</p>
+<ul>
+<li>FileReader：从文件读取</li>
+<li>CharArrayReader：从char[]数组读取</li>
+</ul>
+<p>Reader是基于InputStream构造的，任何InputStream都可指定编码并转换为Reader：</p>
+<pre><code>Reader reader = new InputStreamReader(input, "UTF-8")
+</code></pre>
+<h3 id="toc_h3_9">7.10 Writer</h3>
+<p>Writer以字符为最小单位实现了字符流输出：</p>
+<ul>
+<li>write(int c) 写入下一个字符</li>
+<li>write(char[]) 写入char[]数组的所有字符</li>
+</ul>
+<p>常用Writer类：</p>
+<ul>
+<li>FileWriter：写入文件</li>
+<li>CharArrayWriter：写入char[]数组</li>
+</ul>
+<p>Writer是基于OutputStream构造的，任何OutputStream都可指定编码并转换为Writer：</p>
+<pre><code>Writer writer = new OutputStreamWriter(output, "UTF-8")
+</code></pre>
+                            <div>
+                                <hr>
+
+标题：java-09-I0编程<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/01/23/1606073820820.html" target="_blank">https://ceneri.me/articles/2019/01/23/1606073820820.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/01/23/1606073759169.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: java-08-JAVA集合
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/01/23/1606073862292.html" rel="next"
+                               class="fn__right breadcrumb">
+                                java-10-JAVA处理日期和时间: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/01/23/1606073759169.html" rel="prev" class="breadcrumb">
+                            旧一篇: java-08-JAVA集合
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/01/23/1606073862292.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: java-10-JAVA处理日期和时间
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1606073820820"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">9.1 IO</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">9.2 File</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">9.3 InputStream</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">9.4 OutputStream</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">9.5 Filter模式</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">7.6 Zip</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">7.7 classpath资源</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_7">7.8 序列化</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_8">7.9 Reader</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_9">7.10 Writer</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1606073820820",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1606073820820",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1606073820820', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1636ms, 2020/12/08 21:51:25 -->

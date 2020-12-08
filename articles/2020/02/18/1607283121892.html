@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>springboot-02-config 配置文件及原理 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="springboot-02-config 配置文件及原理 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2020/02/18/1607283121892.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="springboot-02-config 配置文件及原理 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2020/02/18/1607283121892.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="springboot-01-helloworld 初识及原理探究" href="https://ceneri.me/articles/2020/02/18/1607280652102.html">
+            <link rel="next" title="springboot-03-web web开发" href="https://ceneri.me/articles/2020/02/18/1607354377610.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2020年">
+                        02月
+                        <span class="item__day">18</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2020/02/18/1607283121892.html">
+                            springboot-02-config 配置文件及原理
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2020-02-18
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/SpringBoot">
+                                SpringBoot</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2020/02/18/1607283121892.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1607283121892">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2020/02/18/1607283121892.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h2 id="toc_h2_0">一.知识点</h2>
+<h3 id="toc_h3_1">配置文件</h3>
+<p>SpringBoot使用一个全局的配置文件 ， 配置文件名称是固定的</p>
+<ul>
+<li>application.properties
+<ul>
+<li>语法结构 ： key=value</li>
+</ul>
+</li>
+<li>application.yml
+<ul>
+<li>语法结构 ：key：空格 value</li>
+</ul>
+</li>
+</ul>
+<p>**配置文件的作用 ：<strong>修改SpringBoot自动配置的默认值，因为SpringBoot在底层都给我们自动配置好了；</strong><br>
+**</p>
+<h3 id="toc_h3_2">YAML</h3>
+<p>YAML是 "YAML Ain't a Markup Language" （YAML不是一种置标语言）的递归缩写。</p>
+<p>在开发的这种语言时，YAML 的意思其实是："Yet Another Markup Language"（仍是一种置标语言）</p>
+<p>YAML A Markup Language ：是一个标记语言</p>
+<p>YAML isnot Markup Language ：不是一个标记语言</p>
+<p><strong>标记语言</strong></p>
+<p>以前的配置文件，大多数都是使用xml来配置；比如一个简单的端口配置，我们来对比下yaml和xml</p>
+<p>yaml配置：</p>
+<pre>server：
+    prot: 8080</pre>
+<p>xml配置：</p>
+<pre>&lt;server&gt;
+    &lt;port&gt;8081&lt;port&gt;
+&lt;/server&gt;</pre>
+<h4 id="toc_h4_3">YAML语法</h4>
+<p><strong>基础语法：</strong></p>
+<pre>k:(空格) v   </pre>
+<p>以此来表示一对键值对（空格不能省略）；以空格的缩进来控制层级关系，只要是左边对齐的一列数据都是同一个层级的。</p>
+<p>注意 ：属性和值的大小写都是十分敏感的。例子：</p>
+<pre>server:
+    port: 8081
+    path: /hello</pre>
+<h4 id="toc_h4_4"><strong>值的写法</strong></h4>
+<p><strong>字面量：普通的值  [ 数字，布尔值，字符串  ]</strong></p>
+<pre>k: v</pre>
+<p>字面量直接写在后面就可以 ， 字符串默认不用加上双引号或者单引号；</p>
+<p>“” 双引号，不会转义字符串里面的特殊字符 ， 特殊字符会作为本身想表示的意思；</p>
+<p>比如 ： name: "kuang \n shen"   输出 ： kuang  换行   shen</p>
+<p>'' 单引号，会转义特殊字符 ， 特殊字符最终会变成和普通字符一样输出</p>
+<p>比如 ： name: ‘kuang \n shen’   输出 ： kuang  \n   shen</p>
+<hr>
+<p><strong>对象、Map（键值对）</strong></p>
+<pre>k: 
+    v1:
+    v2:</pre>
+<p>在下一行来写对象的属性和值得关系，注意缩进；比如：</p>
+<pre>student:
+    name: qinjiang
+    age: 3</pre>
+<p>行内写法</p>
+<pre>student: {name: qinjiang,age: 3}</pre>
+<p><strong>数组（ List、set ）</strong></p>
+<p>用 - 值表示数组中的一个元素,比如：</p>
+<pre>pets:
+ - cat
+ - dog
+ - pig</pre>
+<p>行内写法</p>
+<pre>pets: [cat,dog,pig]</pre>
+<h4 id="toc_h4_5">修改SpringBoot的默认端口号</h4>
+<p>配置文件中添加，端口号的参数，就可以切换端口；</p>
+<pre>server.port=8081</pre>
+<h3 id="toc_h3_6">注入配置文件</h3>
+<h4 id="toc_h4_7">程序实现</h4>
+<p><strong>1. 如果要使用properties配置文件可能导入时存在乱码现象 ， 需要在IDEA中进行调整 ， 我们这里直接使用yml文件 ， 将默认的 application.properties后缀修改为yml</strong></p>
+<p><strong><a href="https://b3logfile.com/file/2020/12/solofetchupload3862881748604497236-55b97fed.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload3862881748604497236-55b97fed.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></strong></p>
+<p><strong>2. 导入配置文件处理器</strong></p>
+<p><strong>spring默认使用yml中的配置，但有时候要用传统的xml或properties配置，就需要使用spring-boot-configuration-processor了</strong></p>
+<pre>&lt;!--导入配置文件处理器，配置文件进行绑定就会有提示--&gt;<br>&lt;dependency&gt;<br>    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;<br>    &lt;artifactId&gt;spring-boot-configuration-processor&lt;/artifactId&gt;<br>    &lt;optional&gt;true&lt;/optional&gt;<br>&lt;/dependency&gt;</pre>
+<p><strong>3.编写yml 配置文件</strong></p>
+<pre>person:
+    name: qinjiang
+    age: 3
+    happy: false
+    birth: 2000/01/01
+    maps: {k1: v1,k2: v2}
+    lists:
+      - code
+      - girl
+      - music
+    dog:
+      name: 旺财
+      age: 1</pre>
+<p><strong>4.在SpringBoot的主程序的同级目录下建包，只有这样，主程序才会对这些类生效 ； 我们建一个pojo的包放入我们的Person类和Dog类；</strong></p>
+<pre>package com.kuang.springbootdemo03.pojo;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+
+
+/*
+@ConfigurationProperties作用：
+将配置文件中配置的每一个属性的值，映射到这个组件中；
+告诉SpringBoot将本类中的所有属性和配置文件中相关的配置进行绑定
+参数 prefix = “person” : 将配置文件中的person下面的所有属性一一对应
+
+只有这个组件是容器中的组件，才能使用容器提供的@ConfigurationProperties功能
+*/
+@Component //注册bean
+@ConfigurationProperties(prefix = "person")
+public class Person {
+
+    private String name;
+    private Integer age;
+    private Boolean happy;
+    private Date birth;
+    private Map&lt;String,Object&gt; maps;
+    private List&lt;Object&gt; lists;
+    private Dog dog;
+
+    //get,set方法
+    //toString方法
+    
+}</pre>
+<p><strong>记得写上 toString（）方法，方便调试输出结果</strong></p>
+<pre>package com.kuang.springbootdemo03.pojo;
+
+public class Dog {
+    private String name;
+    private Integer age;
+    
+    //get、set方法
+    //toString()方法  
+}</pre>
+<p><strong>5.确认无误后，到测试单元中进行测试，看是否注入成功！</strong></p>
+<pre>@RunWith(SpringRunner.class)
+@SpringBootTest
+public class SpringbootDemo03ApplicationTests {
+
+    @Autowired
+    Person person = new Person();
+
+    @Test
+    public void contextLoads() {
+        System.out.println(person);
+    }
+
+}</pre>
+<p><strong>运行结果</strong></p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload7978202785435074255-0e127455.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload7978202785435074255-0e127455.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<h4 id="toc_h4_8">唠叨两句</h4>
+<p>我们上面采用的方法都是最简单的方式，开发中最常用的；</p>
+<p>那我们来唠唠其他的实现方式，道理都是相同得；写还是那样写；</p>
+<p>配置文件除了yml还有我们之前常用的properties ， 我们没有讲 ， properties配置文件在写中文的时候，会有乱码 ， 我们需要去IDEA中设置编码格式为UTF-8；</p>
+<p>settings--&gt;FileEncodings 中配置；</p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload5986254432138253200-3337ac01.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload5986254432138253200-3337ac01.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<p>还有，我们的类和配置文件直接关联着 ， 我们使用的是@configurationProperties的方式，还有一种方式是使用@value</p>
+<pre>@Component //注册bean
+public class Person {
+    //直接使用@value
+    @Value("${person.name}") //从配置文件中取值
+    private String name;
+    @Value("#{11*2}")  //#{SPEL} Spring表达式
+    private Integer age;
+    @Value("true")  // 字面量
+    private Boolean happy;
+    
+    。。。。。。  
+}</pre>
+<p><strong>结果</strong></p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload3510065248871058351-b3c08eb6.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload3510065248871058351-b3c08eb6.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<p>这个使用起来并不友好！我们需要为每个属性单独注解赋值，比较麻烦；我们来看个功能对比图</p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload1245232493938626627-e498a6a3.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload1245232493938626627-e498a6a3.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<ul>
+<li>cp只需要写一次即可 ， value则需要每个字段都添加</li>
+<li>松散绑定：这个什么意思呢? 比如我的yml中写的last-name，这个和lastName是一样的， - 后面跟着的字母默认是大写的。这就是松散绑定</li>
+<li>JSR303数据校验 ， 这个就是我们可以在字段是增加一层过滤器验证 ， 可以保证数据的合法性</li>
+<li>复杂类型封装，yml中可以封装对象 ， 使用@value就不支持</li>
+</ul>
+<p><strong>结论：</strong></p>
+<ul>
+<li>配置yml和配置properties都可以获取到值 ， 强烈推荐 yml</li>
+<li>如果我们在某个业务中，只需要获取配置文件中的某个值，可以使用一下 @value</li>
+<li>如果说，我们专门编写了一个JavaBean来和配置文件进行映射，就直接使用@configurationProperties，不要犹豫！</li>
+</ul>
+<h3 id="toc_h3_9">JSR303数据校验</h3>
+<p>spring-boot中可以用@validated来校验数据，如果数据异常则会统一抛出异常，方便异常中心统一处理。我们这里来写个注解让我们的name只能支持Email格式</p>
+<pre>@Component //注册bean
+@ConfigurationProperties(prefix = "person")
+@Validated  //数据校验
+public class Person {
+
+    //@Value("${person.name}")
+    @Email //name必须是邮箱格式
+    private String name;
+}</pre>
+<p><strong>运行结果</strong></p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload7921298593682014421-f193fae8.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload7921298593682014421-f193fae8.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<p><strong>使用数据校验，可以保证数据的正确性；</strong></p>
+<h3 id="toc_h3_10">加载指定配置文件</h3>
+<p>** 1. @PropertySource ：**加载指定的配置文件；使用@configurationProperties默认从全局配置文件中获取值；</p>
+<p>我们去在resources目录下新建一个<strong>person.properties</strong>文件</p>
+<pre>name=kuangshen</pre>
+<p>然后在我们的代码中指定加载person.properties文件</p>
+<pre>@PropertySource(value = "classpath:person.properties")
+@Component //注册bean
+public class Person {
+
+    @Value("${name}")
+    private String name;
+
+    ......  
+}</pre>
+<p><strong>测试结果：</strong></p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload7239428951464862067-ba0892d8.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload7239428951464862067-ba0892d8.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<h3 id="toc_h3_11">配置文件占位符</h3>
+<p><strong>随机数</strong></p>
+<pre>${random.value}、${random.int}、${random.long}、${random.int(10)}等等</pre>
+<p><strong>占位符引用其他属性的值，如果不存在可以设置默认值</strong></p>
+<pre>person:
+    name: qinjiang${random.uuid}
+    age: ${random.int}
+    happy: false
+    birth: 2000/01/01
+    maps: {k1: v1,k2: v2}
+    lists:
+      - code
+      - girl
+      - music
+    dog:
+      name: ${person.hello:hello}_旺财
+      age: 1</pre>
+<h3 id="toc_h3_12">多环境切换</h3>
+<p>profile是Spring对不同环境提供不同配置功能的支持，可以通过激活不同的环境版本，实现快速切换环境；</p>
+<p><strong>方式一：多配置文件</strong></p>
+<p>我们在主配置文件编写的时候，文件名可以是 application-{profile}.properties/yml ， 用来指定多个环境版本；</p>
+<p>例如：application-test.properties 代表测试环境配置    application-dev.properties 代表开发环境配置</p>
+<p>但是Springboot并不会直接启动这些配置文件，它默认使用application.properties主配置文件；</p>
+<p>我们需要通过一个配置来选择需要激活的环境；</p>
+<pre>#比如在配置文件中指定使用dev环境，我们可以通过设置不同的端口号进行测试；<br>#我们启动SpringBoot，就可以看到已经切换到dev下的配置了；<br>spring.profiles.active=dev</pre>
+<p><strong>方式二：yml的多文档块</strong></p>
+<p>和properties配置文件中一样，但是使用yml去实现不需要创建多个配置文件，更加方便了</p>
+<pre>server:
+  port: 8081
+#选择要激活那个环境块
+spring:
+  profiles:
+    active: prod
+
+---
+server:
+  port: 8083
+#配置环境的名称
+spring:
+  profiles: dev
+
+
+---
+
+server:
+  port: 8084
+spring:
+  profiles: prod  #配置环境的名称</pre>
+<p><strong>注意：如果yml和properties同时都配置了端口，并且没有激活其他环境 ， 默认会使用properties配置文件的！</strong></p>
+<h3 id="toc_h3_13">** 配置文件加载位置**</h3>
+<p><strong>springboot 启动会扫描以下位置的application.properties或者application.yml文件作为Spring boot的默认配置文件</strong></p>
+<pre>优先级1：项目路径下的config文件夹配置文件
+优先级2：项目路径下配置文件
+优先级3：资源路径下的config文件夹配置文件
+优先级4：资源路径下配置文件</pre>
+<p>优先级由高到底，高优先级的配置会覆盖低优先级的配置；</p>
+<p><strong>SpringBoot会从这四个位置全部加载主配置文件；<strong>互补配置</strong>；</strong></p>
+<p><strong>我们在最低级的配置文件中设置一个项目访问路径的配置来测试互补问题；</strong></p>
+<pre>#配置项目的访问路径
+server.servlet.context-path=/kuang</pre>
+<p>【扩展】指定位置加载配置文件</p>
+<p>我们还可以通过spring.config.location来改变默认的配置文件位置</p>
+<p>项目打包好以后，我们可以使用命令行参数的形式，启动项目的时候来指定配置文件的新位置；</p>
+<p>这种情况，一般是后期运维做的多，相同配置，外部指定的配置文件优先级最高</p>
+<pre>java -jar spring-boot-config.jar --spring.config.location=F:/application.properties</pre>
+<p><strong>外部加载配置文件的方式十分多，我们选择最常用的即可，在开发的资源文件中进行配置！</strong></p>
+<p><a href="https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#boot-features-external-config" target="_blank">官方外部配置文件说明参考文档</a></p>
+<h3 id="toc_h3_14">自动配置原理</h3>
+<h4 id="toc_h4_15">配置文件到底能写什么？怎么写？</h4>
+<p><a href="https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/htmlsingle/#common-application-properties" target="_blank">SpringBoot官方文档</a></p>
+<h4 id="toc_h4_16">分析自动配置原理</h4>
+<ol>
+<li>SpringBoot启动的时候加载主配置类，开启了自动配置功能 **@EnableAutoConfiguration **</li>
+<li>@EnableAutoConfiguration 作用 ：</li>
+</ol>
+<ul>
+<li>
+<p>利用EnableAutoConfigurationImportSelector给容器中导入一些组件，导入了哪些组件呢？</p>
+</li>
+<li>
+<p>可以查看这个类selectImports()方法的内容，他返回了一个  autoConfigurationEntry , 来自  this.getAutoConfigurationEntry(autoConfigurationMetadata, annotationMetadata); 这个方法。我们继续跟踪；</p>
+</li>
+<li>
+<p>这个方法中有一个值 ： List<string> configurations =this.getCandidateConfigurations(annotationMetadata, attributes); 叫做获取候选的配置 ， 我们点击去继续跟踪；</string></p>
+<pre>protected List&lt;String&gt; getCandidateConfigurations(AnnotationMetadata metadata, AnnotationAttributes attributes) {
+    List&lt;String&gt; configurations = SpringFactoriesLoader.loadFactoryNames(this.getSpringFactoriesLoaderFactoryClass(), this.getBeanClassLoader());
+    Assert.notEmpty(configurations, "No auto configuration classes found in META-INF/spring.factories. If you are using a custom packaging, make sure that file is correct.");
+    return configurations;
+}</pre>
+<p>这里里面有一个 SpringFactoriesLoader.loadFactoryNames() ，我们继续进去看 , 它又调用了  loadSpringFactories 方法；继续跟踪。发现它去获得了一个资源文件："META-INF/spring.factories"</p>
+</li>
+<li>
+<pre>Enumeration&lt;URL&gt; urls = classLoader != null ? classLoader.getResources("META-INF/spring.factories") : ClassLoader.getSystemResources("META-INF/spring.factories");</pre>
+<p>继续阅读源码 ， 它将读取到的资源封装在url中，然后遍历url ， 将这些url文件封装在Properties文件中；最后返回封装好的结果；他的那个ClassLoader参数，我们追踪回去，看到他就是 EnableAutoConfiguration ；<a href="https://b3logfile.com/file/2020/12/solofetchupload2521780485681356079-dea909ca.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload2521780485681356079-dea909ca.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+</li>
+<li>
+<p>说明了这个逻辑就是 从properties中获取到EnableAutoConfiguration.class类（类名）对应的值，然后把他们添加在容器中</p>
+</li>
+<li>
+<p>总结一句话就是：<strong>将类路径下 META-INF/spring.factories 里面配置的所有EnableAutoConfiguration的值加入到了容器中；我们从源码中拿过来</strong></p>
+</li>
+</ul>
+<pre># Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,\
+org.springframework.boot.autoconfigure.aop.AopAutoConfiguration,\
+org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration,\
+org.springframework.boot.autoconfigure.batch.BatchAutoConfiguration,\
+org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration,\
+org.springframework.boot.autoconfigure.cassandra.CassandraAutoConfiguration,\
+org.springframework.boot.autoconfigure.cloud.CloudServiceConnectorsAutoConfiguration,\
+org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration,\
+org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration,\
+org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration,\
+org.springframework.boot.autoconfigure.couchbase.CouchbaseAutoConfiguration,\
+org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.cassandra.CassandraDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.cassandra.CassandraReactiveDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.cassandra.CassandraReactiveRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.cassandra.CassandraRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.couchbase.CouchbaseDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.couchbase.CouchbaseReactiveDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.couchbase.CouchbaseReactiveRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.couchbase.CouchbaseRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.jdbc.JdbcRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.ldap.LdapRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.mongo.MongoReactiveDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.mongo.MongoReactiveRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.neo4j.Neo4jDataAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.neo4j.Neo4jRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.solr.SolrRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.rest.RepositoryRestMvcAutoConfiguration,\
+org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration,\
+org.springframework.boot.autoconfigure.elasticsearch.jest.JestAutoConfiguration,\
+org.springframework.boot.autoconfigure.elasticsearch.rest.RestClientAutoConfiguration,\
+org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration,\
+org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration,\
+org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration,\
+org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration,\
+org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration,\
+org.springframework.boot.autoconfigure.hazelcast.HazelcastAutoConfiguration,\
+org.springframework.boot.autoconfigure.hazelcast.HazelcastJpaDependencyAutoConfiguration,\
+org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration,\
+org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration,\
+org.springframework.boot.autoconfigure.influx.InfluxDbAutoConfiguration,\
+org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration,\
+org.springframework.boot.autoconfigure.integration.IntegrationAutoConfiguration,\
+org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration,\
+org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration,\
+org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration,\
+org.springframework.boot.autoconfigure.jdbc.JndiDataSourceAutoConfiguration,\
+org.springframework.boot.autoconfigure.jdbc.XADataSourceAutoConfiguration,\
+org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration,\
+org.springframework.boot.autoconfigure.jms.JmsAutoConfiguration,\
+org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration,\
+org.springframework.boot.autoconfigure.jms.JndiConnectionFactoryAutoConfiguration,\
+org.springframework.boot.autoconfigure.jms.activemq.ActiveMQAutoConfiguration,\
+org.springframework.boot.autoconfigure.jms.artemis.ArtemisAutoConfiguration,\
+org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration,\
+org.springframework.boot.autoconfigure.jersey.JerseyAutoConfiguration,\
+org.springframework.boot.autoconfigure.jooq.JooqAutoConfiguration,\
+org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration,\
+org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration,\
+org.springframework.boot.autoconfigure.ldap.embedded.EmbeddedLdapAutoConfiguration,\
+org.springframework.boot.autoconfigure.ldap.LdapAutoConfiguration,\
+org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration,\
+org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration,\
+org.springframework.boot.autoconfigure.mail.MailSenderValidatorAutoConfiguration,\
+org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration,\
+org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration,\
+org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration,\
+org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration,\
+org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration,\
+org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration,\
+org.springframework.boot.autoconfigure.reactor.core.ReactorCoreAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.servlet.SecurityRequestMatcherProviderAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.reactive.ReactiveUserDetailsServiceAutoConfiguration,\
+org.springframework.boot.autoconfigure.sendgrid.SendGridAutoConfiguration,\
+org.springframework.boot.autoconfigure.session.SessionAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.oauth2.client.reactive.ReactiveOAuth2ClientAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration,\
+org.springframework.boot.autoconfigure.security.oauth2.resource.reactive.ReactiveOAuth2ResourceServerAutoConfiguration,\
+org.springframework.boot.autoconfigure.solr.SolrAutoConfiguration,\
+org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration,\
+org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration,\
+org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration,\
+org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration,\
+org.springframework.boot.autoconfigure.transaction.jta.JtaAutoConfiguration,\
+org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.reactive.HttpHandlerAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactoryAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.reactive.WebFluxAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.reactive.error.ErrorWebFluxAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration,\
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration,\
+org.springframework.boot.autoconfigure.websocket.reactive.WebSocketReactiveAutoConfiguration,\
+org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration,\
+org.springframework.boot.autoconfigure.websocket.servlet.WebSocketMessagingAutoConfiguration,\
+org.springframework.boot.autoconfigure.webservices.WebServicesAutoConfiguration,\
+org.springframework.boot.autoconfigure.webservices.client.WebServiceTemplateAutoConfiguration</pre>
+<p>每一个这样的 xxxAutoConfiguration类都是容器中的一个组件，最后都加入到容器中；用他们来做自动配置；</p>
+<ol start="3">
+<li>每一个自动配置类可以进行自动配置功能；</li>
+<li>我们以**HttpEncodingAutoConfiguration（Http编码自动配置）**为例解释自动配置原理；</li>
+</ol>
+<pre>@Configuration //表示这是一个配置类，以前编写的配置文件一样，也可以给容器中添加组件
+//启动指定类的ConfigurationProperties功能；
+//进入这个HttpProperties查看，将配置文件中对应的值和HttpProperties绑定起来；
+//并把HttpProperties加入到ioc容器中
+@EnableConfigurationProperties({HttpProperties.class}) 
+
+//Spring底层@Conditional注解
+//根据不同的条件判断，如果满足指定的条件，整个配置类里面的配置就会生效；
+//这里的意思就是判断当前应用是否是web应用，如果是，当前配置类生效
+@ConditionalOnWebApplication(
+    type = Type.SERVLET
+)
+
+//判断当前项目有没有这个类CharacterEncodingFilter；SpringMVC中进行乱码解决的过滤器；
+@ConditionalOnClass({CharacterEncodingFilter.class})
+
+//判断配置文件中是否存在某个配置：spring.http.encoding.enabled；
+//如果不存在，判断也是成立的
+//即使我们配置文件中不配置pring.http.encoding.enabled=true，也是默认生效的；
+@ConditionalOnProperty(
+    prefix = "spring.http.encoding",
+    value = {"enabled"},
+    matchIfMissing = true
+)
+
+public class HttpEncodingAutoConfiguration {
+
+    //他已经和SpringBoot的配置文件映射了
+    private final Encoding properties;
+
+    //只有一个有参构造器的情况下，参数的值就会从容器中拿
+    public HttpEncodingAutoConfiguration(HttpProperties properties) {
+        this.properties = properties.getEncoding();
+    }
+
+    //给容器中添加一个组件，这个组件的某些值需要从properties中获取
+    @Bean
+    @ConditionalOnMissingBean //判断容器没有这个组件？
+    public CharacterEncodingFilter characterEncodingFilter() {
+        CharacterEncodingFilter filter = new OrderedCharacterEncodingFilter();
+        filter.setEncoding(this.properties.getCharset().name());
+        filter.setForceRequestEncoding(this.properties.shouldForce(org.springframework.boot.autoconfigure.http.HttpProperties.Encoding.Type.REQUEST));
+        filter.setForceResponseEncoding(this.properties.shouldForce(org.springframework.boot.autoconfigure.http.HttpProperties.Encoding.Type.RESPONSE));
+        return filter;
+    }
+    。。。。。。
+}    </pre>
+<p><strong>一句话总结 ： 根据当前不同的条件判断，决定这个配置类是否生效！</strong></p>
+<p>一但这个配置类生效；这个配置类就会给容器中添加各种组件；这些组件的属性是从对应的properties类中获取的，这些类里面的每一个属性又是和配置文件绑定的；</p>
+<ol start="5">
+<li>所有在配置文件中能配置的属性都是在xxxxProperties类中封装者‘；配置文件能配置什么就可以参照某个功能对应的这个属性类</li>
+</ol>
+<pre>@ConfigurationProperties(
+    prefix = "spring.http"
+) //从配置文件中获取指定的值和bean的属性进行绑定
+public class HttpProperties {
+    private boolean logRequestDetails;
+    private final HttpProperties.Encoding encoding = new HttpProperties.Encoding();
+
+    public HttpProperties() {
+    }
+
+    public boolean isLogRequestDetails() {
+        return this.logRequestDetails;
+    }
+
+    public void setLogRequestDetails(boolean logRequestDetails) {
+        this.logRequestDetails = logRequestDetails;
+    }
+
+    public HttpProperties.Encoding getEncoding() {
+        return this.encoding;
+    }
+
+    public static class Encoding {
+        public static final Charset DEFAULT_CHARSET;
+        private Charset charset;
+        private Boolean force;
+        private Boolean forceRequest;
+        private Boolean forceResponse;
+        private Map&lt;Locale, Charset&gt; mapping;
+        
+        、、、、、、
+    }
+}</pre>
+<p>我们去配置文件里面试试前缀，看提示！</p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload2964899848831531185-11758f2d.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload2964899848831531185-11758f2d.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<p><strong>这就是自动装配的原理！</strong></p>
+<p><strong>精髓：</strong></p>
+<p><strong>1）、SpringBoot启动会加载大量的自动配置类</strong></p>
+<p><strong>2）、我们看我们需要的功能有没有在SpringBoot默认写好的自动配置类当中；</strong></p>
+<p><strong>3）、我们再来看这个自动配置类中到底配置了哪些组件；（只要我们要用的组件存在在其中，我们就不需要再手动配置了）</strong></p>
+<p><strong>4）、给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们只需要在配置文件中指定这些属性的值即可；</strong></p>
+<p>**xxxxAutoConfigurartion：自动配置类；**给容器中添加组件</p>
+<p><strong>xxxxProperties:封装配置文件中相关属性；</strong></p>
+<h4 id="toc_h4_17"><strong>@Conditional</strong></h4>
+<p>了解完自动装配的原理后，我们来关注一个细节问题 ，<strong>自动配置类必须在一定的条件下才能生效；</strong></p>
+<p><strong>@Conditional派生注解（Spring注解版原生的@Conditional作用）</strong></p>
+<p>作用：必须是@Conditional指定的条件成立，才给容器中添加组件，配置配里面的所有内容才生效；</p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload6551302413288674050-ebb11a2e.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload6551302413288674050-ebb11a2e.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<p><strong>那么多的自动配置类，必须在一定的条件下才能生效；也就是说，我们加载了这么多的配置类，但不是所有的都生效了。</strong></p>
+<p>我们怎么知道哪些自动配置类生效；<strong>我们可以通过启用 debug=true属性；来让控制台打印自动配置报告，这样我们就可以很方便的知道哪些自动配置类生效；</strong></p>
+<pre>#开启springboot的调试类
+debug=true</pre>
+<p><strong>Positive matches:（自动配置类启用的：正匹配）</strong></p>
+<p><strong>Negative matches:（没有启动，没有匹配成功的自动配置类：负匹配）</strong></p>
+<p><strong>Unconditional classes: （没有条件的类）</strong></p>
+<h2 id="toc_h2_18">二、扩展</h2>
+<h4 id="toc_h4_19">YMAL</h4>
+<ul>
+<li>占位符： ${random.int}</li>
+<li>松散绑定：Dog.java中的属性名为dogName，YMAL中对应的为dog-name</li>
+<li>实体类装载配置文件信息： @ConfigurationProperties(prefix = "dog") 会将配置文件中的dog-name和age赋值给实体类的dogName和age</li>
+</ul>
+<pre><code>person:
+  name: qinjiang
+  age: ${random.int}  #使用占位符设置值
+  happy: false
+  birth: 2000/01/01
+  maps: {k1: v1,k2: v2}
+  lists:
+    - code
+    - girl
+    - music
+  dog:
+    dog-name: 旺财
+    age: ${random.int}
+
+dog:
+  dog-name: 阿黄    #名字与属性松散绑定
+  age: 5
+</code></pre>
+<pre><code>@Component
+@ConfigurationProperties(prefix = "dog")
+public class Dog {
+    private String dogName;
+    private Integer age;
+
+    public Dog() {
+    }
+
+    public Dog(String dogName, Integer age) {
+        this.dogName = dogName;
+        this.age = age;
+    }
+
+    public String getDogName() {
+        return dogName;
+    }
+
+    public void setDogName(String dogName) {
+        this.dogName = dogName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "dogName='" + dogName + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+</code></pre>
+<h4 id="toc_h4_20">JSR 303 基本的校验规则</h4>
+<p>空检查</p>
+<ol>
+<li>@Null 验证对象是否为null</li>
+<li>@NotNull 验证对象是否不为null, 无法查检长度为0的字符串</li>
+<li>@NotBlank 检查约束字符串是不是Null还有被Trim的长度是否大于0,只对字符串,且会去掉前后空格.</li>
+<li>@NotEmpty 检查约束元素是否为NULL或者是EMPTY.</li>
+</ol>
+<p>Booelan检查</p>
+<ol>
+<li>@AssertTrue 验证 Boolean 对象是否为 true</li>
+<li>@AssertFalse 验证 Boolean 对象是否为 false</li>
+</ol>
+<p>长度检查</p>
+<ol>
+<li>@Size(min=, max=) 验证对象（Array,Collection,Map,String）长度是否在给定的范围之内</li>
+<li>@Length(min=, max=) Validates that the annotated string is between min and max included.</li>
+</ol>
+<p>日期检查</p>
+<ol>
+<li>@Past 验证 Date 和 Calendar 对象是否在当前时间之前，验证成立的话被注释的元素一定是一个过去的日期</li>
+<li>@Future 验证 Date 和 Calendar 对象是否在当前时间之后 ，验证成立的话被注释的元素一定是一个将来的日期</li>
+<li>@Pattern 验证 String 对象是否符合正则表达式的规则，被注释的元素符合制定的正则表达式，regexp:正则表达式 flags: 指定 Pattern.Flag 的数组，表示正则表达式的相关选项。</li>
+</ol>
+<p>数值检查<br>
+建议使用在Stirng,Integer类型，不建议使用在int类型上，因为表单值为“”时无法转换为int，但可以转换为Stirng为”“,Integer为null</p>
+<ol>
+<li>@Min 验证 Number 和 String 对象是否大等于指定的值</li>
+<li>@Max 验证 Number 和 String 对象是否小等于指定的值</li>
+<li>@DecimalMax 被标注的值必须不大于约束中指定的最大值. 这个约束的参数是一个通过BigDecimal定义的最大值的字符串表示.小数存在精度</li>
+<li>@DecimalMin 被标注的值必须不小于约束中指定的最小值. 这个约束的参数是一个通过BigDecimal定义的最小值的字符串表示.小数存在精度</li>
+<li>@Digits 验证 Number 和 String 的构成是否合法</li>
+<li>@Digits(integer=,fraction=) 验证字符串是否是符合指定格式的数字，interger指定整数精度，fraction指定小数精度。</li>
+<li>@Range(min=, max=) 被指定的元素必须在合适的范围内</li>
+<li>@Range(min=10000,max=50000,message=”range.bean.wage”)</li>
+<li>@Valid 递归的对关联对象进行校验, 如果关联对象是个集合或者数组,那么对其中的元素进行递归校验,如果是一个map,则对其中的值部分进行校验.(是否进行递归验证)</li>
+<li>@CreditCardNumber信用卡验证</li>
+<li>@Email 验证是否是邮件地址，如果为null,不进行验证，算通过验证。</li>
+<li>@ScriptAssert(lang= ,script=, alias=)</li>
+<li>@URL(protocol=,host=, port=,regexp=, flags=)</li>
+</ol>
+<p>代码展示：</p>
+<ol>
+<li>@Validated用于数据校验</li>
+<li>@Email设置属性格式必须为email格式</li>
+</ol>
+<pre><code>@Component
+   @ConfigurationProperties(prefix = "person")
+   @Validated
+   public class Person {
+
+     @Email()
+     private String name;
+    }
+</code></pre>
+<h3 id="toc_h3_21">三.多环境配置以及配置文件位置</h3>
+<h4 id="toc_h4_22">1.配置的位置（4个位置）</h4>
+<ol>
+<li><code>file:./config/ ,项目目录下建立一个config文件夹，config文件夹下建立application.yaml</code></li>
+<li><code>file:./　　,项目目录下直接建立一个application.yaml</code></li>
+<li><code>classpath:/config/ ,resources下建立一个config文件夹，config文件夹下建立application.yaml</code></li>
+<li><code>classpath:/ ,resources下直接建立一个application.yaml</code></li>
+</ol>
+<h4 id="toc_h4_23">2.配置优先级：上面的顺序从上到下一次降低（ file:./config/ &gt; file:./ &gt;  classpath:/config/ &gt; classpath:/ ）</h4>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload990911052034901180-e089b8b4.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload990911052034901180-e089b8b4.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<h4 id="toc_h4_24">3.多个配置文件来指定配置环境</h4>
+<ol>
+<li>application.yaml：用来指定激活哪一个配置文件（application-xxx.yaml，绑定激活xxx即可）</li>
+<li>application-test.yaml：指定服务端口号8082</li>
+<li>application-dev.yaml：指定服务端口号8081</li>
+</ol>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload7302858849863346778-f830fac1.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload7302858849863346778-f830fac1.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<h4 id="toc_h4_25">4.YMAL简化多文件配置</h4>
+<p>一个文件就能解决，中间用三个横线隔开</p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload4294216489258209064-cc0e3e27.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload4294216489258209064-cc0e3e27.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<h4 id="toc_h4_26">5.深入理解自动装配</h4>
+<p><strong>精髓：</strong></p>
+<p><strong>1）、SpringBoot启动会加载大量的自动配置类</strong></p>
+<p><strong>2）、我们看我们需要的功能有没有在SpringBoot默认写好的自动配置类当中；</strong></p>
+<p><strong>3）、我们再来看这个自动配置类中到底配置了哪些组件；（只要我们要用的组件存在在其中，我们就不需要再手动配置了）</strong></p>
+<p><strong>4）、给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们只需要在配置文件中指定这些属性的值即可；</strong></p>
+<p>**xxxxAutoConfigurartion：自动配置类；**给容器中添加组件</p>
+<p><strong>xxxxProperties:封装配置文件中相关属性；</strong></p>
+<p><strong>application.yaml：用于修改springboot的属性</strong></p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload65771794400246978-229cc7c9.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload65771794400246978-229cc7c9.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a></p>
+<h4 id="toc_h4_27">6.查看哪些配置生效和没有生效</h4>
+<p>（1）application.yaml中配置 debug: true</p>
+<p><a href="https://b3logfile.com/file/2020/12/solofetchupload5229892533072698446-7d9e124e.png" target="_blank"><img src="https://b3logfile.com/file/2020/12/solofetchupload5229892533072698446-7d9e124e.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></a><br>
+（2）设置生效只需要在pom.xml中添加启动器即可<br>
+类似：spring-boot-starter-xxx</p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+                            <div>
+                                <hr>
+
+标题：springboot-02-config 配置文件及原理<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2020/02/18/1607283121892.html" target="_blank">https://ceneri.me/articles/2020/02/18/1607283121892.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2020/02/18/1607280652102.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: springboot-01-helloworld 初识及原理探究
+                            </a>
+                            <a href="https://ceneri.me/articles/2020/02/18/1607354377610.html" rel="next"
+                               class="fn__right breadcrumb">
+                                springboot-03-web web开发: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2020/02/18/1607280652102.html" rel="prev" class="breadcrumb">
+                            旧一篇: springboot-01-helloworld 初识及原理探究
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2020/02/18/1607354377610.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: springboot-03-web web开发
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1607283121892"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h2">
+            <a href="#toc_h2_0">一.知识点</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">配置文件</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">YAML</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_3">YAML语法</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_4">值的写法</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_5">修改SpringBoot的默认端口号</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">注入配置文件</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_7">程序实现</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_8">唠叨两句</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_9">JSR303数据校验</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_10">加载指定配置文件</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_11">配置文件占位符</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_12">多环境切换</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_13">** 配置文件加载位置**</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_14">自动配置原理</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_15">配置文件到底能写什么？怎么写？</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_16">分析自动配置原理</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_17">@Conditional</a>
+        </li>
+        <li class="toc__h2">
+            <a href="#toc_h2_18">二、扩展</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_19">YMAL</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_20">JSR 303 基本的校验规则</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_21">三.多环境配置以及配置文件位置</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_22">1.配置的位置（4个位置）</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_23">2.配置优先级：上面的顺序从上到下一次降低（ file:./config/ > file:./ > classpath:/config/ > classpath:/ ）</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_24">3.多个配置文件来指定配置环境</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_25">4.YMAL简化多文件配置</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_26">5.深入理解自动装配</a>
+        </li>
+        <li class="toc__h4">
+            <a href="#toc_h4_27">6.查看哪些配置生效和没有生效</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1607283121892",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1607283121892",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1607283121892', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1412ms, 2020/12/08 21:51:00 -->

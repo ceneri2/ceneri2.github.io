@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>pmp-13-项目相关方管理 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="pmp-13-项目相关方管理 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/12/11/1600709543792.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="pmp-13-项目相关方管理 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/12/11/1600709543792.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="pmp-12-项目采购管理" href="https://ceneri.me/articles/2019/12/11/1600708794943.html">
+            <link rel="next" title="redis-01-常用命令" href="https://ceneri.me/articles/2020/01/12/1599746683209.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        12月
+                        <span class="item__day">11</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/12/11/1600709543792.html">
+                            pmp-13-项目相关方管理
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-12-11
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/pmp">
+                                pmp</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/12/11/1600709543792.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1600709543792">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/12/11/1600709543792.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">13.1 识别相关方</h3>
+<ul>
+<li>
+<p>定期识别项目相关方，分析和记录他们的利益、参与度、相互依赖性、影响力和对项目成功的潜在影响的过程</p>
+</li>
+<li>
+<p>主要作用是，使项目团队能够建立对每个相关方或相关方群体的适度关注、</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload6693616620378463294-e4dd817c.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>每次重复开展本过程，都应查阅项目管理计划组件及项目文件，来识别项目相关方</p>
+</li>
+<li>
+<p>输入：效益管理计划</p>
+<ul>
+<li>指出将从项目成果交付中获益并因此被视为相关方的个人及群体</li>
+</ul>
+</li>
+<li>
+<p>工具：数据收集</p>
+<ul>
+<li>问卷和调查
+<ul>
+<li>一对一调查、焦点小组讨论，或其他大规模信息收集技术</li>
+</ul>
+</li>
+<li>头脑风暴
+<ul>
+<li>头脑风暴、头脑写作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：数据分析</p>
+<ul>
+<li>相关方分析
+<ul>
+<li>会产生相关方清单和关于相关方的各种信息</li>
+<li>兴趣；权利（合法权利或道德权利）；所有权；知识；贡献</li>
+</ul>
+</li>
+<li>文件分析
+<ul>
+<li>评估现有项目文件及以往项目的经验教训</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：数据表现</p>
+<ul>
+<li>
+<p>相关方映射分析和表现是一种利用不同方法对相关方进行分类的方法</p>
+</li>
+<li>
+<p>对相关方进行分类有助于团队与已识别的项目相关方建立关系</p>
+</li>
+<li>
+<p>权力利益方格、权力影响方格，或作用影响方格</p>
+<ul>
+<li>基于权力、利益、影响，或改变项目计划或执行的能力，每一种方格都可用于对相关方进行分类</li>
+<li>对于小型项目、相关方与项目的关系很简单的项目，或相关方之间的关系很简单的项目</li>
+<li>权力大利益大，应该“重点管理” 权力大利益小，应该“令其满意”</li>
+<li>权力小利益大，应该“随时告知”</li>
+<li>权力小利益小，应该“监督”</li>
+<li>利益，指干系人对项目结果的关注程度</li>
+<li>权力，指干系人的职权</li>
+<li>影响，指干系人主动参与项目的程度</li>
+<li>作用，指干系人改变项目计划或执行的能力</li>
+<li>看到“职权级别”、“关心程度”——选项中找“权力利益方格”</li>
+</ul>
+</li>
+<li>
+<p>相关方立方体</p>
+<ul>
+<li>上述方格模型的改良形式，变成3维图形</li>
+<li>更好地加以分析，从而有助于沟通策略的制定</li>
+</ul>
+</li>
+<li>
+<p>凸显模型</p>
+<ul>
+<li>通过评估相关方的权力、紧迫性、合法性（或邻近性），对相关方进行分类</li>
+<li>用邻近性取代合法性，以便考察相关方参与项目工作的程度</li>
+<li>适用于复杂的相关方大型社区</li>
+</ul>
+</li>
+<li>
+<p>影响方向</p>
+<ul>
+<li>根据相关方对项目工作或项目团队本身的影响方向，对相关方进行分类</li>
+<li>分类
+<ul>
+<li>向上（执行组织或客户组织、发起人和指导委员会的高级高级管理层）；</li>
+<li>向下（临时贡献知识或技能的团队或专家）；</li>
+<li>向外（项目团队外的相关方群体及其代表，如供应商、政府部门、公众、最终用户和监管部门）；</li>
+<li>横向（项目经理的同级人员，如其他项目经理或中层管理人员，他们与项目经理竞争稀缺项目资源或者合作共享资源或信息）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>优先级排序</p>
+<ul>
+<li>如果项目有大量相关方、相关方社区的成员频繁变化，相关方和项目团队之间或相关方社区内部的关系复杂，</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：会议</p>
+<ul>
+<li>引导式研讨会、指导式小组讨论会、虚拟小组</li>
+</ul>
+</li>
+<li>
+<p>输出：相关方登记册</p>
+<ul>
+<li>记录关于已识别相关方的信息</li>
+<li>身份信息。姓名、组织职位、地点、联系方式，以及在项目中扮演的角色。</li>
+<li>评估信息。主要需求、期望、影响项目成果的潜力，以及相关方最能影响或冲击的项目生命周期阶段。</li>
+<li>相关方分类。用内部或外部，作用、影响、权力或利益，上级、下级、外围或横向，或者项目经理选择的其他分类模型，进行分类的结果。</li>
+</ul>
+</li>
+<li>
+<p>题：相关方太多时，需求也会很复杂，组织过程资产相对更重要</p>
+<ul>
+<li>详见第二章</li>
+</ul>
+</li>
+<li>
+<p>题：相关方分析错误，属于风险识别</p>
+<ul>
+<li>识别到之后，，先记录</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_1">13.2 规划相关方参与</h3>
+<ul>
+<li>
+<p>根据相关方的需求、期望、利益和对项目的潜在影响，制定项目相关方参与项目的方法的过程</p>
+</li>
+<li>
+<p>主要作用是，提供与相关方进行有效互动的可行计划</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload8190457100552304633-9de8b915.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>工具：数据收集</p>
+<ul>
+<li>标杆对照</li>
+</ul>
+</li>
+<li>
+<p>工具：数据分析</p>
+<ul>
+<li>假设条件和制约因素分析</li>
+<li>根本原因分析</li>
+</ul>
+</li>
+<li>
+<p>工具：决策</p>
+<ul>
+<li>优先级排序或分级</li>
+</ul>
+</li>
+<li>
+<p>工具：数据表现</p>
+<ul>
+<li>思维导图
+<ul>
+<li>用于对相关方信息、相互关系以及他们与组织的关系进行可视化整理</li>
+</ul>
+</li>
+<li>相关方参与度评估矩阵
+<ul>
+<li>用于将相关方当前参与水平与期望参与水平进行比较</li>
+<li>不了解型、抵制型、中立型、支持型、领导型
+<ul>
+<li>不了解型。不知道潜在影响。</li>
+<li>抵制型。知道潜在影响，但抵制任何变更。不会支持项目工作或项目成果。</li>
+<li>中立型。了解项目，但既不支持，也不反对。</li>
+<li>支持型。了解项目及其潜在影响，并且会支持项目工作及其成果。</li>
+<li>领导型。了解项目及其潜在影响，而且积极参与、非常关注以确保项目取得成功。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>输出：相关方参与计划</p>
+<ul>
+<li>确定用于促进相关方有效参与决策和执行的策略和行动</li>
+<li>是要对相关方保密的，不能分发</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_2">13.3 管理相关方参与</h3>
+<ul>
+<li>
+<p>与相关方进行沟通和协作以满足其需求与期望、处理问题，并促进相关方合理参与的过程</p>
+</li>
+<li>
+<p>主要作用是，让项目经理能够提高相关方的支持，并尽可能降低相关方的抵制</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload6978093460029734492-8d051f7a.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>确保相关方明确了解项目目的、目标、收益和风险，以及他们的贡献将如何促进项目成功</p>
+</li>
+<li>
+<p>工具：沟通技能</p>
+<ul>
+<li>正式与非正式对话；问题识别和讨论；会议；进展报告；调查。</li>
+</ul>
+</li>
+<li>
+<p>工具：人际关系与团队技能</p>
+<ul>
+<li>冲突管理</li>
+<li>文化意识</li>
+<li>谈判</li>
+<li>观察和交谈</li>
+<li>政治意识</li>
+</ul>
+</li>
+<li>
+<p>工具：会议</p>
+<ul>
+<li>决策；</li>
+<li>问题解决；</li>
+<li>经验教训和回顾总结；</li>
+<li>项目开工；</li>
+<li>迭代规划；</li>
+<li>状态更新。</li>
+</ul>
+</li>
+<li>
+<p>题：如果执行期间，有相关方问题，首先看输入：相关方管理计划</p>
+</li>
+</ul>
+<h3 id="toc_h3_3">13.4 监督相关方参与</h3>
+<ul>
+<li>
+<p>监督项目相关方关系，并通过修订参与策略和计划来引导相关方合理参与项目的过程</p>
+</li>
+<li>
+<p>主要作用是，随着项目进展和环境变化，维持或提升相关方参与活动的效率和效果</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload2759271612280996564-948c01e0.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>工具：数据分析</p>
+<ul>
+<li>备选方案分析</li>
+<li>根本原因分析</li>
+<li>相关方分析</li>
+<li>相关方不重视(或不配合）项目，先分析其立场（做功课），再与其见面（公关）</li>
+</ul>
+</li>
+<li>
+<p>工具：决策</p>
+<ul>
+<li>多标准决策分析</li>
+<li>投票</li>
+</ul>
+</li>
+<li>
+<p>工具：数据表现</p>
+<ul>
+<li>相关方参与度评估矩阵</li>
+</ul>
+</li>
+<li>
+<p>工具：沟通技能</p>
+<ul>
+<li>反馈； 演示</li>
+</ul>
+</li>
+<li>
+<p>工具：人际关系与团队技能</p>
+<ul>
+<li>积极倾听；</li>
+<li>文化意识；</li>
+<li>领导力；</li>
+<li>人际交往；</li>
+<li>政治意识</li>
+</ul>
+</li>
+<li>
+<p>增减相关方，属于监督</p>
+<ul>
+<li>注：人员退出是一种普遍的项目风险。先把他从相关方登记册中去掉，再评估退出造成的影响</li>
+</ul>
+</li>
+<li>
+<p>相关方问题，用利益（商业论证中的项目效益）说服相关方支持项目</p>
+</li>
+<li>
+<p>相关方包含的很广泛</p>
+<ul>
+<li>运营部门</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_4">沟通/相关方区分</h3>
+<ul>
+<li>
+<p>沟通</p>
+<ul>
+<li>需要收集什么信息。 在什么时候收集。</li>
+<li>以什么方式收集。</li>
+<li>什么时候、以什么方式、向谁发送什么信息。</li>
+<li>主要项目相关方的联系方式。</li>
+<li>对于关键术语的定义。</li>
+<li>如何更新沟通管理计划。</li>
+</ul>
+</li>
+<li>
+<p>因此，沟通可能的情况： 如果沟通方式的问题，查阅沟通管理计划。</p>
+</li>
+<li>
+<p>没收到报告，没收到通知，查看沟通管理计划。</p>
+</li>
+<li>
+<p>信息不能有效共享，查看沟通管理计划。</p>
+</li>
+<li>
+<p>新的信息提供要求，更新沟通管理计划。</p>
+</li>
+<li>
+<p>新成员加入后，首先应该查看沟通计划来确定如何沟通。然后通过沟通去获取其他资源或处理任务。</p>
+</li>
+<li>
+<p>相关方不了解项目情况、不了解在项目中的参与情况，更新沟通管理计划</p>
+<ul>
+<li>注意沟通管理计划的输入是相关方登记册 如果是沟通问题，但没有出现沟通管理计划，选择相关方登记册</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_5">相关方</h3>
+<ul>
+<li>
+<p>来自相关方登记册的内容。 相关方现有的参与项目的程度，以及所需的参与项目的程度。</p>
+</li>
+<li>
+<p>为了获得所需的参与程度，应该采取的与相关方打交道的策略和措施。</p>
+</li>
+<li>
+<p>应该如何更新相关方登记册和相关方参与计划。</p>
+<ul>
+<li>
+<ol>
+<li>规划阶段，输出相关方参与计划，要确定如何与相关方打交道，如何引导他们合理参与项目。</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>执行阶段，要根据相关方参与计划，要引导管理相关方合理参与项目，解决实际出现的相关方问题，满足相关方的需要和期望。发现问题，记录问题，可以提变更修改相关方参与计划。</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>监控阶段，要把相关方参与计划与相关方实际参与的程度做比较，发现并分析偏差，形成工作绩效信息，可以要求变更修改相关方参与计划。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>由此看出，相关方自身主导的问题，就可以找相关方参与计划或者分析相关方。 不知道如何管理相关方，查看相关方参与计划。</p>
+</li>
+<li>
+<p>项目经理管理内部外部依赖关系，查阅相关方参与计划。</p>
+</li>
+<li>
+<p>相关方对项目管理程序不满，查看相关方参与计划。</p>
+</li>
+<li>
+<p>相关方担心自己没被通知到，查看相关方参与计划。</p>
+</li>
+<li>
+<p>相关方反对该项目，执行相关方分析。</p>
+</li>
+<li>
+<p>相关方不参加会议，执行相关方分析。</p>
+</li>
+<li>
+<p>相关方对沟通意见不同，先从相关方入手。</p>
+</li>
+</ul>
+<h3 id="toc_h3_6">思维导图</h3>
+<p>由幕布生成<br>
+分享链接：<a href="https://share.mubu.com/doc/4WpYQL4ECKe" target="_blank">https://share.mubu.com/doc/4WpYQL4ECKe</a><br>
+<img src="https://b3logfile.com/file/2020/09/13.项目相关方管理-12525f68.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="13.项目相关方管理.png"></p>
+                            <div>
+                                <hr>
+
+标题：pmp-13-项目相关方管理<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/12/11/1600709543792.html" target="_blank">https://ceneri.me/articles/2019/12/11/1600709543792.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/12/11/1600708794943.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: pmp-12-项目采购管理
+                            </a>
+                            <a href="https://ceneri.me/articles/2020/01/12/1599746683209.html" rel="next"
+                               class="fn__right breadcrumb">
+                                redis-01-常用命令: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600708794943.html" rel="prev" class="breadcrumb">
+                            旧一篇: pmp-12-项目采购管理
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2020/01/12/1599746683209.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: redis-01-常用命令
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1600709543792"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">13.1 识别相关方</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">13.2 规划相关方参与</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">13.3 管理相关方参与</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">13.4 监督相关方参与</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">沟通/相关方区分</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">相关方</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">思维导图</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1600709543792",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1600709543792",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1600709543792', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1446ms, 2020/12/08 21:50:56 -->

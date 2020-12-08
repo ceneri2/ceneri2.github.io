@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>pmp-06-项目进度管理 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="pmp-06-项目进度管理 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/12/11/1600670066973.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="pmp-06-项目进度管理 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/12/11/1600670066973.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="pmp-05-项目范围管理" href="https://ceneri.me/articles/2019/12/11/1600666951502.html">
+            <link rel="next" title="pmp-07-项目成本管理" href="https://ceneri.me/articles/2019/12/11/1600674552643.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        12月
+                        <span class="item__day">11</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/12/11/1600670066973.html">
+                            pmp-06-项目进度管理
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-12-11
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/pmp">
+                                pmp</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/12/11/1600670066973.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1600670066973">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/12/11/1600670066973.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">6.1 规划进度管理</h3>
+<ul>
+<li>为规划、编制、管理、执行和控制项目进度而制定政策、程序和文档的过程</li>
+<li>主要作用是，为如何在整个项目期间管理项目进度提供指南和方向</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload375480634187826565-7ffd21ed.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>输入
+<ul>
+<li>项目章程
+<ul>
+<li>总体里程碑进度</li>
+</ul>
+</li>
+<li>项目管理计划
+<ul>
+<li>范围管理计划、开发方法</li>
+</ul>
+</li>
+<li>事业环境因素、组织过程资产</li>
+</ul>
+</li>
+<li>工具：备选方案分析</li>
+<li>输出：进度管理计划
+<ul>
+<li>进度管理计划会规定：
+<ul>
+<li>项目进度模型制定。</li>
+<li>进度计划的发布和迭代长度。使用适应型生命周期时，应指定固定时间的发布时段阶段和迭代</li>
+<li>准确度。</li>
+<li>计量单位。</li>
+<li>组织程序链接。WBS为进度管理计划提供了框架</li>
+<li>项目进度模型维护。</li>
+<li>控制临界值。可能需要规定偏差临界值，用于监督进度绩效</li>
+<li>绩效测量规则。</li>
+<li>报告格式。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_1">6.2 定义活动</h3>
+<ul>
+<li>识别和记录为完成项目可交付成果而需采取的具体行动的过程。</li>
+<li>主要作用是，将工作包分解为进度活动，作为对项目工作进行进度估算、规划、执行、监督和控制的基础。</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload8201986255528645475-4920ef75.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>工具：分解
+<ul>
+<li>把项目范围和项目可交付成果逐步划分为更小、更便于管理的组成部分的技术。活动表示完成工作包所需的投入。</li>
+<li>定义活动过程的最终输出是活动而不是可交付成果，可交付成果是创建 WBS 过程的输出</li>
+<li>分解的输入是项目管理计划中的范围基准</li>
+<li>每个工作包都需分解成活动</li>
+</ul>
+</li>
+<li>工具：滚动式规划
+<ul>
+<li>将需求记录在用户故事中，然后在建造之前按优先级排序并优化用户故事，最后在规定的时间盒内开发产品功能。 这一方法通常用于向客户交付增量价值，或多个团队并行开发大量内部关联较小的功能。适应型生命周期在产品开发中的应用越来越普遍，很多项目都采用这种进度计划方法。</li>
+<li>这种方法的好处在于，它允许在整个开发生命周期期间进行变更。</li>
+<li>通常是一年以上的项目</li>
+</ul>
+</li>
+<li>输出：活动清单
+<ul>
+<li>类似WBS</li>
+</ul>
+</li>
+<li>输出：活动属性
+<ul>
+<li>类似WBS词典</li>
+<li>活动属性包括唯一活动标识 (ID)、WBS 标识和活动标签或名称；</li>
+<li>在活动属性编制完成时，活动属性可能包括活动描述、紧前活动、紧后活动、逻辑关系、提前量和滞后量、资源需求、强制日期、制约因素和假设条件</li>
+</ul>
+</li>
+<li>输出：里程碑清单
+<ul>
+<li>里程碑的持续时间为零，因为它们代表的是一个重要时间点或事件</li>
+<li>指明每个里程碑是强制性的（如合同要求的）还是选择性的（如根据历史信息确定的）</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_2">6.3 排列活动顺序</h3>
+<ul>
+<li>识别和记录项目活动之间的关系的过程</li>
+<li>主要作用是定义工作之间的逻辑顺序，以便在既定的所有项目制约因素下获得最高的效率</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload7279059049754116893-e15f998b.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>工具：紧前关系绘图法（PDM）
+<ul>
+<li>是创建进度模型的一种技术</li>
+<li>完成到开始（FS）。只有紧前活动完成，紧后活动才能开始的逻辑关系。
+<ul>
+<li>例如，只有完成装配 PC 硬件（紧前活动），才能开始在 PC 上安装操作系统（紧后活动）。</li>
+</ul>
+</li>
+<li>完成到完成（FF）。只有紧前活动完成，紧后活动才能完成的逻辑关系。
+<ul>
+<li>例如，只有完成文件的编写（紧前活动），才能完成文件的编辑（紧后活动）。</li>
+</ul>
+</li>
+<li>开始到开始（SS）。只有紧前活动开始，紧后活动才能开始的逻辑关系。
+<ul>
+<li>例如，开始地基浇灌（紧后活动）之后，才能开始混凝土的找平（紧前活动）。</li>
+</ul>
+</li>
+<li>开始到完成（SF）。只有紧前活动开始，紧后活动才能完成的逻辑关系。
+<ul>
+<li>例如，只有启动新的应付账款系统（紧前活动），才能关闭旧的应付账款系统（紧后活动）。</li>
+</ul>
+</li>
+<li>以显示活动的实施顺序</li>
+</ul>
+</li>
+<li>工具：确定和整合依赖关系
+<ul>
+<li>强制性依赖关系
+<ul>
+<li>法律或合同要求的或工作的内在性质决定的依赖关系</li>
+</ul>
+</li>
+<li>选择性依赖关系
+<ul>
+<li>又称首选逻辑关系、优先逻辑关系或软逻辑关系</li>
+</ul>
+</li>
+<li>外部依赖关系
+<ul>
+<li>项目活动与非项目活动之间的依赖关系，这些依赖关系往往不在项目团队的控制范围内</li>
+</ul>
+</li>
+<li>内部依赖关系
+<ul>
+<li>项目活动之间的紧前关系，通常在项目团队的控制之中</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：项目管理信息系统 (PMIS)</li>
+<li>输出：项目进度网络图
+<ul>
+<li>是表示项目进度活动之间的逻辑关系（也叫依赖关系）的图形</li>
+<li>带有多个紧前活动的活动代表路径汇聚，而带有多个紧后活动的活动则代表路径分支。</li>
+</ul>
+</li>
+<li>紧前关系、紧后关系、提前量、滞后量
+<ul>
+<li>紧前活动是在进度计划的逻辑路径中，排在非开始活动前面的活动。</li>
+<li>紧后活动是在进度计划的逻辑路径中，排在某个活动后面的活动。</li>
+<li>提前量是紧后活动可以提前的时间量。
+<ul>
+<li>例如，在新办公大楼建设项目中，绿化施工可以在尾工清单编制完成前 2 周开始，这就是带 2 周提前量的完成到开始的关系</li>
+</ul>
+</li>
+<li>滞后量是紧后活动需要推迟的时间量。
+<ul>
+<li>例如，对于一个大型技术文档，编写小组可以在编写工作开始后 15 天，开始编辑文档草案，这就是带 15 天滞后量的开始到开始关系，</li>
+</ul>
+</li>
+<li>提前量和滞后量的使用不能替代进度逻辑关系， 而且持续时间估算中不包括任何提前量或滞后量，同时还应该记录各种活动及与之相关的假设条件</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_3">6.4 估算活动持续时间</h3>
+<ul>
+<li>估算活动持续时间是根据资源估算的结果，估算完成单项活动所需工作时段数的过程。</li>
+<li>本过程的主要作用是，确定完成每个活动所需花费的时间量。</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload8831331110301863029-d1db3209.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>应该首先估算出完成活动所需的工作量和计划投入该活动的资源数量，然后结合项目日历和资源日历，据此估算出完成活动所需的工作时段数（活动持续时间）。</li>
+<li>主导性资源通常会影响持续时间，但这不是简单的“直线”或线性关系。</li>
+<li>需要考虑的其他因素包括
+<ul>
+<li>收益递减规律。</li>
+<li>资源数量。</li>
+<li>技术进步。</li>
+<li>员工激励。
+<ul>
+<li>“学生综合征”（即拖延症）
+<ul>
+<li>人们只有在最后一刻，即快到期限时才会全力以赴；</li>
+<li>不会范围蔓延</li>
+</ul>
+</li>
+<li>帕金森定律
+<ul>
+<li>只要还有时间，工作就会不断扩展，直到用完所有的时间；</li>
+<li>会范围蔓延</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：类比估算
+<ul>
+<li>就是自上而下估算</li>
+<li>使用相似活动或项目的历史数据</li>
+<li>成本较低、耗时较少，但准确性也较低 粗略</li>
+<li>项目详细信息不足时，经常使用</li>
+<li>如果以往活动是本质上而不是表面上类似，并且从事估算的项目团队具备必要的专业知识，那么类比估算就最为可靠</li>
+</ul>
+</li>
+<li>工具：参数估算（公式）
+<ul>
+<li>利用历史数据之间的统计关系和其他变量（如建筑施工中的平方英尺），来估算诸如成本、预算和持续时间等活动参数</li>
+<li>统计关系
+<ul>
+<li>没有就是类比</li>
+</ul>
+</li>
+<li>准确性取决于参数模型的成熟度和基础数据的可靠性</li>
+</ul>
+</li>
+<li>工具：三点估算
+<ul>
+<li>过考虑估算中的不确定性和风险，可以提高持续时间估算的准确性</li>
+<li>三点分布公式 PERT=(P+ML+O)/3</li>
+<li>贝塔分布公式 PERT=(P+4ML+O)/6</li>
+<li>标准差=(悲观-乐观)/6</li>
+</ul>
+</li>
+<li>工具：自下而上估算
+<ul>
+<li>果无法以合理的可信度对活动持续时间进行估算，则应将活动中的工作进一步细化</li>
+</ul>
+</li>
+<li>工具：决策
+<ul>
+<li>first of five（从拳头到五指）</li>
+<li>德尔菲
+<ul>
+<li>专家只与主持人单线联系、专家之间不讨论</li>
+<li>有助于减少偏见和克服个人对结果的不合理影响；</li>
+<li>广泛听取意见并达成一致</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：数据分析-储备分析
+<ul>
+<li>应急储备
+<ul>
+<li>是包含在进度基准中来应对已经接受的已识别风险</li>
+<li>应急储备可取活动持续时间估算值的某一百分比或某一固定的时间段</li>
+<li>亦可把应急储备从各个活动中剥离出来并汇总</li>
+</ul>
+</li>
+<li>管理储备
+<ul>
+<li>来应对项目范围中不可预见的工作</li>
+<li>“未知-未知”风险</li>
+<li>使用管理储备可能需要变更进度基准。</li>
+<li>不包括再进度基准中，但是属于项目总持续时间的一部分</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_4">6.5 制定进度计划</h3>
+<ul>
+<li>分析活动顺序、持续时间、资源需求和进度制约因素，创建项目进度模型，从而落实项目执行和监控的过程</li>
+<li>主要作用是，为完成项目活动而制定具有计划日期的进度模型。</li>
+<li>是一个反复进行的过程，需要再整个项目期间开展。</li>
+<li>项目管理团队制定</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload2570669588425334139-7a51a404.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>工具：进度网络分析
+<ul>
+<li>是创建项目进度模型的一种综合技术</li>
+<li>包括：关键路径法、资源优化技术和建模技术。 其他分析包括（但不限于）：
+<ul>
+<li>当多个路径在同一时间点汇聚或分叉时，评估汇总进度储备的必要性，以减少出现进度落后的可能性。</li>
+</ul>
+</li>
+<li>审查网络，看看关键路径是否存在高风险活动或具有较多提前量的活动，是否需要使用进度储备或执行风险应对计划来降低关键路径的风险。</li>
+</ul>
+</li>
+<li>工具：关键路径法
+<ul>
+<li>有最长的工期，决定最短的项目时间，有最少的松动时间，最有可能引起项目厌恶</li>
+<li>不考虑任何资源限制的情况，但实际上需要考虑资源平衡</li>
+<li>关键路径是项目中时间最长的活动顺序，决定着可能的项目最短工期</li>
+<li>关键路径的总浮动时间为零</li>
+<li>关键路径可能不止一条
+<ul>
+<li>关键路径越多，风险越大</li>
+</ul>
+</li>
+<li>关键路径可能会发生改变</li>
+<li>负浮动时间（负的总时差），表示关键路径上的活动延误、或被要求提前完工，出现后必须尽快解决、需要赶工或快速跟进</li>
+<li>自由浮动时间就是指在不延误任何紧后活动最早开始日期或不违反进度制约因素的前提下，某进度活动可以推迟的时间量。</li>
+</ul>
+</li>
+<li>工具：资源优化
+<ul>
+<li>资源平衡 Resource Level
+<ul>
+<li>可能导致改变关键路径，及延长项目时程</li>
+<li>根据资源制约因素，对开始和完成日期进行调整</li>
+</ul>
+</li>
+<li>资源平滑 Resource Smooth
+<ul>
+<li>不会改变项目关键路径，完工日期也不会延迟</li>
+<li>不超过预定的资源限制</li>
+</ul>
+</li>
+<li>题：整个项目工期中资源充足，但某个特定月份不充足，只需资源在关键路径/非关键路径之间的资源平衡</li>
+<li>题：强调将不影响到关键路径，即锁定答题区域为资源平滑</li>
+</ul>
+</li>
+<li>工具：数据分析
+<ul>
+<li>假设情景分析
+<ul>
+<li>对各种情景进行评估，预测它们对项目目标的影响</li>
+<li>基于已有的进度计划</li>
+<li>11.2.风险识别中，还有一个假设分析</li>
+<li>题干：如果情况X出现，情况会怎么样</li>
+</ul>
+</li>
+<li>模拟（假设情景分析的工具）
+<ul>
+<li>把单个项目风险和不确定性的其他来源模型化</li>
+<li>首先确定每个活动的可能持续时间概率分布，然后据此计算出整个项目的可能工期概率分布</li>
+<li>蒙特卡罗分析</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：进度压缩 又称：资源优化
+<ul>
+<li>赶工高成本，快速跟进高风险</li>
+<li>都不改变项目范围，都能压缩项目进度，都可能有负面影响，都只针对关键路径</li>
+<li>赶工
+<ul>
+<li>增加资源、增加成本
+<ul>
+<li>包括：批准加班、增加额外资源或支付额外费用，从而加快关键路径上的活动</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>快速跟进
+<ul>
+<li>压缩时程、容易造成重做而增加风险
+<ul>
+<li>例如，在大楼的建筑图纸尚未全部完成前就开始建地基。</li>
+</ul>
+</li>
+<li>节省时间也叫节省成本</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：项目管理信息系统</li>
+<li>工具：敏捷发布规划
+<ul>
+<li>敏捷发布规划基于项目路线图和产品发展愿景，提供了高度概括的发布进度时间轴（通常是 3 到 6 个月）。</li>
+<li>敏捷发布规划还确定了发布的迭代或冲刺次数，</li>
+<li>该时间轴定义了每次迭代结束时交付的功能，提供了更易于理解的项目进度计划</li>
+<li>图 6-20产品愿景、发布规划和迭代计划之间的关系<img src="https://b3logfile.com/file/2020/09/solofetchupload7404827877296629594-c50dc99a.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+</ul>
+</li>
+<li>输出：进度基准
+<ul>
+<li>是经过批准的进度模型</li>
+<li>包含基准开始日期和基准结束日期</li>
+<li>进度基准是项目管理计划的组成部分。</li>
+</ul>
+</li>
+<li>输出：项目进度计划
+<ul>
+<li>项目进度计划是进度模型的输出</li>
+<li>至少要包括每个活动的计划开始日期与计划完成日期</li>
+<li>项目进度计划可以是概括（有时称为主进度计划或里程碑进度计划）或详细的</li>
+<li>可用列表形式或图形方式
+<ul>
+<li>横道图、“甘特图”</li>
+<li>里程碑图</li>
+<li>项目进度网络图、纯逻辑图、逻辑横道图、时标逻辑图</li>
+<li>选择网络图而不是横道图的情形：显示活动间依赖关系时</li>
+<li>选择里程碑图而不是横道图的情形：向高层或客户报告关键的外部接口</li>
+<li>选择横道图而不是网络图哦情形：为了跟进项目的进展，想管理层和团队成员报告项目进展情况时</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出：进度数据
+<ul>
+<li>至少包括进度里程碑、进度活动、活动属性，以及已知的全部假设条件与制约因素</li>
+<li>可能包含：资源需求、备选的进度计划、进度储备、资源直方图、现金流预测，以及订购与交付进度安排等其他相关信息</li>
+</ul>
+</li>
+<li>输出：项目日历
+<ul>
+<li>规定可以开展进度活动的可用工作日和工作班次</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_5">6.6 控制进度</h3>
+<ul>
+<li>监督项目状态，以更新项目进度和管理进度基准变更的过程</li>
+<li>主要作用是在整个项目期间保持对进度基准的维护，且需要在整个项目期间开展</li>
+<li>进度基准的任何变更都必须经过实施整体变更控制的审批</li>
+<li>控制进度是实施整体变更控制过程的一部分</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload5942489612098506076-e47e7dcb.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>关注如下内容：
+<ul>
+<li>判断项目进度的当前状态；</li>
+<li>对引起进度变更的因素施加影响；</li>
+<li>重新考虑必要的进度储备；</li>
+<li>判断项目进度是否已经发生变更；</li>
+<li>在变更实际发生时对其进行管理</li>
+</ul>
+</li>
+<li>工具：数据分析——迭代燃尽图
+<ul>
+<li>追踪迭代未完项中尚待完成的工作</li>
+<li>先用对角线表示理想的燃尽情况，再每天画出实际剩余工作，最后基于剩余工作计算出趋势线以预测完成情况</li>
+<li><img src="https://b3logfile.com/file/2020/09/solofetchupload7236263219987538151-0cf1b0b6.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="image.png"></li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_6">思维导图</h3>
+<p>由幕布生成<br>
+分享链接：<a href="https://share.mubu.com/doc/70LgXsR419e" target="_blank">https://share.mubu.com/doc/70LgXsR419e</a></p>
+<p><img src="https://b3logfile.com/file/2020/09/6.项目进度管理-c74b71b8.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="6.项目进度管理.png"></p>
+                            <div>
+                                <hr>
+
+标题：pmp-06-项目进度管理<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/12/11/1600670066973.html" target="_blank">https://ceneri.me/articles/2019/12/11/1600670066973.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/12/11/1600666951502.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: pmp-05-项目范围管理
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/12/11/1600674552643.html" rel="next"
+                               class="fn__right breadcrumb">
+                                pmp-07-项目成本管理: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600666951502.html" rel="prev" class="breadcrumb">
+                            旧一篇: pmp-05-项目范围管理
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600674552643.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: pmp-07-项目成本管理
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1600670066973"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">6.1 规划进度管理</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">6.2 定义活动</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">6.3 排列活动顺序</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">6.4 估算活动持续时间</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">6.5 制定进度计划</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">6.6 控制进度</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">思维导图</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1600670066973",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1600670066973",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1600670066973', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1296ms, 2020/12/08 21:51:01 -->

@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>pmp-12-项目采购管理 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="pmp-12-项目采购管理 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/12/11/1600708794943.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="pmp-12-项目采购管理 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/12/11/1600708794943.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="pmp-11-项目风险管理" href="https://ceneri.me/articles/2019/12/11/1600707062018.html">
+            <link rel="next" title="pmp-13-项目相关方管理" href="https://ceneri.me/articles/2019/12/11/1600709543792.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        12月
+                        <span class="item__day">11</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/12/11/1600708794943.html">
+                            pmp-12-项目采购管理
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-12-11
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/pmp">
+                                pmp</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/12/11/1600708794943.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1600708794943">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/12/11/1600708794943.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">项目采购管理</h3>
+<ul>
+<li>协议可以是合同、服务水平协议（SLA）、谅解备忘录、协议备忘录（MOA）或订购单</li>
+<li>项目经理无权签署对组织有约束力的法律协议，这项工作仅由具备相关职权的人员执行</li>
+</ul>
+<h3 id="toc_h3_1">12.1 规划采购管理</h3>
+<ul>
+<li>记录项目采购决策、明确采购方法，及识别潜在卖方的过程</li>
+<li>主要作用是，确定是否从项目外部获取货物和服务，如果是，则还要确定将在什么时间、以什么方式获取什么货物和服务</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload3668428914842462485-c2f1262a.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>典型的步骤可能有：
+<ul>
+<li>
+<ol>
+<li>准备采购工作说明书 (SOW) 或工作大纲 (TOR)【范围基准】；</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>准备高层级的成本估算，制定预算；</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>发布招标广告；</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>确定合格卖方的短名单；</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>准备并发布招标文件；</li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li>由卖方准备并提交建议书；</li>
+</ol>
+</li>
+<li>
+<ol start="7">
+<li>对建议书开展技术（包括质量）评估；</li>
+</ol>
+</li>
+<li>
+<ol start="8">
+<li>对建议书开展成本评估；</li>
+</ol>
+</li>
+<li>
+<ol start="9">
+<li>准备最终的综合评估报告（包括质量及成本），选出中标建议书；</li>
+</ol>
+</li>
+<li>
+<ol start="10">
+<li>结束谈判，买方和卖方签署合同。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>合同类型
+<ul>
+<li>总价合同(乙方风险大)
+<ul>
+<li>合同为既定产品、服务或成果的采购设定一个总价。 这种合同应在已明确定义需求，且不会出现重大范围变更的情况下使用
+<ul>
+<li>买方风险最低</li>
+</ul>
+</li>
+<li>固定总价 (Firm fixed price FFP)
+<ul>
+<li>最常用的，买方喜欢的，不允许改变（除非工作范围发生变更）</li>
+</ul>
+</li>
+<li>总价加激励费用 (Fixed price incentive fee，FPIF)
+<ul>
+<li>会设置价格上限，高于此价格上限的全部成本将由卖方承担
+<ul>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload8433025707905286593-59fbfb88.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>总价加经济价格调整 (Fixed price with economic price adjustments，FPEPA)
+<ul>
+<li>卖方履约期将跨越几年时间， 或将以不同货币支付价款</li>
+<li>通货膨胀、某些特殊商品的成本增加（或降低）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>成本补偿合同（乙风险小）
+<ul>
+<li>适用于：工作范围预计会在合同执行期间发生重大变更</li>
+<li>成本加固定费用 (Cost plus fixed fee，CPFF)
+<ul>
+<li>卖方风险最小</li>
+</ul>
+</li>
+<li>成本加激励费用 (Cost plus incentive fee，CPIF)
+<ul>
+<li>达到绩效后再支付激励费用
+<ul>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload8833038691999464722-211f682a.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>成本加奖励费用 (Cost plus award fee，CPAF)
+<ul>
+<li>所有可列支成本；卖方满足合同规定买方才支付费用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工料合同 (T&amp;M)（风险对等）
+<ul>
+<li>适用于：在无法快速编制出准确的工作说明书的情况下扩充人员、聘用专家或寻求外部支持。</li>
+<li>兼具成本补偿合同和总价合同特点的混合型合同</li>
+<li>单价确定，总数不定;工作性质清楚、工作量不定
+<ul>
+<li>风险最大，不确定性最大，不精确</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：数据收集
+<ul>
+<li>市场调研
+<ul>
+<li>考察行业情况和具体卖方的能力</li>
+<li>从会议、在线评论和各种其他渠道得到的信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：数据分析
+<ul>
+<li>自制或外购分析</li>
+<li>可以使用回收期、投资回报率（ROI）、内部报酬率 (IRR)、现金流贴现、净现值（NPV）、收益成本（BCA）或其他分析技术， 来确定某种货物或服务是应该在项目内部自制，还是从外部购买。</li>
+</ul>
+</li>
+<li>工具：供方选择分析
+<ul>
+<li>最低成本
+<ul>
+<li>适用于标准化或常规采购</li>
+</ul>
+</li>
+<li>仅凭资质
+<ul>
+<li>适用于采购价值相对较小，不值得花时间和成本开展完整选择过程的情况</li>
+</ul>
+</li>
+<li>基于质量或技术方案得分
+<ul>
+<li>建议书，同时列明技术和成本详情</li>
+</ul>
+</li>
+<li>基于质量和成本
+<ul>
+<li>如果项目的风险和（或）不确定性较高，相对于成本而言，质量就应该是一个关键因素</li>
+</ul>
+</li>
+<li>独有来源</li>
+<li>固定预算
+<ul>
+<li>在建议邀请书中向受邀的卖方披露可用预算</li>
+<li>适用于工作说明书定义精确、预期不会发生变更，而且预算固定且不得超出的情况</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：会议
+<ul>
+<li>信息交流会</li>
+</ul>
+</li>
+<li>输出：采购管理计划
+<ul>
+<li>如何协调采购与项目的其他工作，例如，项目进度计划制定和控制；</li>
+<li>开展重要采购活动的时间表；</li>
+<li>用于管理合同的采购测量指标；</li>
+<li>与采购有关的相关方角色和职责；</li>
+<li>如果执行组织有采购部，项目团队拥有的职权和受到的限制；</li>
+<li>可能影响采购工作的制约因素和假设条件；</li>
+<li>司法管辖权和付款货币；</li>
+<li>是否需要编制独立估算，以及是否应将其作为评价标准；</li>
+<li>风险管理事项，包括对履约保函或保险合同的要求，以减轻某些项目风险；</li>
+<li>拟使用的预审合格的卖方（如果有）。</li>
+</ul>
+</li>
+<li>输出：采购策略
+<ul>
+<li>交付方法</li>
+<li>合同支付类型
+<ul>
+<li>总价合同适用于工作类型可预知、需求能清晰定义且不太可能变更的情况；</li>
+<li>成本补偿合同适用于工作不断演进、很可能变更或未明确定义的情况；</li>
+<li>激励和奖励费用可用于协调买方和卖方的目标。</li>
+</ul>
+</li>
+<li>采购阶段
+<ul>
+<li>采购工作的顺序安排或阶段划分，每个阶段的描述，以及每个阶段的具体目标；</li>
+<li>用于监督的采购绩效指标和里程碑；</li>
+<li>从一个阶段过渡到下一个阶段的标准；</li>
+<li>用于追踪采购进展的监督和评估计划；</li>
+<li>向后续阶段转移知识的过程。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出：招标文件
+<ul>
+<li>信息邀请书 (RFI)
+<ul>
+<li>需要卖方提供关于拟采购货物和服务的更多信息</li>
+</ul>
+</li>
+<li>报价邀请书 (RFQ)
+<ul>
+<li>需要供应商提供关于将如何满足需求和（或）将需要多少成本的更多信息</li>
+</ul>
+</li>
+<li>建议邀请书 (RFP)
+<ul>
+<li>项目中出现问题且解决办法难以确定</li>
+<li>最正式，需要遵守与内容、时间表，以及卖方应答有关的严格的采购规则</li>
+</ul>
+</li>
+<li>不仅应便于潜在卖方做出准确、完整的应答，还要便于买方对卖方应答进行评价</li>
+<li>采购文件会包括规定的应答格式、相关的采购工作说明书，以及所需的合同条款</li>
+</ul>
+</li>
+<li>输出：采购工作说明书
+<ul>
+<li>内容包括：规格、所需数量、质量水平、绩效数据、履约期间、工作地点和其他要求</li>
+<li>工作大纲 (TOR)
+<ul>
+<li>承包商需要执行的任务，以及所需的协调工作；</li>
+<li>承包商必须达到的适用标准；</li>
+<li>需要提交批准的数据；</li>
+<li>由买方提供给承包商的，将用于合同履行的全部数据和服务的详细清单（若适用）；</li>
+<li>关于初始成果提交和审查（或审批）的进度计划。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出：供方选择标准
+<ul>
+<li>能力和潜能；</li>
+<li>产品成本和生命周期成本；</li>
+<li>交付日期；</li>
+<li>技术专长和方法；</li>
+<li>具体的相关经验；</li>
+<li>用于响应工作说明书的工作方法和工作计划；</li>
+<li>关键员工的资质、可用性和胜任力；</li>
+<li>公司的财务稳定性；</li>
+<li>管理经验；</li>
+<li>知识转移计划，包括培训计划。
+<ul>
+<li>得分需要加权计算</li>
+</ul>
+</li>
+<li>不包括项目报价</li>
+</ul>
+</li>
+<li>输出：自制或外购决策</li>
+<li>输出：独立成本估算
+<ul>
+<li>采购组织做出成本估算，并对比卖方报价</li>
+<li>子主题</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_2">12.2 实施采购</h3>
+<ul>
+<li>获取卖方应答、选择卖方并授予合同的过程</li>
+<li>主要作用是，选定合格卖方并签署关于货物或服务交付的法律协议</li>
+<li>本过程的最后成果是签订的协议，包括正式合同</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload1131256524007745104-f364b467.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>输入：卖方建议书
+<ul>
+<li>卖方为响应采购文件包而编制的建议书
+<ul>
+<li>价格建议书与技术建议书</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：广告
+<ul>
+<li>广告是就产品、服务或成果与用户或潜在用户进行的沟通。</li>
+</ul>
+</li>
+<li>工具：投标人会议</li>
+<li>工具：数据分析
+<ul>
+<li>建议书评估
+<ul>
+<li>确定它们是否对包含在招标文件包中的招标文件、采购工作说明书、供方选择标准和其他文件，都做出了完整且充分的响应</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：人际关系与团队技能
+<ul>
+<li>谈判
+<ul>
+<li>双方是平等的，要保护双方关系</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>输出：选定的卖方</li>
+<li>输出：协议
+<ul>
+<li>合同强制卖方提供规定的产品、服务或成果，强制买方向卖方支付相应的报酬</li>
+<li>包括（但不限于）：
+<ul>
+<li>采购工作说明书或主要的可交付成果；</li>
+<li>进度计划、里程碑，或进度计划中规定的日期；</li>
+<li>绩效报告；</li>
+<li>定价和支付条款；</li>
+<li>检查、质量和验收标准；</li>
+<li>担保和后续产品支持；</li>
+<li>激励和惩罚；</li>
+<li>保险和履约保函；</li>
+<li>下属分包商批准；</li>
+<li>一般条款和条件；</li>
+<li>变更请求处理；</li>
+<li>终止条款和替代争议解决方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_3">12.3 控制采购</h3>
+<ul>
+<li>管理采购关系，监督合同绩效，实施必要的变更和纠偏，以及关闭合同的过程
+<ul>
+<li>没有结束采购过程</li>
+</ul>
+</li>
+<li>主要作用是，确保买卖双方履行法律协议，满足项目需求</li>
+<li>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload5241060274484633069-a3d401bf.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+<li>输入：采购文档
+<ul>
+<li>包含用于管理采购过程的完整支持性记录， 包括工作说明书、支付信息、承包商工作绩效信息、计划、图纸和其他往来函件</li>
+</ul>
+</li>
+<li>工具：索赔管理
+<ul>
+<li>谈判是解决所有索赔和争议的首选方法</li>
+<li>有争议的变更、有争议的金额，也称为索赔</li>
+<li>如果合同双方无法自行解决索赔问题，则可能不得不按合同中规定的程序，用替代争议解决方法（ADR）去处理</li>
+<li>当和供应上发生争议时：
+<ul>
+<li>1、按照合同条款办理， 1）查看合同 ； 2）查看 SOW，如果没有看2</li>
+<li>2、谈判或协商，如果协商没有结果看3</li>
+<li>3、替代争议解决方案ADR，如果没有看4</li>
+<li>4、调解或仲裁，如果没有看5；</li>
+<li>5、诉讼</li>
+<li>以上工具的使用有顺序，注意仲裁和诉讼是互斥的。</li>
+<li>与供应商或客户唯一双方共同承认的文件是合同；唯一不撕破脸的打交道方式是谈判。
+<ul>
+<li>客户拒绝沟通，就是无法协商，要选3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：数据分析
+<ul>
+<li>绩效审查</li>
+<li>挣值分析 (EVA)</li>
+<li>趋势分析
+<ul>
+<li>成本绩效的完工估算 (EAC)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>工具：检查
+<ul>
+<li>指对承包商正在执行的工作进行结构化审查， 可能涉及对可交付成果的简单审查，或对工作本身的实地审查</li>
+</ul>
+</li>
+<li>工具：审计
+<ul>
+<li>对采购过程的结构化审查</li>
+</ul>
+</li>
+<li>输出：采购关闭
+<ul>
+<li>买方通常通过其授权的采购管理员，向卖方发出合同已经完成的正式书面通知</li>
+<li>包括：已按时按质按技术要求交付全部可交付成果，没有未决索赔或发票，全部最终款项已经付清</li>
+<li>总结经验教训，也是控制采购过程</li>
+<li>凡是出现“结束采购过程”之类的选项，都是错误的</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_4">题总结</h3>
+<ul>
+<li>题干出现“供应商必须对。。。变更”，直接准备变更请求，走合同变更流程</li>
+<li>凡是卖方没有过错的延误，都是可原谅的，应延长工期</li>
+<li>采购的步骤<img src="https://b3logfile.com/file/2020/09/solofetchupload2660763313613595817-61de0458.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></li>
+</ul>
+<h3 id="toc_h3_5">思维导图</h3>
+<p>由幕布生成<br>
+分享链接：<a href="https://share.mubu.com/doc/3HioB_qSt-e" target="_blank">https://share.mubu.com/doc/3HioB_qSt-e</a></p>
+<p><img src="https://b3logfile.com/file/2020/09/12.项目采购管理-1c7013e6.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="12.项目采购管理.png"></p>
+                            <div>
+                                <hr>
+
+标题：pmp-12-项目采购管理<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/12/11/1600708794943.html" target="_blank">https://ceneri.me/articles/2019/12/11/1600708794943.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/12/11/1600707062018.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: pmp-11-项目风险管理
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/12/11/1600709543792.html" rel="next"
+                               class="fn__right breadcrumb">
+                                pmp-13-项目相关方管理: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600707062018.html" rel="prev" class="breadcrumb">
+                            旧一篇: pmp-11-项目风险管理
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600709543792.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: pmp-13-项目相关方管理
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1600708794943"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">项目采购管理</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">12.1 规划采购管理</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">12.2 实施采购</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">12.3 控制采购</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">题总结</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">思维导图</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1600708794943",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1600708794943",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1600708794943', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1390ms, 2020/12/08 21:51:00 -->

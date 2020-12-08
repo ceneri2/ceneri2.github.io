@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>pmp-08-项目质量管理 - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="pmp-08-项目质量管理 - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/12/11/1600676585151.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="pmp-08-项目质量管理 - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/12/11/1600676585151.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="pmp-07-项目成本管理" href="https://ceneri.me/articles/2019/12/11/1600674552643.html">
+            <link rel="next" title="pmp-09-项目资源管理" href="https://ceneri.me/articles/2019/12/11/1600680384793.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        12月
+                        <span class="item__day">11</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/12/11/1600676585151.html">
+                            pmp-08-项目质量管理
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-12-11
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/pmp">
+                                pmp</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/12/11/1600676585151.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1600676585151">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/12/11/1600676585151.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">项目质量管理</h3>
+<ul>
+<li>项目质量管理包括把组织的质量政策应用于规划、管理、控制项目和产品质量要求，以满足相关方目标的各个过程。</li>
+<li>项目质量管理需要兼顾项目管理与项目可交付成果两个方面</li>
+<li>“质量”与“等级”不是相同的概念。 质量：实现的性能或成果，是“一系列内在特性满足要求的程度”。等级：设计意图，是对用途相同但技术特性不同的可交付成果的级别分类。</li>
+<li>质量低永远是个问题，但等级较低不一定是个问题</li>
+<li>好质量的产品是符合要求的适用产品，而不是超过要求的优质产品</li>
+<li>预防胜于检查。预防错误的成本通常远低于在检查或使用中发现并纠正错误的成本。</li>
+<li>术语之间的差别
+<ul>
+<li>“预防”（保证过程中不出现错误）与“检查”（保证错误不落到客户手中）；</li>
+<li>“属性抽样”（结果为合格或不合格）与“变量抽样”（在连续的量表上标明结果所处的位置，表明合格的程度）；</li>
+<li>“公差”（结果的可接受范围）与“控制界限”（在统计意义上稳定的过程或过程绩效的普通偏差的边界）术语之间的差别：</li>
+</ul>
+</li>
+<li>项目质量管理的趋势可能包括（但不限于）
+<ul>
+<li>客户满意（符合要求，适合使用）</li>
+<li>持续改进（PDCA）</li>
+<li>管理层的责任（85%） 员工15%</li>
+<li>与供应商的互利合作关系（组织与其供应商相互依赖）</li>
+</ul>
+</li>
+<li>敏捷中需要考虑
+<ul>
+<li>定期检查质量过程的效果</li>
+<li>寻找问题的根本原因，然后建议实施新的质量改进方法</li>
+<li>回顾会议评估实验过程，确认是否可行、是否继续、或做出调整，或直接启用</li>
+</ul>
+</li>
+<li>质量管理中的代表人物
+<ul>
+<li>
+<p>戴明</p>
+<ul>
+<li>PDCA循环</li>
+</ul>
+</li>
+<li>
+<p>朱兰</p>
+<ul>
+<li>质量三部曲（计划、控制、改进）</li>
+</ul>
+</li>
+<li>
+<p>克劳斯比</p>
+<ul>
+<li>零缺陷，开始就把事情做对，质量成本</li>
+<li>“质量符合要求、质量是免费的”</li>
+</ul>
+</li>
+<li>
+<p>石川</p>
+<ul>
+<li>因果分析（鱼骨图） 公司范围</li>
+</ul>
+</li>
+<li>
+<p>新乡重夫</p>
+<ul>
+<li>系统的差错检验和差错原因的检验装置</li>
+</ul>
+</li>
+<li>
+<p>田口宏一</p>
+<ul>
+<li>质量是设计出来的</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_1">8.1 规划质量管理</h3>
+<ul>
+<li>
+<p>识别项目及其可交付成果的质量要求和（或）标准，并书面描述项目将如何证明符合质量要求和（或）标准的过程</p>
+</li>
+<li>
+<p>主要作用是，为在整个项目期间如何管理和核实质量提供指南和方向</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload655819851916527385-08025df7.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>工具：数据分析</p>
+<ul>
+<li>
+<p>成本效益分析</p>
+<ul>
+<li>权衡质量的投入和产出</li>
+<li>主要效益包括减少返工、提高生产率、降低成本、提升相关方满意度及提升赢利能力。</li>
+</ul>
+</li>
+<li>
+<p>质量成本</p>
+<ul>
+<li>
+<p>质量成本（COQ）包括在产品生命周期中为预防不符合要求、为评价产品或服务是否符合要求，以及因未达到要求（返工）而发生的所有成本</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload6883862539735188800-24894512.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>预防成本</p>
+<ul>
+<li>预防特定项目的产品、可交付成果或服务质量低劣所带来的相关成本。</li>
+</ul>
+</li>
+<li>
+<p>评估成本</p>
+<ul>
+<li>评估测量审计和测试特定项目的产品、可交付成果或服务所带来的关成本。</li>
+</ul>
+</li>
+<li>
+<p>失败成本</p>
+<ul>
+<li>因产品、可交付成果或服务与相关方需求或期望不一致而导致的相关成本。</li>
+</ul>
+</li>
+<li>
+<p>一致/非一致成本</p>
+<ul>
+<li>一致成本是规避失败所花费的资金；非一致成本是由于失败导致的支出</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>成本效益分析，是对多个质量方案或标准的分析；质量成本，是寻找投资平衡点</p>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：决策</p>
+<ul>
+<li>多标准决策分析（优先矩阵）
+<ul>
+<li>
+<p>可用于识别关键事项和合适的备选方案，并通过一系列决策排列出备选方案的优先顺序</p>
+<ul>
+<li>备选方案的优先顺序</li>
+</ul>
+</li>
+<li>
+<p>先对标准排序和加权，再应用于所有备选方案，计算出各个备选方案的数学得分，然后根据得分对备选方案排序</p>
+<ul>
+<li>存在加权计算</li>
+</ul>
+</li>
+<li>
+<p>是决策不是分析</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：数据表现</p>
+<ul>
+<li>
+<p>流程图</p>
+<ul>
+<li>确定故障位置</li>
+</ul>
+</li>
+<li>
+<p>逻辑数据模型</p>
+<ul>
+<li>把组织数据可视化，识别数据完整性</li>
+</ul>
+</li>
+<li>
+<p>矩阵图</p>
+<ul>
+<li>因素、原因与目标的关系强弱</li>
+<li>识别出对项目成功至关重要的质量测量标准</li>
+</ul>
+</li>
+<li>
+<p>思维导图</p>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：会议</p>
+<ul>
+<li>规划会议</li>
+</ul>
+</li>
+<li>
+<p>输出：质量管理计划</p>
+<ul>
+<li>是项目管理计划的组成部分，描述如何实施适用的政策、程序和指南以实现质量目标。 它描述了项目管理团队为实现一系列项目质量目标所需的活动和资源。</li>
+</ul>
+</li>
+<li>
+<p>输出：质量测量指标</p>
+<ul>
+<li>专用于描述项目或产品属性，以及控制质量过程将如何验证符合程度</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_2">8.2 管理质量 也叫质量保证</h3>
+<ul>
+<li>
+<p>把组织的质量政策用于项目，并将质量管理计划转化为可执行的质量活动的过程。</p>
+</li>
+<li>
+<p>主要作用是，提高实现质量目标的可能性，以及识别无效过程和导致质量低劣的原因</p>
+</li>
+<li>
+<p>预防不一致</p>
+</li>
+<li>
+<p>管理质量被认为是所有人的共同职责，提高相关方对遵循质量标准的信心</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload5064254798801981340-f3c4f162.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>工具：数据收集</p>
+<ul>
+<li>
+<p>核对单</p>
+<ul>
+<li>核对单是一种结构化工具，通常列出特定组成部分，用来核实所要求的一系列步骤是否已得到执行或检查需求列表是否已得到满足。</li>
+<li>涵盖范围基准的验收标准</li>
+</ul>
+</li>
+<li>
+<p>工具：数据分析</p>
+<ul>
+<li>
+<p>备选方案分析</p>
+</li>
+<li>
+<p>文件分析</p>
+</li>
+<li>
+<p>过程分析</p>
+<ul>
+<li>发现非增值活动，寻找改进机会</li>
+</ul>
+</li>
+<li>
+<p>根本原因分析 (RCA)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：数据表现</p>
+<ul>
+<li>
+<p>亲和图</p>
+<ul>
+<li>以对潜在缺陷成因进行分类，展示最应关注的领域</li>
+</ul>
+</li>
+<li>
+<p>因果图</p>
+<ul>
+<li>
+<p>又称“鱼骨图”、“why-why分析图”和“石川图”</p>
+</li>
+<li>
+<p>于识别问题的主要原因或根本原因</p>
+</li>
+<li>
+<p>与根本原因分析 (RCA)的区别</p>
+<ul>
+<li>只分析，不解决</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>流程图</p>
+<ul>
+<li>展示了引发缺陷的一系列步骤</li>
+<li>通常题干中会有“流程”、“程序”和“过程”等文字</li>
+</ul>
+</li>
+<li>
+<p>直方图</p>
+<ul>
+<li>以展示每个可交付成果的缺陷数量、缺陷成因的排列、各个过程的不合规次数，或项目或产品缺陷的其他表现形式</li>
+<li>“帕累托图”
+<ul>
+<li>按发生频率排序</li>
+<li>有重点，首先导致最多缺陷的原因</li>
+<li>相对少量的原因通常造成大多数的问题 80/20原则</li>
+<li>“排序”、“优先”、“首要”、“最重要”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>矩阵图</p>
+<ul>
+<li>展示因素、原因和目标之间的关系强弱</li>
+</ul>
+</li>
+<li>
+<p>散点图</p>
+<ul>
+<li>展示两个变量之间的关系</li>
+<li>确定是否与某个因素有关</li>
+</ul>
+</li>
+<li>
+<p>因果图偏重于从结果倒查原因，</p>
+</li>
+<li>
+<p>流程图偏重于从原因推导结果，</p>
+</li>
+<li>
+<p>散点图是知道两个因素，判断其是否有内在因果关系。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：审计/质量审计</p>
+<ul>
+<li>
+<p>质量审计是用于确定项目活动是否遵循了组织和项目的政策、过程与程序的一种结构化且独立的过程</p>
+</li>
+<li>
+<p>通常由项目外部团队开展</p>
+</li>
+<li>
+<p>包括</p>
+<ul>
+<li>识别良好及最佳实践</li>
+<li>识别违规、差距及不足</li>
+<li>分享良好实践</li>
+<li>改进过程执行</li>
+<li>经验教训</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：面向 X 的设计 (DfX)</p>
+<ul>
+<li>关注什么，就面向什么</li>
+<li>题干：“提高产品特性”</li>
+</ul>
+</li>
+<li>
+<p>工具：问题解决（顺序）</p>
+<ul>
+<li>定义问题；</li>
+<li>识别根本原因；</li>
+<li>生成可能的解决方案；</li>
+<li>选择最佳解决方案；</li>
+<li>执行解决方案；</li>
+<li>验证解决方案的有效性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_3">8.3 控制质量</h3>
+<ul>
+<li>
+<p>为了评估绩效，确保项目输出完整、正确且满足客户期望，而监督和记录质量管理活动执行结果的过程</p>
+</li>
+<li>
+<p>主要作用是，核实项目可交付成果和工作已经达到主要相关方的质量要求，可供最终验收</p>
+</li>
+<li>
+<p>发现不一致</p>
+<ul>
+<li>检查已经出现的质量问题</li>
+</ul>
+</li>
+<li>
+<p>目的是在用户验收和最终交付之前测量产品或服务的完整性、合规性和适用性</p>
+</li>
+<li>
+<p>在整个项目期间执行质量控制</p>
+</li>
+<li>
+<p>用可靠的数据来证明项目已经达到发起人和/或客户的验收标准</p>
+</li>
+<li>
+<p>图示<img src="https://b3logfile.com/file/2020/09/solofetchupload9043599236030234881-222eda45.jpeg?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt=""></p>
+</li>
+<li>
+<p>工具：控制表</p>
+<ul>
+<li>
+<p>用于确定一个过程是否稳定，或者是否具有可预测的绩效</p>
+</li>
+<li>
+<p>可用于监测各种类型的输出变量</p>
+</li>
+<li>
+<p>规格上限和下限是根据要求制定的，反映了可允许的最大值和最小值</p>
+<ul>
+<li>控制上、下限一般设为±3个西格玛</li>
+</ul>
+</li>
+<li>
+<p>七点规则(连续七点在平均值上方或下方，或七个点呈同方向变动(越来越高或越来越低)表示过程失控)</p>
+</li>
+<li>
+<p>数据点在规格界限外为质量不合格，需要返工或重做</p>
+</li>
+<li>
+<p>从考试的角度，控制图的作用有如下几种情况：</p>
+<ul>
+<li>(1)、在问题尚未发生前，找到隐患解决;</li>
+<li>(2)、可以消除相关方对质量的担心;</li>
+<li>(3)、可以监控过程、添加新变量之后的状态。</li>
+</ul>
+</li>
+<li>
+<p>控制线是控制图中判断过程是否失控的上下界限，超过控制线，表明过程已失控。</p>
+</li>
+<li>
+<p>控制线是项目团队制定的。</p>
+</li>
+<li>
+<p>规格线是判断产品或成果是否符合要求，是不合格品的分界线，超过规格线，表明产品不合格。</p>
+</li>
+<li>
+<p>规格线是合同（用户或客户）确定的。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>工具：趋势图</p>
+<ul>
+<li>没有界限的控制图，反应某种变化的历史和模式</li>
+<li>有规律</li>
+</ul>
+</li>
+<li>
+<p>输出：核实的可交付成果</p>
+<ul>
+<li>是确认范围过程的输入</li>
+</ul>
+</li>
+</ul>
+<h3 id="toc_h3_4">管理质量与控制质量的区别</h3>
+<ul>
+<li>管理质量
+<ul>
+<li>组织</li>
+<li>设计流程</li>
+<li>制定目标</li>
+<li>提供资源</li>
+<li>改进步骤</li>
+</ul>
+</li>
+<li>控制质量包括
+<ul>
+<li>检查</li>
+<li>分析</li>
+<li>监视</li>
+<li>汇报</li>
+</ul>
+</li>
+<li>规划质量管理过程关注工作需要达到的质量，管理质量则需要关注管理整个项目期间的质量过程</li>
+<li>核实的可交付成果是控制质量的输出</li>
+</ul>
+<h3 id="toc_h3_5">思维导图</h3>
+<p>由幕布生成<br>
+分享链接：<a href="https://share.mubu.com/doc/4eeSCVk_a1e" target="_blank">https://share.mubu.com/doc/4eeSCVk_a1e</a></p>
+<p><img src="https://b3logfile.com/file/2020/09/8.项目质量管理-bdc365f8.png?imageView2/2/w/1280/format/jpg/interlace/1/q/100" alt="8.项目质量管理.png"></p>
+                            <div>
+                                <hr>
+
+标题：pmp-08-项目质量管理<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/12/11/1600676585151.html" target="_blank">https://ceneri.me/articles/2019/12/11/1600676585151.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/12/11/1600674552643.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: pmp-07-项目成本管理
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/12/11/1600680384793.html" rel="next"
+                               class="fn__right breadcrumb">
+                                pmp-09-项目资源管理: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600674552643.html" rel="prev" class="breadcrumb">
+                            旧一篇: pmp-07-项目成本管理
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/12/11/1600680384793.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: pmp-09-项目资源管理
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1600676585151"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">项目质量管理</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">8.1 规划质量管理</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">8.2 管理质量 也叫质量保证</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">8.3 控制质量</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">管理质量与控制质量的区别</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">思维导图</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1600676585151",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1600676585151",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1600676585151', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1369ms, 2020/12/08 21:51:00 -->

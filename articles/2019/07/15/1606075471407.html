@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="theme-color" content="#3b3e43"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="format-detection" content="telephone=no"/><title>mybatis-03-CRUD - ceneri 的个人博客</title><meta name="description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/><meta property="og:description" content="A small and beautiful blogging system. 一款小而美的博客系统。"/>    <meta name="keywords" content="Solo,Java,博客,开源"/><link rel="dns-prefetch" href="https://ceneri.me"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://ceneri.me"><link rel="icon" type="image/png" href="https://static.b3log.org/images/brand/solo-128.png"/><link rel="apple-touch-icon" href="https://static.b3log.org/images/brand/solo-128.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.b3log.org/images/brand/solo-128.png"><meta name="copyright" content="B3log"/><meta http-equiv="Window-target" content="_top"/><meta property="og:locale" content="zh_CN"/><meta property="og:title" content="mybatis-03-CRUD - ceneri 的个人博客"/><meta property="og:site_name" content="ceneri 的个人博客"/><meta property="og:url"      content="https://ceneri.me/articles/2019/07/15/1606075471407.html?"/><meta property="og:image" content="https://static.b3log.org/images/brand/solo-128.png"/><link rel="search" type="application/opensearchdescription+xml" title="mybatis-03-CRUD - ceneri 的个人博客" href="/opensearch.xml"><link href="https://ceneri.me/rss.xml" title="RSS" type="application/rss+xml" rel="alternate"/><link rel="manifest" href="https://ceneri.me/manifest.json">        <link rel="canonical" href="https://ceneri.me/articles/2019/07/15/1606075471407.html">        <link rel="stylesheet"
+              href="https://ceneri.me/skins/nijigen/css/base.css?1607435156565"/>
+            <link rel="prev" title="mybatis-02-第一个Mybatis程序" href="https://ceneri.me/articles/2019/07/15/1606075260543.html">
+            <link rel="next" title="mybatis-04-配置解析" href="https://ceneri.me/articles/2019/07/15/1606128757393.html">
+    <script src="https://cdn.jsdelivr.net/npm/vditor@3.5.3/dist/js/icons/ant.js" async="" id="vditorIconScript"></script></head>
+<body>
+<div class="bg"></div>
+<div class="bg bg--1"></div>
+<div class="bg bg--2"></div>
+<div class="bg bg--3"></div>
+<div class="bg bg--4"></div>
+<div class="bg bg--5"></div>
+<header class="header">
+    <div class="header__wrap">
+        <a href="https://ceneri.me" rel="start" class="header__logo">
+            <i class="icon__home"></i> ceneri 的个人博客
+        </a>
+
+        <nav class="mobile__hidden header__nav">
+            <a href="https://ceneri.me/tags.html" rel="section">
+                <i class="icon__tags"></i> 标签墙
+            </a>
+            <a href="https://ceneri.me/archives.html">
+                <i class="icon__inbox"></i> 存档
+            </a>
+            <a rel="archive" href="https://ceneri.me/links.html">
+                <i class="icon__link"></i> 友链
+            </a>
+            <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                <i class="icon__rss"></i> RSS
+            </a>
+        </nav>
+
+    </div>
+</header>
+<div class="header__m fn__none">
+    <i class="icon__list fn__none" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list fn__none"></main>
+    <i class="icon__more" onclick="$(this).next().slideToggle()"></i>
+    <main class="module__list">
+        <ul>
+            <li>
+                <a href="https://ceneri.me/tags.html" rel="section">
+                    <i class="icon__tags"></i> 标签墙
+                </a>
+            </li>
+            <li>
+                <a href="https://ceneri.me/archives.html">
+                    <i class="icon__inbox"></i> 存档
+                </a>
+            </li>
+            <li>
+                <a rel="archive" href="https://ceneri.me/links.html">
+                    <i class="icon__link"></i> 友链
+                </a>
+            </li>
+            <li>
+                <a rel="alternate" href="https://ceneri.me/rss.xml" rel="section">
+                    <i class="icon__rss"></i> RSS
+                </a>
+            </li>
+        </ul>
+    </main>
+</div>
+<div class="main" id="pjax">
+    
+    <div class="content">
+        <main id="articlePage">
+            <div class="article-list">
+                <div class="item item--active">
+                    <time class="vditor-tooltipped vditor-tooltipped__n item__date"
+                          aria-label="2019年">
+                        07月
+                        <span class="item__day">15</span>
+                    </time>
+
+                    <h2 class="item__title">
+                        <a rel="bookmark" href="https://ceneri.me/articles/2019/07/15/1606075471407.html">
+                            mybatis-03-CRUD
+                        </a>
+                    </h2>
+
+                    <div class="item__date--m fn__none">
+                        <i class="icon__date"></i>
+                        2019-07-15
+                    </div>
+
+                    <div class="ft__center">
+                        <span class="tag">
+                            <i class="icon__tags"></i>
+                            <a rel="tag" href="https://ceneri.me/tags/mybatis">
+                                mybatis</a>
+                        </span>
+                            <a class="tag" href="https://ceneri.me/articles/2019/07/15/1606075471407.html#b3logsolocomments">
+                                <i class="icon__comments"></i> <span data-uvstatcmt="1606075471407">0</span> 评论
+                            </a>
+                        <span class="tag">
+                            <i class="icon__views"></i>
+                        <span data-uvstaturl="https://ceneri.me/articles/2019/07/15/1606075471407.html">0</span> 浏览
+                        </span>
+                    </div>
+
+                    <div class="vditor-reset">
+                        <h3 id="toc_h3_0">1、namespace</h3>
+<p>namespace中的包名要和 Dao/mapper 接口的包名一致！</p>
+<h3 id="toc_h3_1">2、select</h3>
+<p>选择，查询语句;</p>
+<ul>
+<li>id : 就是对应的namespace中的方法名；</li>
+<li>resultType：Sql语句执行的返回值！</li>
+<li>parameterType ： 参数类型！</li>
+</ul>
+<ol>
+<li>编写接口
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="java" cid="n180" mdtype="fences"> <span role="presentation"><span class="cm-comment">//根据ID查询用户</span></span><br> <span role="presentation"><span class="cm-variable">User</span> <span class="cm-def">getUserById</span>(<span class="cm-variable-3">int</span> <span class="cm-variable">id</span>);</span></pre>
+</li>
+<li>编写对应的mapper中的sql语句
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="java" cid="n183" mdtype="fences"> <span role="presentation"><span class="cm-operator">&lt;</span><span class="cm-variable">select</span> <span class="cm-variable">id</span><span class="cm-operator">=</span><span class="cm-string">"getUserById"</span> <span class="cm-variable">parameterType</span><span class="cm-operator">=</span><span class="cm-string">"int"</span> <span class="cm-variable">resultType</span><span class="cm-operator">=</span><span class="cm-string">"com.kuang.pojo.User"</span><span class="cm-operator">&gt;</span></span><br> <span role="presentation">        <span class="cm-variable">select</span> <span class="cm-operator">*</span> <span class="cm-variable">from</span> <span class="cm-variable">mybatis</span>.<span class="cm-variable">user</span> <span class="cm-variable">where</span> <span class="cm-variable">id</span> <span class="cm-operator">=</span> <span class="cm-variable">#</span>{<span class="cm-variable">id</span>}</span><br> <span role="presentation"><span class="cm-operator">&lt;/</span><span class="cm-variable">select</span><span class="cm-operator">&gt;</span></span><br> <span role="presentation"><span cm-text=""></span></span></pre>
+</li>
+<li>测试
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="java" cid="n186" mdtype="fences"> <span role="presentation">    <span class="cm-meta">@Test</span></span><br> <span role="presentation">    <span class="cm-keyword">public</span> <span class="cm-variable-3">void</span> <span class="cm-def">getUserById</span>() {</span><br> <span role="presentation">        <span class="cm-variable">SqlSession</span> <span class="cm-variable">sqlSession</span> <span class="cm-operator">=</span> <span class="cm-variable">MybatisUtils</span>.<span class="cm-variable">getSqlSession</span>();</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        <span class="cm-variable">UserMapper</span> <span class="cm-variable">mapper</span> <span class="cm-operator">=</span> <span class="cm-variable">sqlSession</span>.<span class="cm-variable">getMapper</span>(<span class="cm-variable">UserMapper</span>.<span class="cm-keyword">class</span>);</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        <span class="cm-variable">User</span> <span class="cm-variable">user</span> <span class="cm-operator">=</span> <span class="cm-variable">mapper</span>.<span class="cm-variable">getUserById</span>(<span class="cm-number">1</span>);</span><br> <span role="presentation">        <span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span>(<span class="cm-variable">user</span>);</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        <span class="cm-variable">sqlSession</span>.<span class="cm-variable">close</span>();</span><br> <span role="presentation">    }</span><br> <span role="presentation"><span cm-text=""></span></span></pre>
+</li>
+</ol>
+<h3 id="toc_h3_2">3、Insert</h3>
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="xml" cid="n188" mdtype="fences"> <span role="presentation">    <span class="cm-comment">&lt;!--对象中的属性，可以直接取出来--&gt;</span></span><br> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">insert</span> <span class="cm-attribute">id</span>=<span class="cm-string">"addUser"</span> <span class="cm-attribute">parameterType</span>=<span class="cm-string">"com.kuang.pojo.User"</span><span class="cm-tag cm-bracket">&gt;</span></span><br> <span role="presentation">        insert into mybatis.user (id, name, pwd) values (#{id},#{name},#{pwd});</span><br> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">insert</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+<h3 id="toc_h3_3">4、update</h3>
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="xml" cid="n190" mdtype="fences"> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">update</span> <span class="cm-attribute">id</span>=<span class="cm-string">"updateUser"</span> <span class="cm-attribute">parameterType</span>=<span class="cm-string">"com.kuang.pojo.User"</span><span class="cm-tag cm-bracket">&gt;</span></span><br> <span role="presentation">        update mybatis.user set name=#{name},pwd=#{pwd}  where id = #{id} ;</span><br> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">update</span><span class="cm-tag cm-bracket">&gt;</span></span><br> <span role="presentation"><span cm-text=""></span></span></pre>
+<h3 id="toc_h3_4">5、Delete</h3>
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="xml" cid="n192" mdtype="fences"> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">delete</span> <span class="cm-attribute">id</span>=<span class="cm-string">"deleteUser"</span> <span class="cm-attribute">parameterType</span>=<span class="cm-string">"int"</span><span class="cm-tag cm-bracket">&gt;</span></span><br> <span role="presentation">        delete from mybatis.user where id = #{id};</span><br> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">delete</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+<p>注意点：</p>
+<ul>
+<li>增删改需要提交事务！</li>
+</ul>
+<h3 id="toc_h3_5">6、分析错误</h3>
+<ul>
+<li>标签不要匹配错</li>
+<li>resource 绑定mapper，需要使用路径！</li>
+<li>程序配置文件必须符合规范！</li>
+<li>NullPointerException，没有注册到资源!</li>
+<li>输出的xml文件中存在中文乱码问题！</li>
+<li>maven资源没有导出问题！</li>
+</ul>
+<h3 id="toc_h3_6">7、万能Map</h3>
+<p>假设，我们的实体类，或者数据库中的表，字段或者参数过多，我们应当考虑使用Map！</p>
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="java" cid="n216" mdtype="fences"> <span role="presentation">    <span class="cm-comment">//万能的Map</span></span><br> <span role="presentation">    <span class="cm-variable-3">int</span> <span class="cm-def">addUser2</span>(<span class="cm-variable">Map</span><span class="cm-operator">&lt;</span><span class="cm-variable-3">String</span>,<span class="cm-variable-3">Object</span><span class="cm-operator">&gt;</span> <span class="cm-variable">map</span>);</span><br> <span role="presentation"><span cm-text=""></span></span></pre>
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="xml" cid="n217" mdtype="fences"> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">    <span class="cm-comment">&lt;!--对象中的属性，可以直接取出来    传递map的key--&gt;</span></span><br> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">insert</span> <span class="cm-attribute">id</span>=<span class="cm-string">"addUser"</span> <span class="cm-attribute">parameterType</span>=<span class="cm-string">"map"</span><span class="cm-tag cm-bracket">&gt;</span></span><br> <span role="presentation">        insert into mybatis.user (id, pwd) values (#{userid},#{passWord});</span><br> <span role="presentation">    <span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">insert</span><span class="cm-tag cm-bracket">&gt;</span></span></pre>
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="xml" cid="n218" mdtype="fences"> <span role="presentation">    @Test</span><br> <span role="presentation">    public void addUser2(){</span><br> <span role="presentation">        SqlSession sqlSession = MybatisUtils.getSqlSession();</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        UserMapper mapper = sqlSession.getMapper(UserMapper.class);</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        Map<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">String,</span> <span class="cm-attribute">Object</span><span class="cm-tag cm-bracket cm-error">&gt;</span> map = new HashMap<span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">String,</span> <span class="cm-attribute">Object</span><span class="cm-tag cm-bracket cm-error">&gt;</span>();</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        map.put("userid",5);</span><br> <span role="presentation">        map.put("passWord","2222333");</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        mapper.addUser2(map);</span><br> <span role="presentation"><span cm-text=""></span></span><br> <span role="presentation">        sqlSession.close();</span><br> <span role="presentation">    }</span><br> <span role="presentation"><span cm-text=""></span></span></pre>
+<p>Map传递参数，直接在sql中取出key即可！    【parameterType="map"】</p>
+<p>对象传递参数，直接在sql中取对象的属性即可！【parameterType="Object"】</p>
+<p>只有一个基本类型参数的情况下，可以直接在sql中取到！</p>
+<p>多个参数用Map，<strong>或者注解！</strong></p>
+<h3 id="toc_h3_7">8、思考题</h3>
+<p>模糊查询怎么写？</p>
+<ol>
+<li>Java代码执行的时候，传递通配符 % %
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="java" cid="n229" mdtype="fences"> <span role="presentation"><span class="cm-variable">List</span><span class="cm-operator">&lt;</span><span class="cm-variable">User</span><span class="cm-operator">&gt;</span> <span class="cm-variable">userList</span> <span class="cm-operator">=</span> <span class="cm-variable">mapper</span>.<span class="cm-variable">getUserLike</span>(<span class="cm-string">"%李%"</span>);</span></pre>
+</li>
+<li>在sql拼接中使用通配符！
+<pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="java" cid="n232" mdtype="fences"> <span role="presentation"><span class="cm-variable">select</span> <span class="cm-operator">*</span> <span class="cm-variable">from</span> <span class="cm-variable">mybatis</span>.<span class="cm-variable">user</span> <span class="cm-variable">where</span> <span class="cm-variable">name</span> <span class="cm-variable">like</span> <span class="cm-string">"%"</span><span class="cm-variable">#</span>{<span class="cm-variable">value</span>}<span class="cm-string">"%"</span></span></pre>
+</li>
+</ol>
+                            <div>
+                                <hr>
+
+标题：mybatis-03-CRUD<br>
+作者：<a href="https://ceneri.me" target="_blank">ceneri</a><br>
+地址：<a href="https://ceneri.me/articles/2019/07/15/1606075471407.html" target="_blank">https://ceneri.me/articles/2019/07/15/1606075471407.html</a><br>
+
+<!-- 签名档内可使用 HTML、JavaScript -->
+<br>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="module mobile__hidden">
+                    <div class="module__content fn__clear">
+                            <a href="https://ceneri.me/articles/2019/07/15/1606075260543.html" rel="prev" class="fn__left breadcrumb">
+                                旧一篇: mybatis-02-第一个Mybatis程序
+                            </a>
+                            <a href="https://ceneri.me/articles/2019/07/15/1606128757393.html" rel="next"
+                               class="fn__right breadcrumb">
+                                mybatis-04-配置解析: 新一篇
+                            </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/07/15/1606075260543.html" rel="prev" class="breadcrumb">
+                            旧一篇: mybatis-02-第一个Mybatis程序
+                        </a>
+                    </div>
+                </div>
+
+                <div class="module mobile__hidden fn__none">
+                    <div class="module__content">
+                        <a href="https://ceneri.me/articles/2019/07/15/1606128757393.html" rel="next"
+                           class="breadcrumb">
+                            新一篇: mybatis-04-配置解析
+                        </a>
+                    </div>
+                </div>
+                <div id="gitalk-container" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"></div>
+                <div id="b3logsolocomments"></div>
+                <div id="vcomment" class="module__content"
+                     style="border-radius: 5px;margin-bottom: 30px;box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);transition: all .3s;"
+                     data-name="ceneri" data-postId="1606075471407"></div>
+
+            <div class="fn__flex article__relevant">
+                <div class="fn__flex-1" id="externalRelevantArticlesWrap">
+                    <div class="module">
+                        <div id="externalRelevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="randomArticlesWrap">
+                    <div class="module">
+                        <div id="randomArticles" class="module__list"></div>
+                    </div>
+                </div>
+                <div class="mobile__hidden">&nbsp; &nbsp; &nbsp; &nbsp;</div>
+                <div class="fn__flex-1" id="relevantArticlesWrap">
+                    <div class="module">
+                        <div id="relevantArticles" class="module__list"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<aside class="side">
+        <div class="module">
+            <div class="module__list">
+<ul class="article__toc">
+        <li class="toc__h3">
+            <a href="#toc_h3_0">1、namespace</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_1">2、select</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_2">3、Insert</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_3">4、update</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_4">5、Delete</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_5">6、分析错误</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_6">7、万能Map</a>
+        </li>
+        <li class="toc__h3">
+            <a href="#toc_h3_7">8、思考题</a>
+        </li>
+</ul>            </div>
+        </div>
+        <section class="vditor-reset module">
+            <main class="module__content">
+                求职中，江浙沪JAVA岗希望！
+            </main>
+        </section>
+
+
+    <div class="module item">
+        <header class="module__header ft__center">
+            ceneri
+        </header>
+        <main class="module__content ft__center">
+            <img class="side__avatar" src="https://b3logfile.com/avatar/1598610885792_1599762584925.jpeg?imageView2/1/w/128/h/128/interlace/0/q/100" alt="ceneri"/>
+            JAVA程序媛 <br> <br>
+
+
+        </main>
+    </div>
+
+
+        <div class="module item">
+            <header class="module__header">标签</header>
+            <main class="module__content--three module__content fn__clear">
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/spring"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="11 篇文章">
+                        spring</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/mybatis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        mybatis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/pmp"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="13 篇文章">
+                        pmp</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringMVC"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="9 篇文章">
+                        SpringMVC</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/redis"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="7 篇文章">
+                        redis</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/SpringBoot"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="5 篇文章">
+                        SpringBoot</a>
+                    <a rel="tag"
+                       href="https://ceneri.me/tags/java"
+                       class="tag vditor-tooltipped vditor-tooltipped__n"
+                       aria-label="4 篇文章">
+                        java</a>
+            </main>
+        </div>
+
+    <div class="module item">
+        <div class="module__header">
+            <div class="fn__flex">
+                <a href="https://ceneri.me/archives.html" class="fn__flex-1 ft__center">
+                    62
+                    文章
+                </a>
+            </div>
+            <br/>
+            <div class="fn__flex">
+                <div class="fn__flex-1 ft__center">
+                    <span data-uvstaturl="https://ceneri.me">0</span> <span class="ft-gray">浏览</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+    
+</div>
+</div>
+<div class="icon__up" onclick="Util.goTop()"></div>
+<footer class="footer">
+    &copy; 2020
+    <a href="https://ceneri.me">ceneri 的个人博客</a>
+    
+    <div class="fn__none"></div>
+</footer>
+<div class="icon-up" onclick="Util.goTop()"></div>
+
+<script>
+  var Label = {
+    speech: true,
+    servePath: "https://ceneri.me",
+    staticServePath: "https://ceneri.me",
+    luteAvailable: false,
+    hljsStyle: 'github',
+    langLabel: "zh_CN",
+    version: "4.3.1",
+    staticSite: true,
+    showCodeBlockLn: false,
+    articleId: "1606075471407",
+  }
+</script>
+<script type="text/javascript" src="https://ceneri.me/skins/nijigen/js/common.min.js?1607435156565" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+    Util.addScript('https://ceneri.me/js/page.min.js?1607435156565', 'soloPageScript')
+    var page = new Page({
+        "commentContentCannotEmptyLabel": "评论不能为空",
+        "oId": "1606075471407",
+        "blogHost": "https://ceneri.me",
+        "randomArticles1Label": "随机阅读：",
+        "externalRelevantArticles1Label": "站外相关阅读："
+    });
+    $(document).ready(function () {
+        page.load();
+    page.tips.externalRelevantArticlesDisplayCount = "0";
+    page.loadRandomArticles('<header class="module__header">随机阅读</header>');
+    page.loadRelevantArticles('1606075471407', '<header class="module__header">相关阅读</header>');
+    Skin.initArticle()
+    });
+</script>
+
+</body>
+</html>
+
+<!-- Generated by Latke (https://github.com/88250/latke) in 1793ms, 2020/12/08 21:51:25 -->
