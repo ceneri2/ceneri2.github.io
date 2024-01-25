@@ -2,99 +2,99 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>ceneri 的个人博客</title>
-    <link>https://ceneri.me</link>
-    <atom:link href="https://ceneri.me/rss.xml" rel="self" type="application/rss+xml"/>
+    <link>https://ceneri2.github.io</link>
+    <atom:link href="https://ceneri2.github.io/rss.xml" rel="self" type="application/rss+xml"/>
     <description>JAVA程序媛</description>
     <generator>Solo, v4.3.1, https://b3log.org/solo</generator>
     <lastBuildDate>Wed, 09 Dec 2020 01:28:11 +0800</lastBuildDate>
     <language>zh-cn</language>
     <item>
       <title>springboot-05-mybatis 整合Mybatis框架</title>
-      <link>https://ceneri.me/articles/2020/02/18/1607366607665.html</link>
+      <link>https://ceneri2.github.io/articles/2020/02/18/1607366607665.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/02/18/1607366607665.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/02/18/1607366607665.html</guid>
       <category>SpringBoot</category>
       <pubDate>Tue, 18 Feb 2020 14:00:05 +0800</pubDate>
     </item>
     <item>
       <title>springboot-04-data 数据访问</title>
-      <link>https://ceneri.me/articles/2020/02/18/1607365451628.html</link>
+      <link>https://ceneri2.github.io/articles/2020/02/18/1607365451628.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/02/18/1607365451628.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/02/18/1607365451628.html</guid>
       <category>SpringBoot</category>
       <pubDate>Tue, 18 Feb 2020 14:00:04 +0800</pubDate>
     </item>
     <item>
       <title>springboot-03-web web开发</title>
-      <link>https://ceneri.me/articles/2020/02/18/1607354377610.html</link>
+      <link>https://ceneri2.github.io/articles/2020/02/18/1607354377610.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/02/18/1607354377610.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/02/18/1607354377610.html</guid>
       <category>SpringBoot</category>
       <pubDate>Tue, 18 Feb 2020 14:00:03 +0800</pubDate>
     </item>
     <item>
       <title>springboot-02-config 配置文件及原理</title>
-      <link>https://ceneri.me/articles/2020/02/18/1607283121892.html</link>
+      <link>https://ceneri2.github.io/articles/2020/02/18/1607283121892.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/02/18/1607283121892.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/02/18/1607283121892.html</guid>
       <category>SpringBoot</category>
       <pubDate>Tue, 18 Feb 2020 14:00:02 +0800</pubDate>
     </item>
     <item>
       <title>springboot-01-helloworld 初识及原理探究</title>
-      <link>https://ceneri.me/articles/2020/02/18/1607280652102.html</link>
+      <link>https://ceneri2.github.io/articles/2020/02/18/1607280652102.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/02/18/1607280652102.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/02/18/1607280652102.html</guid>
       <category>SpringBoot</category>
       <pubDate>Tue, 18 Feb 2020 14:00:01 +0800</pubDate>
     </item>
     <item>
       <title>redis-07-三种特殊数据类</title>
-      <link>https://ceneri.me/articles/2020/01/12/1599750078455.html</link>
+      <link>https://ceneri2.github.io/articles/2020/01/12/1599750078455.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/01/12/1599750078455.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/01/12/1599750078455.html</guid>
       <category>redis</category>
       <pubDate>Sun, 12 Jan 2020 14:00:07 +0800</pubDate>
     </item>
     <item>
       <title>redis-06-Zset有序集合</title>
-      <link>https://ceneri.me/articles/2020/01/12/1599749567559.html</link>
+      <link>https://ceneri2.github.io/articles/2020/01/12/1599749567559.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/01/12/1599749567559.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/01/12/1599749567559.html</guid>
       <category>redis</category>
       <pubDate>Sun, 12 Jan 2020 14:00:06 +0800</pubDate>
     </item>
     <item>
       <title>redis-05-Hash哈希</title>
-      <link>https://ceneri.me/articles/2020/01/12/1599749076072.html</link>
+      <link>https://ceneri2.github.io/articles/2020/01/12/1599749076072.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/01/12/1599749076072.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/01/12/1599749076072.html</guid>
       <category>redis</category>
       <pubDate>Sun, 12 Jan 2020 14:00:05 +0800</pubDate>
     </item>
     <item>
       <title>redis-04-List链表</title>
-      <link>https://ceneri.me/articles/2020/01/12/1599748813551.html</link>
+      <link>https://ceneri2.github.io/articles/2020/01/12/1599748813551.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/01/12/1599748813551.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/01/12/1599748813551.html</guid>
       <category>redis</category>
       <pubDate>Sun, 12 Jan 2020 14:00:04 +0800</pubDate>
     </item>
     <item>
       <title>redis-03-Set集合</title>
-      <link>https://ceneri.me/articles/2020/01/12/1599747790318.html</link>
+      <link>https://ceneri2.github.io/articles/2020/01/12/1599747790318.html</link>
       <description/>
       <author>ceneri</author>
-      <guid>https://ceneri.me/articles/2020/01/12/1599747790318.html</guid>
+      <guid>https://ceneri2.github.io/articles/2020/01/12/1599747790318.html</guid>
       <category>redis</category>
       <pubDate>Sun, 12 Jan 2020 14:00:03 +0800</pubDate>
     </item>
